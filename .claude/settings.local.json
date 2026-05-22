@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:www.capgemini.com)",
+      "WebFetch(domain:careers.capgemini.com)"
+    ]
+  }
+}
