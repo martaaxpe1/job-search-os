@@ -1,9 +1,9 @@
 # Application Tracker — Marta Axpe
-Last updated: 2026-05-19
+Last updated: 2026-05-25
 
-**Summary:** 64 applications | Apr 2025 – May 2026
+**Summary:** 65 applications | Apr 2025 – May 2026
 - Active / Interviewing: 1 (oneUp)
-- Pending response: 4 (ICC, Aquent/IKEA, Polaroid, Booking.com)
+- Pending response: 5 (ICC, Aquent/IKEA, Polaroid, Booking.com, Apple/Magnit)
 - Offer received, declined: 1 (Packback)
 - Final round reached: 1 (Adidas)
 - Rejected: ~45 | Ghosted: 8 | Not for me: 3
@@ -47,6 +47,23 @@ Last updated: 2026-05-19
 - **Next action:** Follow up if no response by 26/05/26
 - **History:**
   - 19/05/26 Applied
+
+### Apple (via Magnit) — Associate Creative Director, Experience Strategy
+- **Applied:** 25/05/26
+- **Status:** Registered — Pending Response
+- **Type:** Contract / contingent workforce (via Magnit DirectSource)
+- **Pay rate:** $107–$161/hr USD
+- **Referral:** No
+- **Connection at company:** None active — Pelican Apple Wallet pilot contact no longer at Apple.
+- **Work product sent:** No
+- **Fit score:** 81/100 — APPLY IMMEDIATELY (Design function weighting)
+- **Remote policy:** Listed as remote (Sunnyvale, CA base) — NL contractor eligibility unconfirmed
+- **Company tier:** Big Tech (target company — warm hook via Pelican Apple Wallet pilot)
+- **Last action:** Low-effort database registration 25/05/26
+- **Next action:** Verify NL contractor eligibility via Magnit recruiter by 01/06/26
+- **Notes:** Strong skill match — Experience Strategy is core Marta territory. Main open question is whether EU/NL-based contractors can engage Apple's US contingent workforce program. If yes, this is a priority. No warm contact available — Apple Wallet pilot contact has left Apple.
+- **History:**
+  - 25/05/26 Registered in Magnit database / applied to posting
 
 ### International Chamber of Commerce — Innovation Manager, Products & Services (Contract)
 - **Applied:** 12/04/26

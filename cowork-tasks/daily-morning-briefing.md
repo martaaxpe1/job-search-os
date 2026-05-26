@@ -5,7 +5,7 @@ This briefing has been split into 3 self-contained parts to fit within Claude's 
 ## 3-Part Structure
 
 | Part | File | Scope | Output |
-|------|------|-------|--------|
+|------|------|-------|----/----|
 | **Part 1: Roles** | `briefing-part1-roles.md` | Scan target companies, score roles, tailor resumes | `briefings/[date]-part1-roles.md` |
 | **Part 2: Networking** | `briefing-part2-networking.md` | Connection requests, follow-ups, referral nudges | `briefings/[date]-part2-networking.md` |
 | **Part 3: Coaching** | `briefing-part3-coaching.md` | Pipeline health, interview coaching, priority stack | `briefings/[date]-part3-coaching.md` |
