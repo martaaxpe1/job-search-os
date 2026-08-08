@@ -358,6 +358,16 @@ Last updated: 2026-05-05
 
 ---
 
+### RoomPriceGenie
+- **What:** Hospitality tech scale-up — dynamic pricing algorithm helping independent hotels compete on revenue management
+- **Location:** Remote-first (optional hubs in Mannheim, Berlin, Sydney — none in NL)
+- **Why:** Not on the primary industry list (hospitality/B2B SaaS), but the strongest role-fit score of the search so far (86/100) — Head of UX is a near-exact match to career-plan.md's Primary target: leading a small design + research team, building the function from a small base, comp landing almost exactly on target (€95-125K)
+- **Roles to target:** Head of UX, Head of Design & Research
+- **Connections:** None yet
+- **Status:** Applied 03/08/26 — see app-tracker.md
+
+---
+
 ## Tier 3: Good Fit (20)
 
 Monitor and apply selectively. Match 3 of 5 preferences.
@@ -394,7 +404,7 @@ Monitor and apply selectively. Match 3 of 5 preferences.
 | MediaMonks | Amsterdam, NL | Large creative/tech agency (S4 Capital) — global scale, design and innovation work | Innovation Strategist, Senior Service Designer |
 | The Garage \| E.ON | Amsterdam, NL | Innovation lab inside E.ON energy company — sustainability + energy transition | Innovation Lead, Experience Strategist |
 | HikeOne | Amsterdam, NL | Product design agency — NL, good reputation for craft | Senior UX Researcher, Senior Product Designer |
-| Booking.com | Amsterdam, NL | ⚠️ PAUSE — 3 rejections in 12 months (VP Product, Customer Centricity, Service Designer). Strong ATS/cultural mismatch signal. Revisit in 12+ months | — |
+| Booking.com | Amsterdam, NL | Pause lifted 08/08/26 for warm-channel applications only — 4 prior ATS auto-rejects (VP Product, Customer Centricity, Service Designer, Employee Experience Researcher), none reached a human. Applied 08/08/26 to Manager, PX Strategy & Journey Health via warm reconnection with Francis Gerber (see connection-tracker.md) — HM is actively soliciting internal recs for this brand-new team. Cold applications to Booking remain paused; only apply here again with a warm path in. | Francis Gerber (Senior Service Designer) |
 
 ---
 

@@ -399,6 +399,17 @@ Auto-maintained by the OS. Updated after connection requests, referral requests,
 
 ---
 
+## Rabobank
+
+### Youp ⬅️ NEW — Active intel source, Strategic Service Designer interview
+- **Title:** Unknown role at Rabobank — fill in
+- **LinkedIn connected:** Unknown — fill in
+- **Met in person/Zoom:** Yes — WhatsApp contact, gave real-time interview intel 03/08/26
+- **Relationship:** Friend
+- **Next action:** Already delivered real value ahead of the 05/08/26 14:00 recruiter/team-lead screen for Strategic Service Designer (Business Lending, Design Chapter) — gave interviewer names/dynamics and portfolio guidance (see app-tracker.md notes). Thank him after the call regardless of outcome — this kind of insider intel is exactly what referral relationships are for.
+
+---
+
 ## Shell
 
 ### Darrell Chung
@@ -446,12 +457,19 @@ Auto-maintained by the OS. Updated after connection requests, referral requests,
 ## Booking.com
 *⚠️ PAUSE — 3 rejections in 12 months. Do not apply.*
 
-### Francis Gerber
+### Francis Gerber (She/Her)
 - **Title:** Senior Service Designer
 - **LinkedIn connected:** Yes — 16 Mar 2020
 - **LinkedIn:** https://www.linkedin.com/in/francis-gerber
-- **Last contact:** Unknown — fill in
-- **Next action:** HOLD. Booking.com is on PAUSE per app-tracker. Keep connection warm but don't activate for referrals until at least 6 more months have passed.
+- **Relationship history:** Marta interviewed Francis for a role at WEAREREASONABLEPEOPLE ("Warp") — good interaction, real rapport. Francis reached out 03 Nov 2020 inviting Marta to an Accenture "New Insiders" event — Marta never responded. Personal update: Francis has since become a mother.
+- **Last contact:** 07/08/26 — Marta sent reconnection message (LinkedIn DM): acknowledged the dropped 2020 thread, gave a career recap, asked for her honest read on the Manager, Partner Experience Strategy & Journey Health role and her general experience at Booking.com, lightly referenced the 2024/25 Service Design reorg. Low-effort ask (chat over call), no pressure.
+- **Context flag:** Francis posted publicly (~11mo ago) that Service Design's future at Booking.com was uncertain post-reorg — worth asking her directly if she responds, relevant due-diligence for the PX/Journey Health role since it sits next to Service Design.
+- **Response received 07/08/26 (same day):** ⭐⭐ EXCELLENT SIGNAL. Francis works closely with the Hiring Manager (new to Booking, started April 2026 — this is a brand-new team formed out of the reorg, everyone in it is new to their role even if long-tenured at Booking). HM has already asked Francis directly for internal candidate recommendations for this team. Francis works cross-functionally across Finance, CS, and Commercial/Partner on overall Partner Experience. She flagged Finance is mid-way through a major Transformation (systems change) — relevant context for how settled/unsettled this specific role's scope is right now. She explicitly invited more questions ("Fire away").
+- **Follow-up sent 08/08/26 (LinkedIn DM):** Questions only, no referral ask yet (deliberately holding that back until her answers come in). Asked: team composition/expertise so far; how iteration works between PX and Analytics/Operations post-implementation; her own cross-departmental experience and whether alignment across Finance/CS/Commercial is top-down or bottom-up; what the HM is prioritizing most for this hire; and asked for her advice on what to pay attention to if Marta applies. Gave her an explicit out to skip anything too internal.
+- **Response received 08/08/26 (same day):** Team shape unknown — Francis can see 4 direct reports in the system today but doesn't know final headcount. Team sits in the **Order to Cash** org — heavy finance/payments ops, narrower and more finance-heavy than the "Partner Experience" title suggests. No visibility into the continuous-improvement/iteration operating model between PX and Analytics/Operations — Francis's own work has been strictly on the Strategic cross-functional operating model side, a different track from this role. Confirmed: strategy at Booking is top-down. On HM priorities: HM mentioned needing someone to own the business cases for the transformations, but Francis doesn't expect that to be the sole or long-term focus. Color commentary (unprompted, positive): called it "a very interesting area with big problems to solve," and flagged a strong, female-driven core team.
+- **Follow-up sent 08/08/26 (LinkedIn DM):** Thanked her for confirming the heavy Order to Cash / finance-payments-ops scope, named the domain gap honestly, countered with real transferable experience (product business cases + innovation investment proposals for leadership teams — Tikkie monetization business case, WARP client proposals with investment rationale). Confirmed Marta is applying regardless. Left the referral/flagging door open without asking directly — "only if it feels right on your end" — plus invited her to ask questions first. No pressure, no hard ask.
+- **Response received 08/08/26:** "My pleasure. Good luck!" — warm, brief sign-off. No explicit offer to flag/refer, no further questions. Thread reads as naturally closed for now on her end.
+- **Next action:** No open ask outstanding — don't chase a referral she didn't volunteer. Proceed with the application through the standard channel. Update `app-tracker.md` once submitted. If Francis follows up later (e.g. after seeing the application or hearing from the HM), log it here. Good relationship to keep warm long-term regardless of this outcome — she's been unusually generous twice over across two response rounds.
 
 ---
 

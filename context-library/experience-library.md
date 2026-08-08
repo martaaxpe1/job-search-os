@@ -1,5 +1,5 @@
 # Experience Library — Marta Axpe
-Last updated: 2026-05-05
+Last updated: 2026-07-23
 Sources: MartaAxpe-CV-2026.pdf + interview prep notes + LinkedIn bio + website about
 
 ---
@@ -118,8 +118,10 @@ Sources: MartaAxpe-CV-2026.pdf + interview prep notes + LinkedIn bio + website a
 - Built findsunspot.com independently using vibe coding (AI-assisted development) — a real-time app that shows which outdoor terraces and spots are currently sunny, using sun position data, live weather, and building shadow modelling, with a 2h+ forward prediction; currently in debugging (2025–present)
 - Actively developing own AI-enabled propositions — experimenting with how AI can support early discovery, synthesis, and decision-making as part of real workflows (2025–present)
 - AI prototyping tools in active use: Lovable, Stitch, Midjourney, Zapier
-- Completing Agents course (Huggingface.co, ongoing) and Data Analytics Professional Certificate (DeepLearning.AI, 2026)
+- Completed Data Analytics Professional Certificate (DeepLearning.AI, 2026)
 - Completed Prototyping with AI (IDEO U, 2026)
+- Completed Google Prompting Essentials Specialization (Google, 2026)
+- Completed Vibe Coding L3: Gold (Lovable, 2026)
 - Research support tools: ChatGPT, NotebookLM
 
 ---
@@ -130,7 +132,8 @@ Sources: MartaAxpe-CV-2026.pdf + interview prep notes + LinkedIn bio + website a
 - **BA in Product Design** — EINA - Universitat Autònoma de Barcelona (2011)
 - **Data Analytics Professional Certificate** — DeepLearning.AI (2026)
 - **Prototyping with AI** — IDEO U (2026)
-- **Agents course** — Huggingface.co (ongoing)
+- **Google Prompting Essentials Specialization** — Google (2026)
+- **Vibe Coding L3: Gold** — Lovable (2026)
 
 ---
 

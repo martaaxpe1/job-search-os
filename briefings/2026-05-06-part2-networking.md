@@ -12,7 +12,7 @@ This briefing did not run because a required context file is empty.
 | `context-library/career-plan.md` | ✅ Populated | Real data (Marta Axpe, Innovation leadership, Rotterdam NL) |
 | `context-library/target-companies.md` | ✅ Populated | Tier 1+ list with real companies (IKEA, Philips, Unilever, Ocean Cleanup, Danone, etc.) |
 | `context-library/connection-tracker.md` | ❌ Template only | Contains only placeholder text like `[Company Name]`, `[Person Name]`, `[date]`, `[yes/no]` |
-| Active referral tracker | ❌ Not present | No `referral-tracker.md` or equivalent file found in `context-library/` |
+| Active referral tracker | ❌ Not present | No `referral-tracker.md` or equivalent file found in `context-library/` |/
 
 ### Why this stops Part 2
 
