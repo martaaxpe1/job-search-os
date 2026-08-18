@@ -1,20 +1,62 @@
 # Application Tracker — Marta Axpe
-Last updated: 2026-08-08
+Last updated: 2026-08-18
 
-**Summary:** 75 applications | Apr 2025 – Aug 2026
-- Active / Interviewing: 2 (oneUp, Rabobank/Senior Experience Designer — passed Round 1 phone screen, advancing)
-- Pending response: 6 (Booking.com/Manager Partner Experience Strategy & Journey Health, INTERSPORT/Digital Experience Manager, Apple/Experience Strategist, Corecom Consulting/Senior UX Designer, Albert Heijn/Interim Strategic Lead, RoomPriceGenie/Head of UX)
+**Summary:** 77 applications | Apr 2025 – Aug 2026
+- Active / Interviewing: 3 (oneUp, Rabobank/Senior Experience Designer — passed Round 1 phone screen, advancing; RoomPriceGenie/Head of UX — intro call invited)
+- Pending response: 6 (Adyen/Senior Service Designer Platform Engineering, Kraft Heinz/Associate Director Global Innovation Technology, INTERSPORT/Digital Experience Manager, Apple/Experience Strategist, Corecom Consulting/Senior UX Designer, Albert Heijn/Interim Strategic Lead)
 - Offer received, declined: 1 (Packback)/
 - Final round reached: 1 (Adidas)
-- Rejected: ~48 | Ghosted: 10 | Not for me: 3
+- Rejected: ~49 | Ghosted: 10 | Not for me: 3
 
 ---
 
 ## 🟢 ACTIVE
 
-### Booking.com — Manager, Partner Experience Strategy & Journey Health (O2C)
-- **Applied:** 08/08/26
+### Adyen — Senior Service Designer, Platform Engineering
+- **Applied:** 18/08/26
 - **Status:** Submitted — Pending Response
+- **Type:** Permanent — office-first, explicitly no remote-only roles
+- **Location:** Amsterdam, NL (commutable from Rotterdam)
+- **Salary range:** Not stated in JD
+- **Referral:** No formal referral. Natalja Laurey (Global Research Lead, Product & Commercial Strategy) replied to Marta's outreach with one useful piece of insider intel — at Adyen, designers are expected to do their own research and explore solutions from a human-centered view, not hand it off to a separate research function — but she is currently "in between roles" herself, not a current Adyen employee, so not a live internal referral path. Marta replied to her 18/08/26.
+- **Resume version:** Tailored (Senior Service Designer, Platform Engineering — Adyen) via `/resume-tailor`. Summary rewritten to lead with combined research+design identity (directly reflecting Natalja's intel). Global Head of Innovation bullets restructured to lead with hands-on research ("led 100+ end-user and customer interviews") and technical fluency (PCB redesign, coordinating hardware engineers and Chinese manufacturing partners during a component shortage) rather than headcount/budget framing, since this is a Senior IC role, not a "Head of" — overqualification risk was deliberately managed by cutting team-size and BU-handoff bullets. Skills section reordered to foreground Human-Centered Design & UX Research.
+- **Cover letter:** Not confirmed — check with Marta
+- **Connection at company:** Natalja Laurey — see `connection-tracker.md`. Not a current employee; relationship is now more peer-to-peer (she's also job-searching) than a referral path.
+- **Work product sent:** No
+- **Fit score:** Not formally run via `/job-fit-scorer` — informally very strong. 12 years vs. 8+ required, 3+ years formal service design (WEAREREASONABLEPEOPLE) matches directly, and the Advanced Development Team Lead role ("designing intangible products governed by system logic, algorithms, and data rules rather than a user interface") is an unusually close match to the JD's "full-stack service design" ask. Two honest partial gaps: no direct SaaS/B2B software product experience (closest analogs: Tikkie B2B fintech, Culligan IoT admin tooling), and no prior experience designing specifically for a developer/engineer end-user population (closest analog: the YouTube/Unspoken internal CS-agent tooling work, fragmented tooling for a technical-ish internal user base).
+- **Company tier:** Only a one-line Tier 3 entry existed in `target-companies.md` prior to this application — worth expanding given the strength of fit and the live process.
+- **Last action:** Applied 18/08/26; replied to Natalja Laurey same day.
+- **Next action:** No open ask outstanding with Natalja — she gave what she could as someone no longer at Adyen; keep the relationship warm as a peer rather than pushing for more. Follow up on the application if no response by 25/08/26.
+- **History:**
+  - 18/08/26 Resume tailored via `/resume-tailor` — restored the "100+ user interviews" bullet and added the PCB/hardware technical-fluency bullet after a review pass flagged both were missing from the initial draft
+  - 18/08/26 Applied
+  - 18/08/26 Replied to Natalja Laurey
+
+### Kraft Heinz — Associate Director, Global Innovation Technology
+- **Applied:** 15/08/26
+- **Status:** Submitted — Pending Response
+- **Type:** Permanent
+- **Location:** Amsterdam, NL
+- **Salary range:** Not stated in JD — estimated medium confidence, likely at or above €100K–€110K target for a Director-level role at a global public CPG
+- **Referral:** No — no connection found in `connection-tracker.md`; cold application
+- **Resume version:** Tailored from the "Innovation and Technology Strategy Lead" CV base (closer fit than the general innovation-strategy draft) — added roadmap/stage-gate governance language, the IoT servicing platform bullet (dashboard, predictive stocking, firmware updates, proactive maintenance — built end to end and adopted by other teams), budget ownership bullet (~€550K OpEx/CapEx, confirmed and reconciled in experience-library.md), and a stakeholder-enablement bullet (Marketing, R&D, Supply Chain, IT, M&A)
+- **Cover letter:** Not confirmed — check with Marta
+- **Connection at company:** None in `connection-tracker.md` or `target-companies.md` — Kraft Heinz not yet tracked there
+- **Work product sent:** No
+- **Fit score:** 79/100 — APPLY IMMEDIATELY. Strong on years/seniority (12 vs 10+ required), team leadership, CPG/food industry fit (your #1 stated industry preference), and stakeholder influence. Sharpest gap: JD wants ownership of an internal enterprise software platform (release cycles, feature backlog, data integrity, adoption analytics); your platform experience (Twist/IoT servicing tool) is physical/IoT, not enterprise SaaS — addressed via the platform bullet above but still a real distinction if probed in interview.
+- **Company tier:** Not yet tracked in `target-companies.md` — large global public CPG, matches "large corporates broadly" preference and #1 industry preference (food/CPG)
+- **Post-submission accuracy audit:** Ran a full traceability check of the submitted CV against `experience-library.md` after applying. Found and reconciled: budget figure (library said €450K, submitted CV said €550K — corrected to €550K, confirmed accurate), flavour supplier name (Sensient — added to library, confirmed accurate), launch geography (library had two conflicting versions, UK/US vs US/EU — corrected to UK pilot, then US/UK/EU launch). **Still open, not yet resolved:** the "R&D expertise translated across formulation, supply chain, and operations" claim (scope confirmed as "something in between" full ownership and just the partner relationship, exact boundary not yet defined) and the Supply Chain/IT stakeholder claim (confirmed real, specific context not yet captured). Revisit before using either claim in an interview or future application.
+- **Last action:** Applied 15/08/26
+- **Next action:** Follow up if no response by 22/08/26. Consider building a Kraft Heinz connection via `/connection-request` in parallel, since this went in cold. Resolve the two open accuracy items above before any recruiter screen.
+- **History:**
+  - 15/08/26 `/job-fit-scorer` run — 79/100, APPLY IMMEDIATELY
+  - 15/08/26 `/resume-tailor` run twice — first against experience-library.md directly, then re-run against Marta's existing "Innovation and Technology Strategy Lead" CV as the closer-fit base
+  - 15/08/26 Applied
+  - 15/08/26 Post-submission traceability audit run; budget, supplier name, and launch geography reconciled in experience-library.md
+
+### ~~Booking.com — Manager, Partner Experience Strategy & Journey Health (O2C)~~ — REJECTED 11/08/26
+- **Applied:** 08/08/26
+- **Status:** Rejected 11/08/26 — no detailed feedback given
 - **Type:** Permanent, Amsterdam (hybrid implied — not relocation-eligible)
 - **Location:** Amsterdam, NL
 - **Salary range:** Listing showed €29,999 — almost certainly a placeholder/data error in the JD, not the real band. Worth running `/salary-research` for a real estimate before any offer conversation.
@@ -25,14 +67,15 @@ Last updated: 2026-08-08
 - **Work product sent:** No
 - **Fit score:** Not formally run via `/job-fit-scorer` — informally scored very strong on skill/experience match (~90% JD coverage), with one honest domain gap (O2C/finance-payments-ops specifics — no direct experience, addressed via business-case-building transferable skill).
 - **Company tier:** ⚠️ Previously PAUSED in `target-companies.md` — 4 prior rejections (VP Product, Customer Centricity Product Lead, Senior Service Designer, Employee Experience Researcher), all auto-rejected at ATS/resume-screen stage, none reached a human. This application differs materially: warm relationship in the target org, HM actively soliciting internal recommendations for this exact team. Worth updating the target-companies.md pause note to reflect this is a different channel, not a repeat of the same pattern.
-- **Last action:** Applied 08/08/26
-- **Next action:** Confirm cover letter status with Marta. No outstanding ask with Francis — don't chase. Follow up around 15/08/26 if no response.
+- **Last action:** Rejected 11/08/26
+- **Next action:** None — closed. Worth a low-key note to Francis Gerber thanking him for the intel, since the relationship is the durable asset here, not this specific req. Revisit `target-companies.md` pause note: this warm-channel attempt still didn't convert, reinforcing that Booking.com continues to be a hard filter even with a real internal contact.
 - **History:**
   - 07/08/26 Reconnected with Francis Gerber, got strong signal (HM asking for internal recs)
   - 08/08/26 Second round of intel from Francis (O2C/finance-ops scope, HM priorities)
   - 08/08/26 Sent thank-you/domain-gap message to Francis, no referral ask
   - 08/08/26 Francis replied "Good luck" — no referral volunteered
   - 08/08/26 Resume tailored and applied
+  - 11/08/26 Rejected — no detailed feedback given
 
 ### IIC – INTERSPORT International Corporation — Digital Experience Manager
 - **Applied:** 06/08/26
@@ -54,7 +97,7 @@ Last updated: 2026-08-08
 
 ### RoomPriceGenie — Head of UX
 - **Applied:** 03/08/26
-- **Status:** Submitted — Pending Response
+- **Status:** 🟢 Intro call confirmed — Thursday, 20/08/26, 10:00, 20 minutes, with Wiebke Potesta
 - **Type:** Permanent, remote-first (hubs in Mannheim, Berlin, Sydney — none in NL)
 - **Salary range:** €95K–€125K — midpoint (€110K) lands almost exactly on target
 - **Referral:** No
@@ -64,10 +107,13 @@ Last updated: 2026-08-08
 - **Work product sent:** No
 - **Fit score:** 86/100 — APPLY IMMEDIATELY (Design function weighting) — strongest score of this session; near-exact match to career-plan.md's Primary target ("Head of" design+research leadership)
 - **Company tier:** Not yet tracked in target-companies.md — scale-up, hospitality tech (industry not on target list, but explicitly in-scope company stage)
-- **Last action:** Applied 03/08/26
-- **Next action:** Follow up if no response by 10/08/26; consider adding RoomPriceGenie to target-companies.md given the strong fit score
+- **Last action:** `/interview-prep` run 17/08/26 — prep package saved to `briefings/2026-08-17-prep-roompricegenie.md`
+- **Next action:** Practice the compressed (~90-second) TMAY out loud against a timer before Thursday — interview-history.md shows this has failed live 5/5 times at the normal length, and this call is only 20 minutes total so there's no room for the usual overrun. Resolve the salary range discrepancy flagged in the prep doc (app-tracker/target-companies say €95K–€125K; a live posting found in web research says €80K–€100K) if it comes up. Wiebke Potesta's exact role at RoomPriceGenie could not be confirmed via web search — worth a quick LinkedIn look if time allows.
 - **History:**
   - 03/08/26 Applied
+  - 11/08/26 Wiebke Potesta emailed inviting an introductory video call — first interview stage
+  - 12/08/26 Call confirmed: Thursday 20/08/26, 10:00, 20 min, with Wiebke Potesta
+  - 17/08/26 `/interview-prep` run — prep package generated, salary range discrepancy flagged, TMAY compressed to fit 20-min format
 
 ### Corecom Consulting — Senior User Experience Designer (6m, payroll)
 - **Applied:** 03/08/26
@@ -117,15 +163,16 @@ Last updated: 2026-08-08
 - **Fit score:** 85/100 — APPLY IMMEDIATELY (Design function weighting)
 - **Company tier:** Not yet tracked in target-companies.md — large corporate/financial services, fits "large corporates broadly" preference but outside top-2 industry preference (water/sustainability)
 - **Prior attempt:** ⚠️ Applied to Rabobank once before — Tech Lab Lead, applied 24/02/26, auto-rejected (see Full History). ~5 months ago. Different role and domain (Tech Lab vs. Design Chapter/Business Lending), and the prior one was an auto-reject with no real review, so this is a genuinely different shot — but worth knowing if it comes up.
-- **Interviewers:** Emin Sinani (Team Lead — cares most about design/business alignment and process; loves AI) and Anne Gerssen (Hiring Manager, Chapter Lead Design Business — TU Delft alum like Marta; trusts Emin's read)
+- **Interviewers:** Round 1: Emin Sinani (Team Lead — cares most about design/business alignment and process; loves AI). Round 2 (17/08/26): Emin Sinani again, plus Robert Paauwe (MT member — not the hiring manager for this role, but a management-team-level stakeholder in the room). Anne Gerssen (Hiring Manager, Chapter Lead Design Business — TU Delft alum like Marta; trusts Emin's read) has not yet appeared as a named interviewer for either round.
 - **Insider intel:** Friend Youp (Rabobank) gave real-time prep tips 03/08/26 — see connection-tracker.md and briefings/2026-08-03-prep-rabobank.md
-- **Last action:** Round 1 phone screen completed 05/08/26 with Emin Sinani (30 min). Outcome: advancing — Emin said explicitly it "could be a match" and to "go forward and do an interview." Full debrief logged in `interview-history.md` (Aug 2026 entry).
-- **Next action:** Send thank-you note to Emin within 24h. Await Round 2 scheduling from Charlotte (recruiter, covering during a colleague's vacation — may take longer than usual). Before Round 2: tighten TMAY with hard metrics (Pelican $2.5M, Tikkie board case), prep Opinion 1 (Rabo Business Banking consolidation) and rewritten Opinion 3 (sustainability-linked lending) to deliver unprompted, and have the conflict-of-interest script ready — it was flagged as mandatory in the confirmation email but did not come up in Round 1, so it's near-certain for Round 2.
+- **Last action:** Round 1 phone screen completed 05/08/26 with Emin Sinani (30 min). Outcome: advancing — Emin said explicitly it "could be a match" and to "go forward and do an interview." Full debrief logged in `interview-history.md` (Aug 2026 entry). Round 2 confirmed for Monday, 17/08/26 — 45 minutes, with Emin Sinani and Robert Paauwe (MT member).
+- **Next action:** Robert Paauwe is a new name — worth a quick LinkedIn look before Monday to understand his role on the MT and likely angle (MT-level stakeholders often probe strategic/business impact more than craft detail). Before Round 2: tighten TMAY with hard metrics (Pelican $2.5M, Tikkie board case), prep Opinion 1 (Rabo Business Banking consolidation) and rewritten Opinion 3 (sustainability-linked lending) to deliver unprompted, and have the conflict-of-interest script ready — it was flagged as mandatory in the confirmation email but did not come up in Round 1, so it's near-certain for Round 2. Run `/interview-prep` ahead of Monday.
 - **History:**
   - 23/07/26 Applied
   - 03/08/26 Recruiter callback received — first interview stage
   - 03/08/26 Call confirmed for 05/08/26 14:00; insider intel received from Youp; prep package generated
   - 04/08/26 Tweaked portfolio sent; interview confirmation email received (title corrected to Senior Experience Designer, JR_00142376; confirmed 30-min phone format; outside-interests/COI topic flagged for discussion)
+  - 12/08/26 Round 2 confirmed: Monday 17/08/26, 45 min, with Emin Sinani + Robert Paauwe (MT member, not hiring manager for this role)
   - 05/08/26 Round 1 phone screen with Emin Sinani — passed, advancing to Round 2 (interviewer likely different; Emin returns later for portfolio review)
 
 ### oneUp — Director of Innovation (Food) *(was: Principal Innovation Consultant)*

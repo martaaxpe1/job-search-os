@@ -449,8 +449,11 @@ Auto-maintained by the OS. Updated after connection requests, referral requests,
 - **Title:** Global Research Lead, Product & Commercial Strategy
 - **LinkedIn connected:** Yes — 18 Jul 2019
 - **LinkedIn:** https://www.linkedin.com/in/nataljalaurey
-- **Last contact:** Unknown — fill in
-- **Next action:** Global Research Lead at Adyen — very relevant profile. Good connection if Adyen research/strategy roles appear.
+- **Last contact:** 15/08/26 — sent introduction message re: Senior Service Designer, Platform Engineering role. No meeting history before this; opener used TU Delft (she was Assistant Professor there, Marta did her MSc in Strategic Product Design) and mutual connections as the natural bridge. Asked for 15 min, call or message, no obligation.
+- **Background notes:** Anthropologist by training, ethnographic/qualitative research roots, PhD from VU Amsterdam + NYU, later Assistant Professor at TU Delft (future of creative work in the digital age) before Adyen. Self-described "bridge builder" connecting academia/business, research/strategy. Also co-founded Liminal Collective (wellbeing/community-focused early-stage initiative). Real overlaps with Marta: ethnographic research background, healthcare + fintech research experience, TU Delft, research-to-strategy bridging, community-building instinct.
+- **Response received (undated, ~15-17/08/26):** Friendly, brief. **Key correction: she is "in between roles"** — no longer a current Adyen employee, so not a live internal source or referral path. One genuine piece of intel volunteered: at Adyen, designers are expected to also do research and explore solutions from a human-centered view — i.e., the design and research functions aren't siloed there. Closed warmly, wished Marta well on the job hunt.
+- **Reply sent 18/08/26:** Marta replied — warm, no referral ask (consistent with the plan above). Same day, Marta applied to the Senior Service Designer, Platform Engineering role at Adyen — see `app-tracker.md`. Natalja's one piece of intel (Adyen designers do their own research, not siloed from a separate research function) was worked directly into the tailored resume's summary and bullet selection.
+- **Next action:** Thread is naturally closed for now — no open ask, no referral available since she's not a current employee. Relationship is now peer-to-peer (she's also job-searching) rather than a referral path; worth knowing where she lands next, but no need to chase. Do not pursue further for Adyen-specific intel.
 
 ---
 
