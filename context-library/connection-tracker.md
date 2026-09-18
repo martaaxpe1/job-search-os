@@ -401,12 +401,14 @@ Auto-maintained by the OS. Updated after connection requests, referral requests,
 
 ## Rabobank
 
-### Youp ⬅️ NEW — Active intel source, Strategic Service Designer interview
+### Youp — Active, repeat intel source, Senior Experience Designer interview
 - **Title:** Unknown role at Rabobank — fill in
 - **LinkedIn connected:** Unknown — fill in
-- **Met in person/Zoom:** Yes — WhatsApp contact, gave real-time interview intel 03/08/26
+- **Met in person/Zoom:** Yes — WhatsApp contact, gave real-time interview intel 03/08/26, 24/08/26, and 02/09/26
 - **Relationship:** Friend
-- **Next action:** Already delivered real value ahead of the 05/08/26 14:00 recruiter/team-lead screen for Strategic Service Designer (Business Lending, Design Chapter) — gave interviewer names/dynamics and portfolio guidance (see app-tracker.md notes). Thank him after the call regardless of outcome — this kind of insider intel is exactly what referral relationships are for.
+- **Intel delivered 24/08/26 (ahead of Round 3):** Confirmed Anne Gerssen is the Hiring Manager. Confirmed Manjari Sahu was previously *in this exact role* (Senior Experience Designer, Business Lending) before moving to another team/role — significant, changes how to approach her in the interview (see `briefings/2026-08-24-prep-rabobank-round3.md`). Also flagged, unprompted, what each interviewer values: Anne likes to see proactivity; Manjari is very intentional and focused on understanding/handling complexity.
+- **Intel delivered 02/09/26 (night before Round 3):** Passed on the single most important new signal in this process — a designer on the Business Lending team told him many candidates fail because the panel wants someone who can "reimagine what an entire service should be" strategically, not just improve an existing one. Confirmed the transformation this role sits inside is already in implementation, spans policy/process/architecture/design/business-strategy departments, and is genuinely unstructured with no clear single assignment — directly validates Robert's R2 ambiguity concern. Gave a long, explicitly uncertain/speculative read on why Manjari changed roles (stalled "Thought Leadership" ambition, possible desire for stability) — not solid enough to reference in the interview, treat as background color only. Also mentioned the design chapter's leadership is gradually shifting the function's emphasis toward strategy/business consulting and automating low-value work.
+- **Next action:** Three rounds of real, specific, high-value intel now (05/08/26 pre-R1, 24/08/26 pre-R3, 02/09/26 night before R3). Thank him again after Round 3 regardless of outcome — this relationship has been consistently, unusually generous and worth maintaining long-term.
 
 ---
 

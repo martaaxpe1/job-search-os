@@ -27,8 +27,8 @@ General Glassdoor process data (covers all roles, not design-specific): 9 report
    Best story: The Tikkie/hospitality-sector monetization parallel (see "Why RoomPriceGenie" script below) — this is your sharpest, most specific hook for this company.
 3. "You've spent most of your career in water, FMCG, and consumer/physical-digital products — this is B2B SaaS for independent hotels. How do you see that translating?" — Source: predicted (near-certain given your resume vs. this JD; hospitality/B2B SaaS is not on your stated industry list)
    Best story: Addressing-Weaknesses Framework — cross-industry pattern recognition + the Tikkie B2B/hospitality-sector experiment work specifically.
-4. "This is a 'Head of' role building/leading a small design and research function — tell me about building a team or practice from scratch." — Source: predicted (directly matches the JD's core ask)
-   Best story: Story 5 (Culligan innovation pipeline, built from zero) and/or Story 4 (WEAREREASONABLEPEOPLE — built UX Research + Service Design practice from 0 to 6 people).
+4. "This is a 'Head of' role leading a small existing design and research team (2 designers + 1 researcher) — tell me about leading and maturing a team, or building a practice." — Source: JD-confirmed team composition
+   Best story: Story 5 (Culligan innovation pipeline, built from zero) and/or Story 4 (WEAREREASONABLEPEOPLE — built UX Research + Service Design practice from 0 to 6 people) — both still relevant as evidence of practice-building and maturing skill, even though this specific role starts from a small existing team rather than nothing.
 5. "We're remote-first with no hub in the Netherlands — how do you feel about that?" — Source: predicted (logistics screen is a core purpose of this call)
    Best story: Direct answer from career-plan.md — "fully remote EU roles with periodic travel" is explicitly acceptable to you. Don't hedge.
 6. "What are your compensation expectations?" — Source: predicted (comp is commonly screened in a first call, especially at a scale-up)
@@ -43,10 +43,8 @@ General Glassdoor process data (covers all roles, not design-specific): 9 report
 ## Interviewer Background
 
 - **Name:** Wiebke Potesta
-- **Role:** Unconfirmed. She sent the interview invitation, which typically signals a People/Talent/Recruiting function at a company this size, but this could not be verified via LinkedIn search. [VERIFY: could not confirm her exact title or tenure — web search returned no matching profile]
-- **Location signal:** Search results loosely associated her with Munich and Spain — unconfirmed, don't rely on this.
-- **Suggested approach:** Treat this as a mutual-fit/logistics conversation rather than a deep technical or portfolio screen. If she is on the People team rather than a design leader, keep answers business-and-culture-oriented rather than jargon-heavy on UX methodology.
-- [GAP: If you can find her on LinkedIn before Thursday, a 2-minute look would sharpen this section — not essential given the format, but worth 5 minutes if you have it.]
+- **Role:** **Confirmed: Talent Acquisition.** This is a People/TA screen, as predicted — not a design leader and not the hiring manager.
+- **Suggested approach:** Keep answers business-and-culture-oriented, not jargon-heavy on UX methodology. She's screening for motivation, communication, logistics fit, and comp alignment — not craft depth. Save the design-system/AI/methodology detail for a Round 2 with an actual design/research leader; if she asks about it here, give the short version and move on.
 
 ---
 
@@ -70,33 +68,38 @@ General Glassdoor process data (covers all roles, not design-specific): 9 report
 
 **⚠️ CRITICAL TIMING NOTE, read before Thursday:** Your interview-history.md logs a confirmed, repeated pattern — **5 separate instances** where TMAY ran ~4 minutes live (vs. a ~90-second scripted target) and dropped the hard metric ($2.5M Pelican figure) every single time, even after a mock session fixed it to 8/10 in rehearsal the day before a real call. This call is only **20 minutes total**. A 4-minute TMAY would eat 20% of the entire interview. There is no room for the usual failure mode here — it has to be shorter than your standard script, not just on-target.
 
-**Target: 60-75 seconds, ~130 words. Say the metric in the first sentence — do not save it for later, it keeps getting dropped.**
+**Target: 60-90 seconds, ~150 words. Say the metric in the first third — do not save it for later, it keeps getting dropped.**
 
-**Script:**
-"I'm an innovation and design leader — 12 years building discovery and experimentation practices, most recently as Global Head of Innovation at Culligan, the global leader in drinking water solutions, where I took a new connected product category from zero to a $2.5M global launch. Before that I built a UX research and service design practice from scratch at an agency in Rotterdam, and ran monetization experimentation for ABN AMRO's Tikkie — including experiments specifically with B2B customers in the hospitality sector. I've been freelancing since mid-2025 — currently on a service design project with YouTube — but I'm ready to embed permanently and build a design and research function again, which is exactly what drew me to this role."
+**Script (corrected — your draft had a leftover "pulling me toward Rabobank" line from a different prep session; fixed below):**
+"I'm originally from Spain — studied product design in Barcelona, then came to the Netherlands for my Master's in Strategic Product Design at TU Delft. That set the direction: design as a way into business problems, not just product problems.
 
-**Practice this out loud against a timer at least twice before Thursday.** If it runs past 90 seconds, cut the Tikkie/hospitality detail — you'll use it again in the "Why RoomPriceGenie" answer anyway (see below), so losing it here isn't costly.
+From there I went into consulting — several years at INSITUM, doing ethnographic and design research across FMCG, Big Tech, and healthcare in Latin America and Europe. Then I came back here and led service design and UX research at an agency in Rotterdam, building that practice from scratch. And then I went in-house: almost five years at Culligan as Global Head of Innovation, running discovery, experimentation, and pilots across physical, digital, and service layers. One of the initiatives I led grew into a new connected product category — launched in the US and EU, $2.5M projected first-year revenue.
 
-**What to lead with:** The $2.5M metric, first sentence, non-negotiable.
-**What to preempt:** That your background is water/consumer/physical-digital, not B2B SaaS or hospitality — the Tikkie/hospitality-sector detail is doing double duty here, planting the seed before Question 3 (industry-fit) even gets asked.
+For the last year I've been freelancing — currently wrapping a service design project with YouTube — but I miss being embedded in one team long enough to own the follow-through. What's pulling me toward RoomPriceGenie specifically is getting to lead and mature a small design and research team again — which is the work I'm most energized by — for a mission I genuinely believe in: giving independent hoteliers access to pricing intelligence that used to be a big-chain-only advantage, done in a way that stays transparent rather than a black box."
+
+**Practice this out loud against a timer at least twice before tomorrow.** If it runs long, cut the INSITUM/LATAM sentence first — it's the least load-bearing for this specific call.
+
+**What to lead with:** The $2.5M metric, inside the first third of the answer, non-negotiable.
+**What to preempt:** That your background is water/consumer/physical-digital, not B2B SaaS or hospitality — landing the Tikkie/hospitality hook inside the TMAY itself (not saved for a separate "why this role" question) means it's covered even if the call runs short and she never asks a follow-up.
+**Optional close, only if there's natural time or she asks "what do you do outside work":** "Outside work I lift weights regularly and ski whenever I can — it's how I disconnect and keep a clear head." Don't build this into the core script; it's a 20-minute logistics-heavy call and the personal color is a bonus, not a requirement.
 
 ---
 
 ### "Why RoomPriceGenie" — Your Sharpest Hook
 
-This is not on your primary industry list (career-plan.md doesn't name hospitality/B2B SaaS), so don't force a generic mission-fit answer — lead with the one connection point that's genuinely specific and true:
+**Revised 19/08/26** — the original version led with the Tikkie/hospitality parallel, which read as a forced industry-fit argument rather than a genuine "why." What actually motivates you is (1) the practice-building/team-scaling work itself, and (2) the mission — specifically the combination of leveling the playing field for independent hoteliers, small-business empowerment, and keeping the automation transparent/trustworthy rather than a black box. Lead with those; keep Tikkie in reserve for the separate industry-skepticism question (see Employer Brand defenses below).
 
-**Script:**
-"Two things drew me in. First, this is a product problem I've actually worked on before — at ABN AMRO's Tikkie, I ran ten monetization experiments specifically testing pricing models with B2B customers in the hospitality sector, and the model we validated and shipped was a pricing/value-transparency problem, not just a data problem. RoomPriceGenie's whole differentiator — showing the reasoning behind every rate in plain language — is the same challenge: making an automated pricing decision trustworthy to a small business owner who isn't a revenue management specialist. Second, this is a 'Head of' role building a design and research function from a small base, which is exactly the kind of ambiguous, early-stage team-building I've done twice now — at Culligan and before that at an agency in Rotterdam — and where I do my best work."
+**Script (corrected 19/08/26 — the JD confirms an existing team of 2 product designers + 1 researcher, so this is leading and maturing a small team, not building from zero. Adjusted language below.):**
+"Two things drew me in. First, honestly, the mission — RoomPriceGenie is giving independent hoteliers access to pricing intelligence that used to be a big-chain-only advantage, and doing it by keeping the automation explainable rather than a black box. That combination — accessible technology for small operators, deliberately kept transparent and trustworthy — is exactly the kind of technology-for-the-underdog approach I care about. Second, and honestly the bigger draw for me personally: this is a 'Head of' role leading and maturing a small, close-knit design and research team, and that's the work that energizes me most. I've built and matured practices twice now — the UX Research and Service Design function at an agency in Rotterdam, and Culligan's entire innovation team and function, including making design a formal part of the product development process for the first time. Taking a small, capable team and giving it the structure, standards, and voice to influence product direction at the leadership level — for a mission I actually believe in — is exactly what draws me to this role."
 
-**Why this works:** It's real (Tikkie's hospitality-sector B2B testing is documented in experience-library.md, not invented), specific to RoomPriceGenie's actual product mechanic (explainable pricing), and it reframes the industry-generalist weakness as directly relevant rather than dodging it.
+**Why this works:** Leads with what's actually true and motivating (team/practice-building is your best-documented, most repeatable strength — Story 4 and Story 5), and the mission language draws directly on real company research (explainability differentiator, positioning against six-figure enterprise RMS, built for hoteliers who can't afford a dedicated revenue management team) rather than a generic "I love your mission" line.
 
 ---
 
 ### Employer Brand & Product Stigma Defenses
 
 1. **Stigma: "Her whole career is water, FMCG, big consumer brands — does she actually understand B2B SaaS for small hoteliers?"**
-   Reframe: "The Tikkie hospitality-sector monetization work is real B2B SaaS-adjacent experience — testing pricing models with small business customers, not consumers. And building IoT dashboards at Culligan meant designing for non-technical operators making decisions off automated data, which is structurally the same problem as RoomPriceGenie's rate-reasoning UI."
+   Reframe: This is where Tikkie belongs — not as your "why," but as your answer to this specific skepticism: "The Tikkie hospitality-sector monetization work is real B2B SaaS-adjacent experience — I ran experiments testing pricing models specifically with small business customers in hospitality, not consumers. And building IoT dashboards at Culligan meant designing for non-technical operators making decisions off automated data, which is structurally the same problem as RoomPriceGenie's rate-reasoning UI." Use it only if this question comes up directly — don't volunteer it unprompted.
 2. **Stigma: "Culligan isn't a recognizable name."**
    Reframe: Always attach the qualifier — "Culligan, the global leader in drinking water solutions, operating in 90+ countries." Say it once, early (it's already built into the TMAY script above), so it doesn't need defending later.
 3. **Stigma: "She's used to large-corporate resourcing (15-person team, ~€550K budget) — will she be bored or frustrated building lean at a scale-up?"**
@@ -109,11 +112,41 @@ This is not on your primary industry list (career-plan.md doesn't name hospitali
 ### Key Stories to Have Ready (short versions — this is a 20-min call, don't over-load)
 
 1. **Story 3 (Tikkie)** — Maps to: the core product parallel (pricing/monetization + hospitality-sector B2B testing). Quick version: "Led UX research and experimentation to validate sustainable revenue models for Tikkie, ABN AMRO's peer-to-payment app — ran 10 experiments including with hospitality-sector B2B customers, validated 4 monetization models, shipped the cashback model to production."
-2. **Story 5 (Culligan innovation pipeline)** — Addresses: "building a function from scratch" ask. Quick version: "Designed and ran Culligan's global innovation system from zero — stage-gate funnel, budget, team of ~15 — flagship output was Pelican, a new $2.5M product category."
+2. **Story 5 (Culligan innovation pipeline)** — Addresses: leading/scaling a design-adjacent function and giving it structure. Quick version: "Designed and ran Culligan's global innovation system from zero — stage-gate funnel, budget, team of ~15 — flagship output was Pelican, a new $2.5M product category." Note: RoomPriceGenie's team already exists (2 designers + 1 researcher), so frame this as "here's how I build structure and standards for a team," not "here's how I create a team from nothing."
 3. **Story 4 (WEAREREASONABLEPEOPLE)** — Addresses: the leaner, earlier-stage version of the same skill, closer to RoomPriceGenie's actual scale. Quick version: "Built the UX Research and Service Design practice from 0 to 6 people at a Rotterdam agency — new methodology, new engagement model, won discovery-stage work the agency couldn't previously pursue."
 4. **Story 1 (Pelican)** — Have the $2.5M metric and the accessibility/explainability angle ready if the "product taste" question (Company Context #1/#2) comes up. Don't lead with this unless asked — TMAY already uses the headline metric.
 
 GAP: No strong story yet for "have you worked with independent/small-business owners as end customers, not enterprise buyers." The closest is the Culligan Italy payment pilot (SME context) — but that's your prepared failure story, so don't reach for it here unless a failure question is explicitly asked. If pressed, the Tikkie B2B/hospitality angle is the safer answer.
+
+---
+
+### Requirement-Specific Voice-Over Scripts
+
+You mapped these against the actual JD requirements — turned into spoken-ready answers. This is a 20-min TA screen, so you likely won't get through all eight; the ones marked ⭐ are most likely to surface given the format (leadership scope, team-building, comp/logistics). Keep each to 30-45 seconds.
+
+**1. Design + research balance, even if you lean one way** ⭐
+"I lean closer to research as a practitioner, but I've always stayed hands-on in design — at Culligan, I acted as the de facto designer for the innovation team before that role was formalized, and leaned on external design vendors when we needed to scale. So I don't just advocate for design from the outside — I've done the work myself when the team didn't have dedicated capacity for it."
+
+**2. Senior design leadership — owned a function, led teams, influenced product direction** ⭐
+"I've owned this twice. At an agency in Rotterdam, I led the UX research and service design function I built from scratch. At Culligan, I led a distributed team of about 15 across design, research, and engineering as Global Head of Innovation — and beyond the team itself, I made design a formal part of the new product development process, which hadn't existed before I got there."
+
+**3. Advocating for both disciplines at the leadership level, not just delivering**
+"I think the two disciplines are strongest together, not separated — research is what makes product strategy defensible at the leadership level, and design is what makes that strategy land tactically, on target, for the end user. I've pushed that view in leadership rooms, not just in the work itself — it's part of why I built research and design as one integrated function rather than two separate ones, both at the agency and at Culligan."
+
+**4. Building or maturing a design function from the ground up** ⭐
+"I've done this twice, in two different contexts. At the agency, I built the UX Research and Service Design practice from zero — set up governance and operating models with the other disciplines, created a maturity framework so people had clear growth expectations, and wrote learning guides for our core methodologies so clients and new team members could ramp quickly. At Culligan, same instinct, different shape: there was no innovation function before me, so I designed the stage-gate process, the collaboration model with the business units, and ran the team from the ground up."
+
+**5. Curiosity about AI**
+"I'm learning it hands-on, not just reading about it — but I'm also genuinely critical of what it does to output quality right now. I want to figure out, with a team, where it actually speeds up good work versus where it produces something generic that still needs a real design or research judgment call on top."
+
+**6. Building or scaling teams** ⭐
+"Twice — the UX Research and Service Design practice at the agency, and the innovation team at Culligan. Different starting points, same pattern: figure out the shape of the team the work actually needs, hire or develop into it, and build the structure as you go rather than importing a template."
+
+**7. Building or maintaining a design system**
+"I started — but didn't maintain long-term — the design language for Culligan's connected physical-digital products. There was no system in place before our project, so we built our own for what we needed. It was later picked up into a broader corporate design system effort, which then took over ownership and maintenance."
+
+**8. Comfort with scale-ups/startups and ambiguity**
+"The Culligan innovation team was run like an internal venture — genuinely ambiguous, no existing playbook. I've also just come off a stretch at an AI-first startup as a freelance consultant, and my consulting years before that meant working across companies of very different sizes and maturity. Ambiguity is where I do my best work, honestly — it's the part of the job I look for, not tolerate."
 
 ---
 
@@ -127,19 +160,30 @@ GAP: No strong story yet for "have you worked with independent/small-business ow
 
 ### Compensation Prep
 
-- **⚠️ Range discrepancy — resolve before this comes up:** `app-tracker.md` and `target-companies.md` both record the RoomPriceGenie salary range as **€95K–€125K** (from the original job posting you applied to). A web search for the current live posting shows **€80K–€100K** for "Remote Head of UX (m/f/d), Germany." [VERIFY: this may be a different/updated posting, a different market rate stated for Germany specifically vs. wherever your original applied-to posting targeted, or a stale search result — do not assume either number is current without checking the actual posting or asking Wiebke directly]
-- **Your target:** €100K–€110K gross/year (career-plan.md) — this sits inside both ranges, so you don't need to resolve the discrepancy defensively; your target works either way.
-- **If asked current pay:** Use the qa-master.md script — "I'm currently freelancing, so comparing day rates to a permanent package isn't straightforward. What matters to me is finding the right role — could you share the budgeted range for this position?" This also naturally surfaces which of the two ranges is actually live.
-- **If asked expectations:** "Based on my research for innovation and design leadership roles in the Netherlands and my 12 years of experience — including team-building, budget ownership, and full product launches — I'm targeting €100–110K gross. I'm open to discussing the full package."
+- **Updated floor for this role specifically: €110K**, not the standing €100K–€110K career-plan target. You've seen the range quoted as €95K–€125K depending on location, and given that ceiling, you're not willing to go below €110K here. This is a per-role adjustment — don't cite the specific figures you saw, since they weren't from an official source; just state your number.
+- **If asked current pay:** Use the qa-master.md script — "I'm currently freelancing, so comparing day rates to a permanent package isn't straightforward. What matters to me is finding the right role — could you share the budgeted range for this position?" This naturally surfaces whatever range is actually live for this req.
+- **If asked expectations — compensation statement:** "Based on my research for design and research leadership roles at this level, and my 12 years of experience — including team-building, budget ownership, and full product launches — I'm targeting €110K gross as my floor, with room to go higher depending on the full package. I'd love to hear the budgeted range for this role so we can confirm we're aligned early."
+- **If she cites a range with location-dependent bands:** Ask directly which band applies to a Netherlands-based, remote candidate — don't assume the higher end applies to you by default.
 - **Freelance rate:** Do not share the €140/h figure — same guidance as always.
 
 ---
 
+### Questions to Ask Her
+
+Pick 2-3 depending on time left — a 20-minute TA screen won't fit all of these. Ordered by priority:
+
+1. **"What role does design play at RoomPriceGenie today — and with the recent leadership change (new CEO, and the co-founder moving into a product-innovation-focused CSO role), is there a vision for design to take on a different or bigger role going forward?"** — Your strongest question: combines genuine research (the leadership transition) with a strategic-level question about design's actual influence and mandate, not just its headcount. The answer tells you whether this is a role with real air cover to elevate design's seat at the table, or a maintenance-mode function.
+2. **"The JD mentions a team of two product designers and one user researcher — how long has that team been together, and what's the biggest gap or growth area you'd want a Head of UX to address first?"** — Shows you read the JD carefully and pushes for what isn't stated: team tenure, cohesion, and where the priority gap actually is.
+3. **"What does success look like in the first 6 months for whoever takes this role?"** — Standard but effective; gives you a concrete read on whether the mandate matches the JD as written.
+4. **"How does the team currently use AI in the design/research workflow, if at all?"** — Ties directly to the AI-curiosity requirement; shows genuine interest rather than just answering the question when asked.
+5. **"What does the path look like from here — is there a case/portfolio round next, and roughly when?"** — Practical, logistics-appropriate for a TA screen, and helps you plan prep time for Round 2.
+
+---
+
 ## Pre-Interview Checklist
-- [ ] Practice the compressed TMAY out loud against a 90-second timer — twice minimum, cold each time
-- [ ] Practice the "Why RoomPriceGenie" script out loud once
-- [ ] 5-minute LinkedIn search for Wiebke Potesta if time allows (not essential — format doesn't require deep interviewer research)
+- [ ] Practice the corrected compressed TMAY out loud against a 90-second timer — twice minimum, cold each time (make sure "Rabobank" doesn't slip back in from habit)
+- [ ] Skim the 8 requirement-specific scripts once — don't memorize word-for-word, just get the shape of each in your head
 - [ ] Decide your answer to "remote-first, no NL hub, are you OK with that" — say yes plainly, don't hedge (career-plan.md already confirms this is acceptable to you)
-- [ ] Have the €100–110K target ready and be ready to ask which of the two salary ranges (€95-125K vs €80-100K) is current for this posting
-- [ ] Have 2-3 questions ready — the leadership-transition question in Company Context is a strong one; also consider asking directly whether this is a brand-new function or has prior design/research hires to build on
+- [ ] Have the €110K floor ready, and the compensation-statement script above if she asks expectations directly
+- [ ] Pick your top 2-3 questions from the list above
 - [ ] Since this is only 20 minutes, do NOT over-prepare portfolio/case material — save that depth for a likely Round 2

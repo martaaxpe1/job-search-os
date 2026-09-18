@@ -99,7 +99,7 @@ Last updated: 2026-05-05
 - **Why:** The most direct continuation of the Culligan arc. Physical-digital water product, sustainability mission (reduces energy vs. kettles, reduces plastic vs. bottles), IoT-connected hardware, consumer + B2B. Marta's Culligan/Pelican story is immediately credible here — she built a connected water product category from scratch. Domain passion is genuine and provable
 - **Roles to target:** Innovation Lead, Head of Product & Experience, Senior Innovation Manager — anything at the intersection of hardware product strategy and consumer insight
 - **Connections:** ⭐⭐ WARM — Jiaji Zhao (Innovation & Design Project Leader) and Roemer Linkers (Manager R&D - Innovation) — both had great conversations in Mar 2026
-- **Notes:** No open roles flagged yet. Set job alert. The warm relationships are the asset here — don't wait for a posted role; use Jiaji and Roemer to get visibility ahead of any opening
+- **Notes:** Checked 19/08/26 — no relevant opening currently. The warm relationships (Jiaji, Roemer) are still the asset here for whenever something does open — worth a light check-in periodically (e.g., monthly) rather than a one-off, since roles here won't necessarily hit job boards first.
 - **Priority:** ⭐⭐⭐⭐⭐
 
 ### Marie Stella Maris

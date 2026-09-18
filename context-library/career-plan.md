@@ -34,7 +34,8 @@ Senior IC roles — Senior Service Designer, Lead UX Researcher, Senior Experien
 - **NL roles:** Hybrid preferred (2 days in office); flexible on this
 - **European roles:** Fully remote acceptable with some travel; open depending on the role
 - **Relocation:** Not looking to relocate from NL
-- **Language note:** Dutch is basic (improving) — targeting international/English-first companies; flag roles that require B2+ Dutch
+- **Language note:** Dutch is basic (improving) — targeting international/English-first companies.
+- **DEALBREAKER (confirmed 2026-09-15):** Any role requiring fluent/excellent/native Dutch (spoken AND written) as a stated job requirement is an automatic SKIP, regardless of score. Applies even to otherwise strong-fit roles (e.g., Dawn Technology scored 81/100 but was skipped on this basis). This is stricter than "flag and proceed" — do not recommend APPLY on Dutch-fluency-required roles without explicit override from Marta.
 
 ---
 
@@ -55,9 +56,11 @@ All of the following are in scope — casting wide given market conditions:
 
 | Type | Floor | Target |
 |------|-------|--------|
-| Permanent (40h/week) | €80,000 gross/year | €110,000 gross/year |
+| Permanent (40h/week), base salary | €85,000 gross/year | €115,000–€120,000 gross/year |
 | Freelance — management roles | — | €140/hour |
 | Freelance — IC roles | — | €110/hour |
+
+*Updated 2026-09-07: floor and target raised (previously €80K floor / €110K target) — figures are base salary specifically, not total package.*
 
 ---
 
@@ -107,7 +110,7 @@ All of the following are in scope — casting wide given market conditions:
 *This section is never included in any external document — resumes, cover letters, outreach, or applications.*
 
 ### Working context
-Currently freelancing — current project ends June 2026, giving roughly 2 months of runway. Has been searching for a permanent role for 10 months. Not desperate but timeline is real. Open to freelance projects in parallel with the permanent search — both tracks active simultaneously. Can be somewhat selective but not indefinitely so.
+**Updated 2026-08-20:** The YouTube freelance project has actually already ended. "Currently wrapping up a project for YouTube" is a deliberate line Marta uses in interviews (including TMAY) to avoid signaling she's unemployed between projects — do not "correct" this in interview scripts, it's an intentional positioning choice, not an inaccuracy to fix. But for internal planning purposes, treat her as not currently earning from freelance work, not mid-project. **Confirmed 2026-08-20: ~3 months of financial runway remaining (until approx. late November 2026).** Has been searching for a permanent role for 10+ months. **Actively searching for freelance work in parallel with the permanent search, but it's going slowly (confirmed 2026-08-20)** — no near-term freelance gig to count on for extending runway right now. Both tracks are live but neither is moving fast. Timeline is real but not yet at panic point; factor this into how aggressively to push comp negotiation (e.g., RoomPriceGenie/Rabobank) vs. how much to prioritize speed-to-offer.
 
 ### Junior colleague concern
 Marta has expressed a private concern about working with significantly younger or more junior colleagues in IC roles. This is worth surfacing in role evaluation (team composition, average seniority) but should not be raised in interviews.

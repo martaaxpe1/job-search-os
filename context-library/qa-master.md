@@ -10,15 +10,16 @@ Fill each answer once. The OS uses these for application forms, mock interviews,
 ### "What is your current pay?"
 **Strategy:** Don't share. You're freelancing — an hourly rate doesn't translate to a permanent salary comparison and will anchor the conversation wrong.
 **Script:** "I'm currently freelancing, so comparing day rates to a permanent package isn't straightforward. What matters to me is finding the right role — could you share the budgeted range for this position?"
-**If pressed hard:** "I'm targeting €100–110K gross for permanent roles at this level, based on market research for innovation leadership roles in the Netherlands."
+**If pressed hard:** "I'm targeting €115–120K gross base for permanent roles at this level, based on market research for senior leadership/craft roles in the Netherlands."
 **Note:** Never share the €140/h freelance rate — it reads as €280K+ annualised and will price you out or create awkward expectation gaps.
 
 ### "What are your compensation expectations?"
-**Target range:** €100,000–€110,000 gross/year (permanent, 40h/week)
-**Floor:** €80,000 gross/year — below this is a dealbreaker
-**Script:** "Based on my research for innovation leadership roles in the Netherlands and my 12 years of experience — including team management, budget ownership, and full product launches — I'm targeting €100–110K gross. I'm open to discussing the full package including pension, bonus, and development budget."
-**If the role is clearly IC (not leadership):** Adjust to "€85–100K" and lead with the IC framing.
+**Target range:** €115,000–€120,000 gross/year base salary (permanent, 40h/week)
+**Floor:** €85,000 gross/year base — below this is a dealbreaker
+**Script:** "Based on my research for senior leadership/craft roles in the Netherlands and my 12 years of experience — including team management, budget ownership, and full product launches — I'm targeting €115–120K gross base. I'm open to discussing the full package including pension, bonus, and development budget."
+**If the role is clearly IC (not leadership):** Adjust to "€90–105K" and lead with the IC framing.
 **Freelance rates (if asked):** Management roles: €140/h. IC/research roles: €110/h. Day rate = hourly × 8.
+*Updated 2026-09-07: range raised from €100–110K/€80K floor — confirmed as base salary specifically, not total package.*
 
 ---
 
@@ -86,15 +87,14 @@ Right now I'm freelancing — doing a service design project for YouTube — but
 **Script:** "I'm based in Rotterdam and happy to commute anywhere in the Netherlands. For European roles, fully remote with regular travel works well for me."
 
 ### Start Date Availability
-**Current situation:** Freelance project (Unspoken/YouTube) running through June 2026
-**Earliest start:** July 2026 (after current project ends), or potentially earlier by agreement with current client
-**Script:** "My current freelance engagement wraps up at the end of June, so July would be a clean start. If timing is urgent, I'm open to a conversation about overlapping — but I'd want to honour my current commitment."
-**Note:** Don't offer to start earlier unless genuinely possible — it signals desperation.
+**Current situation:** Freelance/self-employed since Jul 2025 — no active client engagement holding you to a notice period.
+**Earliest start:** Realistically within a few weeks of agreeing terms — no contractual notice period to work around.
+**Script:** "I'm freelancing, so there's no notice period holding me. Realistically I could start within a few weeks of us agreeing."
+**Note:** Don't offer to start earlier than that unless genuinely possible — it signals desperation. If asked directly about current freelance work, "wrapping up a project for YouTube" is the positioning line to use — don't volunteer that the engagement has already ended.
 
 ### "Are you interviewing elsewhere?"
-**[FILL IN with current pipeline — update as pipeline changes. Template below:]**
-**Script:** "Yes — I'm in conversations with a few companies, mostly in the innovation and design space in the Netherlands. I'm being selective — I'm not spraying applications, I'm focused on roles where the domain and scope genuinely fit. This role [at X] is one of my top priorities because [specific reason]."
-**Current pipeline to reference (as of May 2026):** oneUp (Principal Innovation Consultant — food waste, case stage), Aquent/IKEA (Service Designer, pending)
+**Script:** "Yes — I'm in a few live processes right now. I'm being selective — I'm not spraying applications, I'm focused on roles where the domain and scope genuinely fit. This one stands out to me because [specific reason — customise per role]."
+**Current pipeline to reference internally (as of Sept 2026, update as pipeline changes):** Rabobank — Senior Experience Designer, Business Lending (Round 3, in progress); RoomPriceGenie — Head of UX (Round 3, in progress). Keep the spoken answer general — no need to name specific companies unless directly pushed.
 
 ### Remote/Hybrid/In-Person Preference
 **Preferred:** Hybrid — 2–3 days in office per week
