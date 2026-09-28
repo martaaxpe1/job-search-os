@@ -21,7 +21,8 @@ Sources: MartaAxpe-CV-2026.pdf + interview prep notes + LinkedIn bio + website a
 - Led end-to-end discovery for complex digital and service ecosystems combining qualitative research, journey mapping, and service blueprinting — clients: Vueling (experience vision), Ampelmann (digital roadmap), Philips Healthworks (incubation coaching for Philips' healthcare startup acceleration programme) (2017–2020)
 - Explored behavior-change interventions through applied innovation research at Delft University of Technology — designed and validated thesis proposition to increase tap water consumption at the ITGWO music festival, tested with ~200 participants in a real-world public context (2012–2014)
 - Set up consumer testing frameworks in collaboration with marketing teams to capture market-specific preferences for product validation
-- **Tools:** Dovetail, Condens, Maze, UserTesting, TheyDo, Miro, diary studies, semi-structured immersions, journey mapping, service blueprinting, stakeholder workshops
+- Used Figma hands-on to build customer journey maps for the YouTube CS discovery project, and for UX/UI design work at Culligan (2022–2025)
+- **Tools:** Figma, Dovetail, Condens, Maze, UserTesting, TheyDo, Miro, diary studies, semi-structured immersions, journey mapping, service blueprinting, stakeholder workshops
 
 ---
 
@@ -74,6 +75,7 @@ Sources: MartaAxpe-CV-2026.pdf + interview prep notes + LinkedIn bio + website a
 - Managed and coached service designers and researchers at WEAREREASONABLEPEOPLE — established maturity models and feedback loops to ensure delivery quality, autonomy, and team development (2017–2020)
 - Delivered design thinking training and bootcamps directly for INSITUM's clients across industries — teaching design thinking and research methodology to client teams themselves, not just handing off findings (2014–2017)
 - Collaborated with engineering, UX, product management, and external vendors through Agile delivery rituals at Culligan — aligning user needs with technical implementation (2020–2022)
+- Used Confluence and Jira day-to-day for agile delivery documentation and sprint tracking at Culligan (2020–2025) and WEAREREASONABLEPEOPLE (2017–2020)
 - Facilitated alignment workshops with large, multi-stakeholder groups (e.g., YouTube vendor managers, product service managers, SF implementation team, business leads, and outsourced agents) across two days of share-outs ending in a prioritised opportunity backlog (2025)
 - Service Design Coach (2024): supported and guided young professionals entering the field
 - Speaker — Basque Culinary Center (2026): delivered brand-building workshop for food entrepreneurs
@@ -118,7 +120,7 @@ Sources: MartaAxpe-CV-2026.pdf + interview prep notes + LinkedIn bio + website a
 
 ### AI & Digital Tools (Emerging Capability)
 
-- Defined product strategy and led MVP design for lign.ai — AI-first platform using conversational agents for enterprise coaching; ran user testing before project was discontinued due to founder/funding issues (2025)
+- Defined product strategy and led MVP design for lign.ai — AI-first platform using conversational agents for enterprise coaching; designed the MVP hands-on in Figma; ran user testing before project was discontinued due to founder/funding issues (2025)
 - Built findsunspot.com independently using vibe coding (AI-assisted development) — a real-time app that shows which outdoor terraces and spots are currently sunny, using sun position data, live weather, and building shadow modelling, with a 2h+ forward prediction; currently in debugging (2025–present)
 - Actively developing own AI-enabled propositions — experimenting with how AI can support early discovery, synthesis, and decision-making as part of real workflows (2025–present)
 - AI prototyping tools in active use: Lovable, Stitch, Midjourney, Zapier

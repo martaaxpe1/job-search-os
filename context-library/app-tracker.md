@@ -1,16 +1,34 @@
 # Application Tracker — Marta Axpe
-Last updated: 2026-08-26
+Last updated: 2026-09-21
 
-**Summary:** 80 applications | Apr 2025 – Sept 2026
-- Active / Interviewing: 5 (oneUp, Rabobank/Senior Experience Designer — passed Round 2, Round 3 rescheduled to 03/09/26 with Hiring Manager Anne Gerssen; RoomPriceGenie/Head of UX — Round 2 take-home assignment, due Friday 28/08/26; Adyen/Senior Service Designer Platform Engineering — Round 1 recruiter screen confirmed 14/09/26; bol.com/Principal Craft Lead UX — Round 1 video interview confirmed for 11/09/26 with Thijmen Klompmaker, will include notice period/salary/benefits discussion)
-- Pending response: 4 (Kraft Heinz/Associate Director Global Innovation Technology, INTERSPORT/Digital Experience Manager, Apple/Experience Strategist, Corecom Consulting/Senior UX Designer)
+**Summary:** 81 applications | Apr 2025 – Sept 2026
+- Active / Interviewing: 3 (Rabobank/Senior Experience Designer — Round 3 completed 18/09/26, strongly positive, in-person final round to be scheduled week of 28/09/26; bol.com/Principal Craft Lead UX — Round 1 video interview confirmed for 11/09/26 with Thijmen Klompmaker, will include notice period/salary/benefits discussion; Cyient (healthcare client TBD)/Senior Service Designer — CV + details sent to recruiter Priya 18/09/26)
+- Pending response: 1 (Kraft Heinz/Associate Director Global Innovation Technology)
 - Offer received, declined: 1 (Packback)/
 - Final round reached: 1 (Adidas)
-- Rejected: ~52 (incl. TUI/Senior Innovation & Digitalisation Manager, 26/08/26, no reasoning given; Barilla/Long Term Transformative Innovation & Strategic Partnerships Manager, 02/09/26, no reasoning given despite an 83/100 fit score) | Ghosted: 10 | Not for me: 3
+- Rejected: ~54 (incl. TUI/Senior Innovation & Digitalisation Manager, 26/08/26, no reasoning given; Barilla/Long Term Transformative Innovation & Strategic Partnerships Manager, 02/09/26, no reasoning given despite an 83/100 fit score; RoomPriceGenie/Head of UX, 21/09/26, Round 3 — specific feedback given, see entry below; Adyen/Senior Service Designer Platform Engineering, 21/09/26, Round 1 — role filled by another candidate, recruiter wants to stay in touch for future Service Design openings) | Ghosted: 14 (incl. INTERSPORT/Digital Experience Manager, Corecom Consulting/Senior UX Designer, Apple/Experience Strategist — all marked 18/09/26 after 6+ weeks silent; oneUp/Director of Innovation — marked 21/09/26, nearly 3 months silent since last follow-up) | Not for me: 3
 
 ---
 
 ## 🟢 ACTIVE
+
+### Cyient (healthcare client TBD) — Senior Service Designer (via recruiter Priya)
+- **Applied:** N/A — inbound recruiter outreach; CV + candidate details sent 18/09/26
+- **Status:** 🟡 Application sent — CV and candidate info submitted; asked recruiter to disclose end client/team
+- **Type:** Fixed-term contract (1+ year) via staffing agency (Cyient) — end client (healthcare sector) undisclosed until shortlisted
+- **Location:** Amsterdam, NL
+- **Salary range:** Not stated by recruiter; Marta quoted €115,000 gross/year (permanent-equivalent target, per career-plan.md)
+- **Referral:** No — inbound recruiter-sourced (Cyient, contact: Priya)
+- **Resume version:** Reused `MartaAxpe_CV_2026_Service Design_Adyen.docx` baseline as-is — contact header "Password: Welcome2026" line flagged for removal before sending
+- **Cover letter:** No
+- **Connection at company:** None — end client not disclosed; Cyient/Priya not yet in `connection-tracker.md`
+- **Work product sent:** No
+- **Fit score:** 65/100 — APPLY WITH REFERRAL ONLY (borderline). Strong on core service-design/research craft (service design, UX research, journey mapping, service blueprints, Figma, Confluence, ecosystem mapping all confirmed via experience-library.md update); gaps on Heuristic Evaluation and Azure DevOps (had first-hand Azure cloud exposure via Culligan IoT infra, not Azure DevOps project-planning tool specifically). Comp Range and Growth Trajectory were the weakest dimensions — undisclosed client, no listed comp, and a 1-year contract that doesn't advance the IKEA/leadership trajectory.
+- **Company tier:** Not tracked — not in target-companies.md; healthcare is not a listed priority industry
+- **Last action:** Sent CV + nationality/notice/visa/salary details to recruiter Priya, 18/09/26; asked for client/team disclosure
+- **Next action:** Await recruiter response; follow up if no reply by 25/09/26
+- **History:**
+  - 18/09/26 Inbound recruiter email with JD; job-fit-scored at 65/100; CV reviewed and reused from Adyen baseline; reply with candidate details sent
 
 ### [Client TBD] — Service Designer, Transport Transformation Programme (via recruiter Carlijn Tweebeeke)
 - **Applied:** N/A — inbound recruiter outreach, 10/09/26
@@ -89,17 +107,20 @@ Last updated: 2026-08-26
 - **Company tier:** Not yet tracked in `target-companies.md` — large NL e-commerce platform (14M customers, 43,300 partners)
 - **Prior attempt:** ⚠️ Applied to bol.com once before — Product Craft Lead, applied 21/05/25, auto-rejected (see Full History). ~15 months ago, well past a typical 6-12 month cooldown. Different role this time (Principal Craft Lead UX — a craft-leadership/influence-without-authority role reporting into the UX Management Team, distinct from the earlier "Product Craft Lead" title) and the prior attempt was an auto-reject with no real review, so this is a genuinely different shot.
 - **Role notes:** Principal-level craft leadership role, not a people-manager role — Heads of Design do not report to this position; influence is earned through craft credibility and cross-functional frameworks (Engineering, Product, Product Analytics leadership), not direct authority. Explicit mandate from the CPTO Management Team to define bol's design craft direction through the AI transition. Joins the UX Management Team.
-- **Last action:** Interview rescheduled to this afternoon, 14/09/26, video (Teams), with Thijmen Klompmaker — call will include notice period/salary/benefits discussion, so be ready with a number. Prep package at `briefings/2026-09-07-prep-bolcom.md`; cross-interview learnings from the Adyen screen (Sep 14) applied below in History.
-- **Next action:** Run `/interview-debrief` right after this afternoon's call.
+- **Status update (22/09/26):** Moved forward to next stage — Thijmen confirmed via email. Two parts: (1) scheduling team to arrange next interview, plus a brief prep call with Thijmen beforehand; (2) HRorganizer assessment (personality questionnaire + ability test, powered by AON's "scales"/cut-e test suite) to complete before the second interview — separate email with the assessment link to follow.
+- **Last action:** Received "moving forward" email from Thijmen, 22/09/26, with HRorganizer assessment instructions.
+- **Next action:** Complete HRorganizer assessment once the link arrives (personality test untimed, ability test timed — no retake except one component, best result counts). Prep for the ability test (numerical/verbal/inductive-deductive reasoning) — practice resources identified 22/09/26. Await scheduling team for next interview date + prep call with Thijmen. Run `/interview-debrief` was already done for the Sep 14 round — next debrief due after Round 2.
 - **History:**
   - 18/08/26 Applied — portfolio included per JD request
   - 07/09/26 Availability submitted for first interview
   - 07/09/26 Interview confirmed: Fri 11/09/26, 14:30–15:00 CEST, video call (Teams), with Thijmen Klompmaker; will cover general job topics plus notice period/salary/benefits
   - 14/09/26 Interview rescheduled from 11/09/26 to this afternoon (same format — 30-min recruiter screen, Thijmen Klompmaker). Pre-call, applied learnings from the same-day Adyen recruiter screen (see `interview-history.md` Sep 14 entry): (1) recruiter screens can go deeper than the stated logistics-only agenda — keep Story 2/Story 14 metrics fused and ready to fire cold, not just inside the TMAY script; (2) scripted content (why-bol, AI/craft POV, comp) tends to land close to as-written — trust the prep doc; (3) don't let a good question to Thijmen (e.g. "how do the Heads of Craft work together day to day") replace volunteering the matching proof point (Story 12/13) first.
+  - 22/09/26 Advanced to next stage — HRorganizer assessment (personality + ability test) assigned, second interview + prep call with Thijmen to be scheduled
+  - 25/09/26 HRorganizer assessment completed. Ability: Verbal = high (top of scale, "fast and accurate"); Numerical = average; Inductive (rules & interrelations) = average. Personality: less directing / less persuasive / less prudent; more agreeable, conscientious, conceptual, imaginative, open to change. Job-profile talents: Communicates Effectively, Curiosity, Customer Crazy, Manages Complexity, Stronger Together. Development areas: Business Insight, Courage, Make It Happen, Being Bold. Auto-reply: role-specific minimum scores apply; recruiter will contact before the interview if not met. No contact = cleared.
 
-### Adyen — Senior Service Designer, Platform Engineering
+### ~~Adyen — Senior Service Designer, Platform Engineering~~ — REJECTED 21/09/26
 - **Applied:** 18/08/26
-- **Status:** Interview Scheduled — Round 1 Recruiter Screen (30 min) with Alina Mustakimova, 14/09/26. Full process confirmed by Adyen: Recruiter Screen → Hiring Manager Interview → Portfolio Interview (2 case studies) → Design Challenge → Leadership Interview → Board/GLT Interview.
+- **Status:** ❌ Rejected 21/09/26 — role filled. Alina replied to Marta's 21/09/26 follow-up: the other final-stage candidate signed over the weekend, role is officially closed. No fit concern raised — she reiterated a "very positive impression" from the R1 conversation and said she'd have moved Marta forward under normal circumstances; this matches what she disclosed live on the 14/09/26 call (pipeline timing, not a fit issue). She explicitly wants to stay in touch for when the Service Design function expands, and called out Marta as "great to speak with throughout the process." Full process for reference: Recruiter Screen → Hiring Manager Interview → Portfolio Interview (2 case studies) → Design Challenge → Leadership Interview → Board/GLT Interview — Marta only reached stage 1.
 - **Type:** Permanent — office-first, explicitly no remote-only roles
 - **Location:** Amsterdam, NL (commutable from Rotterdam)
 - **Salary range:** Not stated in JD
@@ -109,14 +130,17 @@ Last updated: 2026-08-26
 - **Connection at company:** Natalja Laurey — see `connection-tracker.md`. Not a current employee; relationship is now more peer-to-peer (she's also job-searching) than a referral path.
 - **Work product sent:** No
 - **Fit score:** Not formally run via `/job-fit-scorer` — informally very strong. 12 years vs. 8+ required, 3+ years formal service design (WEAREREASONABLEPEOPLE) matches directly, and the Advanced Development Team Lead role ("designing intangible products governed by system logic, algorithms, and data rules rather than a user interface") is an unusually close match to the JD's "full-stack service design" ask. Two honest partial gaps: no direct SaaS/B2B software product experience (closest analogs: Tikkie B2B fintech, Culligan IoT admin tooling), and no prior experience designing specifically for a developer/engineer end-user population (closest analog: the YouTube/Unspoken internal CS-agent tooling work, fragmented tooling for a technical-ish internal user base).
-- **Company tier:** Only a one-line Tier 3 entry existed in `target-companies.md` prior to this application — worth expanding given the strength of fit and the live process.
-- **Last action:** Applied 18/08/26; replied to Natalja Laurey same day.
-- **Next action:** Prep package generated for the 14/09/26 screen — see `briefings/2026-09-02-prep-adyen-screening.md`. No open ask outstanding with Natalja — keep that relationship warm as a peer, not a referral source. Run `/interview-debrief` after the call.
+- **Company tier:** Only a one-line Tier 3 entry existed in `target-companies.md` prior to this application — worth expanding given the strength of fit; Alina's genuine interest in staying in touch makes this a real warm-relationship asset even though the role closed.
+- **Last action:** Rejected 21/09/26 — role filled, no fit concern raised. Alina wants to stay in touch for future Service Design openings.
+- **Next action:** None — closed. Worth a brief, warm reply thanking Alina and confirming interest in staying connected — this relationship reads as genuinely durable (unprompted "stay in touch," specific mention of function possibly expanding), unlike most auto-rejections. No open ask outstanding with Natalja — keep that relationship warm as a peer, not a referral source.
 - **History:**
   - 18/08/26 Resume tailored via `/resume-tailor` — restored the "100+ user interviews" bullet and added the PCB/hardware technical-fluency bullet after a review pass flagged both were missing from the initial draft
   - 18/08/26 Applied
   - 18/08/26 Replied to Natalja Laurey
   - 02/09/26 Screening call confirmed for 14/09/26 (recruiter Alina Mustakimova); full 6-stage process outlined by Adyen; prep package generated incorporating friend Chris's first-hand Adyen recruiter-screen intel (salary band €90-120K, light-touch culture-fit format, Service Design function still maturing there)
+  - 14/09/26 Round 1 recruiter screen completed — strong round overall (comp answer 9/10, motivation and Adyen Formula answers both landed well); Alina disclosed a candidate at final stage with a decision expected 15/09/26, framed as pure pipeline timing, not a fit concern — debrief logged in interview-history.md
+  - 21/09/26 Follow-up sent to Alina — asked directly whether the final-stage candidate moved forward, reiterated interest, offered to stay flexible
+  - 21/09/26 Rejected — other candidate signed over the weekend, role officially filled. Alina reiterated positive impression, explicitly wants to reconnect if the Service Design function expands.
 
 ### Kraft Heinz — Associate Director, Global Innovation Technology
 - **Applied:** 15/08/26
@@ -163,9 +187,9 @@ Last updated: 2026-08-26
   - 08/08/26 Resume tailored and applied
   - 11/08/26 Rejected — no detailed feedback given
 
-### IIC – INTERSPORT International Corporation — Digital Experience Manager
+### ~~IIC – INTERSPORT International Corporation — Digital Experience Manager~~ — GHOSTED 18/09/26
 - **Applied:** 06/08/26
-- **Status:** Submitted — Pending Response
+- **Status:** Ghosted — no response since application, 43 days silent
 - **Type:** Permanent, hybrid (JD: "Hybrid work"; office implied Amsterdam — 75%+ colleagues described as expats "in our Amsterdam office")
 - **Location:** Amsterdam, NL (inferred — not explicitly stated in JD)
 - **Salary range:** Not stated in JD
@@ -177,13 +201,14 @@ Last updated: 2026-08-26
 - **Fit score:** Not yet run — this application was logged after submission; run `/job-fit-scorer` retroactively if useful for future outreach framing
 - **Company tier:** Not yet tracked in target-companies.md — global sporting goods retail (€14B+ retail turnover, 42 countries), brand/design-system ownership role, not consumer-facing product role
 - **Last action:** Applied 06/08/26
-- **Next action:** ⚠️ Corrected 20/08/26 — this was a LinkedIn Easy Apply with no known contact, so there's no thread to "follow up" on. If still interested, the real path is identifying a recruiter or the hiring manager on LinkedIn and sending a cold outreach message (`/hiring-manager-msg` or `/connection-request`), not a follow-up email. Consider adding INTERSPORT to target-companies.md if pursuing this further.
+- **Next action:** None — archived as ghosted.
 - **History:**
   - 06/08/26 Applied
+  - 18/09/26 Marked ghosted — no response after 6+ weeks, no known contact to follow up with
 
-### RoomPriceGenie — Head of UX
+### ~~RoomPriceGenie — Head of UX~~ — REJECTED 21/09/26
 - **Applied:** 03/08/26
-- **Status:** 🟡 Round 2 — Take-home assignment submitted 27/08/26, awaiting review before next-step scheduling
+- **Status:** ❌ Rejected 21/09/26 after Round 3 (case presentation + panel, 15/09/26) — specific feedback given: "communication clarity, prioritization, and demonstrable experience in leading and developing internal teams." Reply sent thanking the team; verified against the actual transcript — see `interview-history.md` Sep 15 entry for the transcript-level analysis. The team-leadership feedback in particular checks out: Lars asked directly "how you measure impact of your team" (twice, with a qualitative-KPI follow-up), and both answers reached for product-impact metrics or a stakeholder-influence story (Story 13) rather than an actual team-development story — Story 6 (developing Alex) was never deployed despite being the closest match. The communication-clarity feedback is also self-evidenced in the transcript ("I don't know how much I am on time, but I'm going to skip to the process").
 - **Type:** Permanent, remote-first (hubs in Mannheim, Berlin, Sydney — none in NL)
 - **Salary range:** €95K–€125K — midpoint (€110K) lands almost exactly on target
 - **Referral:** No
@@ -194,7 +219,7 @@ Last updated: 2026-08-26
 - **Fit score:** 86/100 — APPLY IMMEDIATELY (Design function weighting) — strongest score of this session; near-exact match to career-plan.md's Primary target ("Head of" design+research leadership)
 - **Company tier:** Not yet tracked in target-companies.md — scale-up, hospitality tech (industry not on target list, but explicitly in-scope company stage)
 - **Last action:** Submitted the take-home assignment 27/08/26, a day ahead of the Friday 28/08/26 deadline. Response confirmed receipt and reiterated they review each submission before scheduling the next stage — not an automatic advance. Deck covered: (1) first 90 days on team leadership/trust-building, (2) chose the design-system/AI-readiness trade-off — flipping the source of truth from Figma to code, with a bootcamp + embedded ticket-level guardrail + automated drift detection + designers-as-reviewers operating model, framed for a speed-over-process CPO, (3) 2-3 year team vision seeded with the designer-as-system-tuner role, still light on hiring plan/UX maturity specifics.
-- **Next action:** Round 3 confirmed — Tuesday 15/09/26, 13:00-14:00 (Europe/Madrid), titled "Strategy and leadership," via Google Meet (https://meet.google.com/nzy-frdz-ejj). Confirmed panel: Sam Gorick, Emanuele Merico (Senior Product Designer), Lars Theunissen — note this differs from the panel named in the invite email (Sam, Aashima, Ilham + Loyce/Emanuele/Ekow); only Sam and Emanuele carry over. Format still expected to open with the 15-min case study presentation per the invite, but the "Strategy and leadership" title suggests the panel discussion may range broader than pure take-home defense — worth prepping strategy/leadership stories alongside the case study compression. Company context already used and available: RPG's "Human-First, AI-Driven" strategic pillar, North Star metric "Genie nights," design system at 35-40% adoption, UX maturity "Stage 3: Emergent," groups expansion targeting 50% of revenue by 2027.
+- **Next action:** None — closed. Genuinely warm relationship throughout (Sam, Lars, Loïc all generous and candid) — worth keeping in mind if a better-fit role opens at RoomPriceGenie later, but no live thread to chase now.
 - **History:**
   - 03/08/26 Applied
   - 11/08/26 Wiebke Potesta emailed inviting an introductory video call — first interview stage
@@ -207,10 +232,12 @@ Last updated: 2026-08-26
   - 27/08/26 Take-home assignment submitted — a day ahead of deadline
   - 08/09/26 Advanced to Round 3 — Wiebke Potesta emailed inviting a 15-min case study presentation + panel discussion (Sam, Aashima, Ilham, + Loyce/Emanuele/Ekow); scheduling link sent, awaiting availability submission
   - 08/09/26 Round 3 confirmed by RoomPriceGenie Hiring Team — Tue 15/09/26, 13:00-14:00 Europe/Madrid, "Strategy and leadership," Google Meet, with Sam Gorick, Emanuele Merico (Sr Product Designer), Lars Theunissen
+  - 15/09/26 Round 3 completed — case presentation + panel Q&A with Sam Gorick, Lars Theunissen, Loïc (Emanuele did not attend despite being on the confirmed panel) — debrief logged in interview-history.md
+  - 21/09/26 Rejection received via email — specific feedback given (communication clarity, prioritization, team leadership/development). Verified against the full interview transcript: the team-leadership feedback holds up (Lars's direct "how do you measure impact of your team" question was answered with product metrics first, then a stakeholder-influence story rather than a team-development story); communication clarity is self-evidenced in the transcript. Polite reply sent thanking the panel and leaving the door open.
 
-### Corecom Consulting — Senior User Experience Designer (6m, payroll)
+### ~~Corecom Consulting — Senior User Experience Designer (6m, payroll)~~ — GHOSTED 18/09/26
 - **Applied:** 03/08/26
-- **Status:** Submitted — Pending Response
+- **Status:** Ghosted — no response since application, 46 days silent
 - **Type:** Contract, 6 months, payroll
 - **Referral:** No
 - **Resume version:** Not tailored — Easy Apply
@@ -219,10 +246,11 @@ Last updated: 2026-08-26
 - **Work product sent:** No
 - **Company tier:** Unranked — not yet tracked in target-companies.md
 - **Last action:** Applied 03/08/26
-- **Next action:** ⚠️ Corrected 20/08/26 — this was a LinkedIn Easy Apply with no known contact, so there's no thread to "follow up" on. If still interested, the real path is finding a recruiter or hiring contact at Corecom on LinkedIn and sending a cold outreach message, not a follow-up email.
-- **Notes:** Easy Apply, no company-specific tailoring. Add to target-companies.md if this progresses.
+- **Next action:** None — archived as ghosted.
+- **Notes:** Easy Apply, no company-specific tailoring.
 - **History:**
   - 03/08/26 Applied
+  - 18/09/26 Marked ghosted — no response after 6+ weeks, no known contact to follow up with
 
 ### ~~Albert Heijn — Interim Strategic Lead~~ — REJECTED
 - **Applied:** 03/08/26
@@ -260,7 +288,7 @@ Last updated: 2026-08-26
 - **Interviewers:** Round 1: Emin Sinani (Team Lead — cares most about design/business alignment and process; loves AI). Round 2 (17/08/26): Emin Sinani again, plus Robert Paauwe (MT member — not the hiring manager for this role, but a management-team-level stakeholder in the room). Round 3 (03/09/26, rescheduled from 31/08/26): Anne Gerssen (Hiring Manager, Chapter Lead Design Business — TU Delft alum like Marta; trusts Emin's read) — finally appears as predicted in interview-history.md's Round 2 next-round prediction — plus Manjari Sahu.
 - **Insider intel:** Friend Youp (Rabobank) gave real-time prep tips 03/08/26, 24/08/26, and 02/09/26 — see connection-tracker.md and briefings/2026-08-03-prep-rabobank.md / briefings/2026-08-24-prep-rabobank-round3.md
 - **Last action:** Round 3 continuation completed 18/09/26 with Anne Gerssen solo (Manjari dropped out last-minute again) — full Pelican case walkthrough, a direct "where do you come in" credibility challenge (handled well — see interview-history.md), reflection question, motivation/fit question, and a conflict-style/negative-trigger question. Outcome strongly positive; in-person final round to be scheduled for week of 28/09/26.
-- **Next action:** Await scheduling for the in-person final round. Before it: (1) build a story-anchored "what are you looking for" answer using career-plan.md's Weakness 3 script — the abstract-answer pattern recurred on this question again; (2) volunteer the conflict-of-interest disclosure and "why Rabobank" EIB/sustainability script unprompted — both are still unused after 4 combined session-appearances across 3 rounds, this is very likely the last round; (3) fuse the "global leader in drinking water solutions, 90+ countries" qualifier to "Culligan" — said 15+ times this session with zero uses, now in front of the actual decision-maker.
+- **Next action:** Await scheduling for the in-person final round (week of 28/09/26). Round 4 prep package generated 19/09/26 — see `briefings/2026-09-19-prep-rabobank-round4-final.md`. Highest-priority items going in: (1) a story-anchored "what are you looking for" answer (career-plan.md Weakness 3 script + Story 7/lign.ai isolation moment) — the abstract-answer pattern recurred on this question again Sep 18; (2) volunteer the conflict-of-interest disclosure and "why Rabobank" EIB/sustainability script unprompted, early in the conversation — both still unused after 4 combined session-appearances across 3 rounds, this is very likely the last round; (3) fuse the "global leader in drinking water solutions, 90+ countries" qualifier to "Culligan" on first use — said 15+ times Sep 18 with zero uses, now in front of the actual decision-maker; (4) confirm the panel once known and background-check anyone beyond Anne/Manjari.
 - **History:**
   - 23/07/26 Applied
   - 03/08/26 Recruiter callback received — first interview stage
@@ -274,14 +302,16 @@ Last updated: 2026-08-26
   - 02/09/26 Round 3 rescheduled to Thursday 03/09/26. Youp gave major new intel via WhatsApp the night before — see prep doc's Late-Breaking Update section for full detail
   - 03/09/26 Round 3 started but cut short ~15-20 min in due to Marta's connection (Sardinia, poor wifi); rescheduled by mutual agreement to resume later
   - 18/09/26 Round 3 continuation/completion with Anne Gerssen solo — full case walkthrough, credibility challenge handled well, strongly positive close; in-person final round to be scheduled for week of 28/09/26 — debrief logged in interview-history.md
+  - 19/09/26 `/interview-prep` run for the final round — full package generated, saved to `briefings/2026-09-19-prep-rabobank-round4-final.md`; fresh web research added (Rabobank engineering culture shift to event-driven credit-risk assessment, relevant "why Rabobank" color); cumulative signal map updated to 4 session-appearances — "what are you looking for" flagged as the highest-priority open gap (asked twice, 5/10 both times, generalized "assertion instead of proof moment" pattern)
+  - 26/09/26 Final-round panel confirmed: Manjari Sahu + Hans (lead from another team, surname TBD) — Anne not listed. Youp: Hans looks for motivation specific to Rabobank/the industry. Supplement prep saved to `briefings/2026-09-26-prep-rabobank-round4-panel-update.md`
 
-### oneUp — Director of Innovation (Food) *(was: Principal Innovation Consultant)*
+### ~~oneUp — Director of Innovation (Food)~~ *(was: Principal Innovation Consultant)* — GHOSTED
 - **Applied:** 03/03/26
-- **Status:** ⚠️ Silent — possible ghost
-- **Stage:** Case presented 01/06/26. Follow-up email sent 23/06/26 — no response as of 27/06/26 (4 days).
-- **Notes:** Great initial interview. Role upgraded from Principal to Director level. 26 days post-presentation with no decision communicated. Second channel attempt (LinkedIn DM to David Milner) not yet tried.
-- **Next action:** LinkedIn DM to David — different channel, low pressure, one more try. If no response by 04/07/26, close.
-- **Priority:** ⭐⭐⭐⭐⭐ (but fading)
+- **Status:** Ghosted — case presented 01/06/26, follow-up sent 23/06/26, no response since; nearly 3 months silent as of 21/09/26
+- **Stage:** Case presented 01/06/26. Follow-up email sent 23/06/26 — no response.
+- **Notes:** Great initial interview. Role upgraded from Principal to Director level. Second channel attempt (LinkedIn DM to David Milner) — outcome not logged; treating thread as closed given the elapsed silence.
+- **Next action:** None — archived as ghosted.
+- **Priority was:** ⭐⭐⭐⭐⭐
 
 ### ~~Polaroid International — Director of Product Experience~~ — REJECTED 05/07/26
 - **Applied:** 14/05/26 (direct) + 12/06/26 (re-approach via IT Leaders / Jan Bernhart)
@@ -317,9 +347,9 @@ Last updated: 2026-08-26
   - 25/05/26 Registered in Magnit database / applied to posting
   - 30/07/26 Learned position was filled — no direct communication received from Magnit or Apple
 
-### Apple — Experience Strategist (Contingent Worker)
+### ~~Apple — Experience Strategist (Contingent Worker)~~ — GHOSTED 18/09/26
 - **Applied:** 30/07/26
-- **Status:** Submitted — Pending Response
+- **Status:** Ghosted — no response since 20/08/26 follow-up, 29 days silent
 - **Type:** Contract / contingent workforce (staffing agency not yet identified — confirm which portal/agency this came through)
 - **Location:** Not stated in JD
 - **Salary range:** Not stated in JD
@@ -329,11 +359,12 @@ Last updated: 2026-08-26
 - **Fit score:** 69/100 — APPLY WITH REFERRAL ONLY *(scored while company was unknown — the JD had no company/location/comp listed, which capped Culture Signals and Comp Range at insufficient-data defaults. Now that we know it's Apple — a named Big Tech target company with a genuine physical-digital intersection resonance — Culture Signals and Growth Trajectory would likely score meaningfully higher on a re-run. Skill Match and Seniority Fit were already 18/20 each: near-exact match to your Secondary target title "Senior Experience Strategist.")*
 - **Company tier:** Big Tech (target company) — second concurrent Apple contingent application in the pipeline
 - **Last action:** Follow-up message sent 20/08/26 via Apple Contingent Workforce portal (Magnit) — no named recruiter, sent through the "Message this recruiter" function. Confirmed staffing platform: Magnit.
-- **Next action:** Await response to 20/08/26 follow-up. Role confirmed still open/pending as of 20/08/26 (visible in portal). Pay range confirmed via portal: USD 92.19–138.60/hour.
-- **Notes:** Near-perfect skill/seniority match on paper (research + product strategy + service design, 12 years vs. 10+ required). JD emphasizes research → strategic rationale → design translation and cross-functional collaboration (Brand, Engineering, Production, Product Marketing, Senior Management) — a strong match to the YouTube/Unspoken project specifically, which the follow-up message leads with. Main open risks: no referral, and this is your second live Apple contingent application — worth tracking both together in case they route through the same internal reviewer.
+- **Next action:** None — archived as ghosted.
+- **Notes:** Near-perfect skill/seniority match on paper (research + product strategy + service design, 12 years vs. 10+ required). JD emphasizes research → strategic rationale → design translation and cross-functional collaboration (Brand, Engineering, Production, Product Marketing, Senior Management) — a strong match to the YouTube/Unspoken project specifically, which the follow-up message led with. Went silent despite strong fit and a direct follow-up — no referral to compensate. Both concurrent Apple contingent applications (this one and the Magnit "Associate Creative Director" req above) are now closed without a substantive response.
 - **History:**
   - 30/07/26 Applied
   - 20/08/26 Follow-up message sent via Magnit portal — confirmed available to start immediately, led with YouTube/Unspoken research-to-design story (JD-matched) plus the Apple Wallet/Culligan pilot detail, shared portfolio link + password with confidentiality note
+  - 18/09/26 Marked ghosted — no response after follow-up, 29 days silent
 
 ### ~~B Lab — Senior Product Design Manager~~ — REJECTED 27/06/26
 - **Applied:** 27/05/26 | **Rejected:** 27/06/26
