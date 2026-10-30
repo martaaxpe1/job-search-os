@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "tight-leading",
+        "value": "*",
+        "files": [
+          "briefings/2026-10-25-decision-app.html"
+        ],
+        "createdAt": "2026-10-26T14:40:01.768Z",
+        "reason": "Claude: remaining tight leading is on display headings, numerals and single-line mono labels, as sanctioned by the project's Leading-by-Role rule in DESIGN.md / .impeccable/design.json (titles 1.05, labels 1.2); wrapping text in this file is 1.35-1.5"
+      }
+    ]
+  }
+}

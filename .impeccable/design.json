@@ -1,0 +1,412 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-05T11:07:47",
+  "title": "Design System: Marta Axpe — The Working Argument",
+  "extensions": {
+    "colorMeta": {
+      "ink-navy": {
+        "role": "primary",
+        "displayName": "Ink Navy",
+        "canonical": "#0E1A47",
+        "tonalRamp": [
+          "#0D1740",
+          "#16296F",
+          "#1F3A9E",
+          "#284BCC",
+          "#5571DD",
+          "#889CE7",
+          "#BBC6F2",
+          "#EAEDFB"
+        ]
+      },
+      "coral": {
+        "role": "secondary",
+        "displayName": "Signal Coral",
+        "canonical": "#F07A6A",
+        "tonalRamp": [
+          "#460E07",
+          "#78190C",
+          "#AB2411",
+          "#DE2E16",
+          "#EC5A46",
+          "#F28B7D",
+          "#F8BDB5",
+          "#FDEAE8"
+        ]
+      },
+      "coral-display": {
+        "role": "secondary",
+        "displayName": "Display Coral",
+        "canonical": "#E0604F",
+        "tonalRamp": [
+          "#41120B",
+          "#711F14",
+          "#A02C1C",
+          "#D03925",
+          "#E06252",
+          "#EA9186",
+          "#F3C0BA",
+          "#FBEBE9"
+        ]
+      },
+      "coral-text": {
+        "role": "secondary",
+        "displayName": "Text Coral",
+        "canonical": "#C2483A",
+        "tonalRamp": [
+          "#3B1612",
+          "#66261F",
+          "#91362B",
+          "#BC4638",
+          "#D06D62",
+          "#DE9991",
+          "#ECC5C0",
+          "#F9EDEB"
+        ]
+      },
+      "coral-deep": {
+        "role": "secondary",
+        "displayName": "Deep Coral",
+        "canonical": "#B84233",
+        "tonalRamp": [
+          "#3C1511",
+          "#68251D",
+          "#943529",
+          "#C04535",
+          "#D36C5F",
+          "#E0988F",
+          "#EDC4BF",
+          "#F9EDEB"
+        ]
+      },
+      "slate": {
+        "role": "neutral",
+        "displayName": "Slate",
+        "canonical": "#5B6589",
+        "tonalRamp": [
+          "#1F222E",
+          "#353B50",
+          "#4B5471",
+          "#626C93",
+          "#848DAE",
+          "#A9AFC6",
+          "#CED2DE",
+          "#F0F1F5"
+        ]
+      },
+      "blush": {
+        "role": "neutral",
+        "displayName": "Blush",
+        "canonical": "#FBD9D1",
+        "tonalRamp": [
+          "#461206",
+          "#7A200B",
+          "#AE2D0F",
+          "#E13B14",
+          "#EF6443",
+          "#F4927C",
+          "#F8C1B4",
+          "#FDECE8"
+        ]
+      },
+      "periwinkle": {
+        "role": "neutral",
+        "displayName": "Periwinkle",
+        "canonical": "#D9DEEF",
+        "tonalRamp": [
+          "#171E36",
+          "#27345D",
+          "#384985",
+          "#495FAC",
+          "#6F82C3",
+          "#9BA8D5",
+          "#C6CDE7",
+          "#EDEFF7"
+        ]
+      },
+      "hairline": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "#DDE1EE",
+        "tonalRamp": [
+          "#1A1F33",
+          "#2C3758",
+          "#3F4E7E",
+          "#5265A3",
+          "#7787BB",
+          "#A0ABCF",
+          "#C9CFE4",
+          "#EEF0F6"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "canonical": "#FFFFFF",
+        "tonalRamp": [
+          "#262626",
+          "#424242",
+          "#5E5E5E",
+          "#7A7A7A",
+          "#999999",
+          "#B8B8B8",
+          "#D6D6D6",
+          "#F2F2F2"
+        ]
+      },
+      "mist": {
+        "role": "neutral",
+        "displayName": "Mist",
+        "canonical": "#F4F5FA",
+        "tonalRamp": [
+          "#181D35",
+          "#29325B",
+          "#3B4782",
+          "#4D5CA8",
+          "#7380BF",
+          "#9DA6D2",
+          "#C7CCE5",
+          "#EDEFF7"
+        ]
+      },
+      "cloud": {
+        "role": "neutral",
+        "displayName": "Cloud",
+        "canonical": "#EBEEF8",
+        "tonalRamp": [
+          "#141C39",
+          "#223162",
+          "#31468C",
+          "#3F5BB5",
+          "#687FCA",
+          "#95A5DA",
+          "#C3CCEA",
+          "#ECEFF8"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "numeral": {
+        "displayName": "Numeral",
+        "purpose": "Faded section number behind opener titles (Display Coral, 16% opacity)."
+      },
+      "cover": {
+        "displayName": "Cover",
+        "purpose": "Cover and closing statements."
+      },
+      "opener": {
+        "displayName": "Opener",
+        "purpose": "Section opener titles; one accent word allowed."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Every content title, written as a sentence that tells the story."
+      },
+      "subhead": {
+        "displayName": "Subhead",
+        "purpose": "Column heads, lead-ins, from → to pairs."
+      },
+      "card-head": {
+        "displayName": "Card Head",
+        "purpose": "Step names, card titles, node labels, behaviour pills."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "The argument sentence under a title."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Evidence, lists, table cells, risk text. 21px floor on slides."
+      },
+      "gloss": {
+        "displayName": "Gloss",
+        "purpose": "Italic one-line definition under a term."
+      },
+      "numeric": {
+        "displayName": "Numeric",
+        "purpose": "Values in metric tables, tabular figures."
+      },
+      "kicker": {
+        "displayName": "Kicker",
+        "purpose": "Section marker above a title, Text Coral, uppercase mono."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Column headers, risk labels, footers; four words max."
+      },
+      "tag": {
+        "displayName": "Tag",
+        "purpose": "Experience example / Hypothesis tags."
+      }
+    },
+    "shadows": [
+      {
+        "name": "halo-coral",
+        "value": "0 0 0 18px #FBD9D1",
+        "purpose": "Solid blush ring around coral diagram nodes. Zero blur: a ring, not a glow."
+      },
+      {
+        "name": "halo-ink",
+        "value": "0 0 0 16px #D9DEEF",
+        "purpose": "Solid periwinkle ring around navy diagram nodes."
+      },
+      {
+        "name": "outline-ring-coral",
+        "value": "0 0 0 6px #FFFFFF, 0 0 0 7px #E0604F",
+        "purpose": "Thin coral outline ring with a white gap, for a highlighted step."
+      }
+    ],
+    "motion": [],
+    "breakpoints": [
+      {
+        "name": "slide-canvas",
+        "value": "1920px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Experience example tag",
+      "kind": "chip",
+      "refersTo": "tag-experience",
+      "description": "Marks a claim backed by something already done.",
+      "html": "<span class=\"ds-tag-exp\">Experience example</span>",
+      "css": ".ds-tag-exp{display:inline-block;font-family:'Space Mono','Courier New',monospace;font-size:18px;font-weight:400;letter-spacing:.06em;text-transform:uppercase;line-height:1.2;color:#FFFFFF;background:#0E1A47;padding:6px 16px;border-radius:256px}.ds-tag-exp:focus-visible{outline:2px solid #E0604F;outline-offset:3px}"
+    },
+    {
+      "name": "Hypothesis tag",
+      "kind": "chip",
+      "refersTo": "tag-hypothesis",
+      "description": "Marks a claim to be tested; dashed outline, text follows the surface.",
+      "html": "<span class=\"ds-tag-hyp\">Hypothesis</span>",
+      "css": ".ds-tag-hyp{display:inline-block;font-family:'Space Mono','Courier New',monospace;font-size:18px;font-weight:400;letter-spacing:.06em;text-transform:uppercase;line-height:1.2;color:#0E1A47;background:transparent;border:2px dashed #F07A6A;padding:4px 14px;border-radius:256px}"
+    },
+    {
+      "name": "Risk box",
+      "kind": "card",
+      "refersTo": "risk-box",
+      "description": "Names a risk and its mitigation, always both.",
+      "html": "<div class=\"ds-risk\"><span class=\"ds-risk-l\">Risk</span><p><b>Energy drops after the first few rituals.</b></p><p><b>Mitigation:</b> Measure contribution, not attendance. After two cycles without contributions, shrink or stop the ritual.</p></div>",
+      "css": ".ds-risk{background:#FBD9D1;color:#0E1A47;border-radius:14px;padding:14px 16px 16px;font-family:'Hanken Grotesk',Arial,sans-serif;font-size:21px;line-height:1.45;max-width:640px}.ds-risk p{margin:4px 0 0}.ds-risk-l{font-family:'Space Mono','Courier New',monospace;font-size:18px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#C2483A}"
+    },
+    {
+      "name": "Kicker and title",
+      "kind": "custom",
+      "refersTo": "title",
+      "description": "Section kicker with coral rule, above a sentence-style title.",
+      "html": "<div class=\"ds-kick\"><span class=\"ds-kick-rule\"></span><span class=\"ds-kick-t\">1 · Vision</span></div><h2 class=\"ds-title\">By 2028, designers will spend most of their week on discovery work</h2>",
+      "css": ".ds-kick{display:flex;align-items:center;gap:20px}.ds-kick-rule{width:40px;height:3px;background:#F07A6A}.ds-kick-t{font-family:'Space Mono','Courier New',monospace;font-size:24px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#C2483A}.ds-title{font-family:'Bricolage Grotesque',Arial,sans-serif;font-size:44px;font-weight:700;line-height:1.05;letter-spacing:-.02em;color:#0E1A47;margin:14px 0 0}"
+    },
+    {
+      "name": "Behaviour pill",
+      "kind": "chip",
+      "refersTo": "behaviour-pill",
+      "description": "Names one of the four behaviours; fill varies by behaviour.",
+      "html": "<span class=\"ds-beh\">High agency</span> <span class=\"ds-beh ds-beh-c\">High taste</span> <span class=\"ds-beh ds-beh-p\">High curiosity</span>",
+      "css": ".ds-beh{display:inline-block;font-family:'Bricolage Grotesque',Arial,sans-serif;font-size:24px;font-weight:700;line-height:1.2;color:#FFFFFF;background:#0E1A47;padding:6px 18px;border-radius:256px}.ds-beh-c{background:#F07A6A;color:#0E1A47}.ds-beh-p{background:#D9DEEF;color:#0E1A47}"
+    },
+    {
+      "name": "Diagram nodes",
+      "kind": "custom",
+      "refersTo": "node-ink",
+      "description": "Flat circles with solid halo rings; coral for outcomes, navy for actors.",
+      "html": "<div class=\"ds-nodes\"><span class=\"ds-node\">Behaviour</span><span class=\"ds-node ds-node-c\">Products</span></div>",
+      "css": ".ds-nodes{display:flex;gap:64px;align-items:center;padding:24px}.ds-node{width:160px;height:160px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Bricolage Grotesque',Arial,sans-serif;font-size:24px;font-weight:700;color:#FFFFFF;background:#0E1A47;box-shadow:0 0 0 16px #D9DEEF}.ds-node-c{background:#F07A6A;color:#0E1A47;box-shadow:0 0 0 18px #FBD9D1}"
+    },
+    {
+      "name": "First move panel",
+      "kind": "card",
+      "refersTo": "panel-ink",
+      "description": "Dark panel for the one action you propose, ending in a question.",
+      "html": "<div class=\"ds-panel\"><span class=\"ds-panel-l\">A first move</span><p><b>Give the Heads of Design their time back.</b> Sit in, co-write the bar, test a first-pass check in one domain.</p><p class=\"ds-panel-q\">Is it the right hurdle?</p></div>",
+      "css": ".ds-panel{background:#0E1A47;color:#FFFFFF;border-radius:20px;padding:22px 26px;font-family:'Hanken Grotesk',Arial,sans-serif;font-size:21px;line-height:1.45;max-width:560px}.ds-panel p{margin:8px 0 0}.ds-panel-l{font-family:'Space Mono','Courier New',monospace;font-size:18px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#F07A6A}.ds-panel-q{font-family:'Hanken Grotesk',Arial,sans-serif;font-weight:700;font-size:24px;color:#F07A6A}"
+    },
+    {
+      "name": "Callout",
+      "kind": "custom",
+      "refersTo": "lead",
+      "description": "Key takeaway in Lead type with a 1px coral rule.",
+      "html": "<blockquote class=\"ds-callout\">Tired from admin is not the same as tired from making something you see land. <b>The rituals are a space to unload.</b></blockquote>",
+      "css": ".ds-callout{margin:0;font-family:'Hanken Grotesk',Arial,sans-serif;font-size:24px;line-height:1.5;color:#0E1A47;border-left:1px solid #F07A6A;padding:2px 0 2px 24px;max-width:720px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Working Argument",
+    "overview": "Every surface in this system makes one claim and then shows its proof. A slide, a portfolio page or a website section leads with a statement in confident display type, and everything underneath exists to support it: evidence in plain body text, the source of that evidence marked with a tag, and the risk named out loud in its own box. The system came out of a case study about \"the end of average\", and it holds itself to the same standard: specific over generic, deliberate over default.\n\nThe world is navy ink on cool white paper, with a single warm coral voice. Navy carries authority and almost all of the text; coral marks the one thing on a surface that deserves attention: an accent word in a headline, a section kicker, the outcome node in a diagram. Structure comes from hairlines, generous margins and flat circles with soft halo rings, never from shadows or decorative containers. Monospace appears only where something is labelled, numbered or classified, like notes in the margin of a working document.\n\nThe density is presentation-first: big type, wide margins, one idea per surface. On the web and in a portfolio the same rules hold at a smaller scale; the hierarchy and the voice don't change.",
+    "keyCharacteristics": [
+      "One claim per surface, carried by a Bricolage Grotesque headline that reads as a sentence.",
+      "Navy ink for text and structure; coral used sparingly as the single accent voice.",
+      "Evidence is labelled: Experience example, Hypothesis and Risk tags say where each claim comes from.",
+      "Flat surfaces, hairline dividers and circle diagrams with halo rings; no drop shadows.",
+      "Monospace only for labels, kickers, numbers and tags."
+    ],
+    "rules": [
+      {
+        "name": "The One Voice Rule",
+        "body": "Coral is the only warm colour and it marks one thing per area of a surface. If two coral elements compete for attention, one of them should be navy.",
+        "section": "colors"
+      },
+      {
+        "name": "The Coral-by-Background Rule",
+        "body": "Pick the coral by what it sits on, not by taste: `coral` on navy or as a fill, `coral-display` for words of 40px and over on light surfaces, `coral-text` for smaller text on paper or mist, `coral-deep` for smaller text on cloud. Each pairing clears WCAG contrast; the original `coral` as small text on white does not (2.7:1).",
+        "section": "colors"
+      },
+      {
+        "name": "The Slate-Not-Grey Rule",
+        "body": "Secondary text is `slate`, never a lighter grey. The earlier `#8C93AE` failed contrast at 3.0:1 and is retired.",
+        "section": "colors"
+      },
+      {
+        "name": "The Fixed Scale Rule",
+        "body": "Use only the sizes above. When copy doesn't fit its frame, cut the copy; never shrink the type to fit. Fit-to-frame values (20.4, 22.7, 41.4, 74.25px) are drift.",
+        "section": "typography"
+      },
+      {
+        "name": "The Projection Floor Rule",
+        "body": "Nothing below 18px on the 1920 canvas, and body text at 21px or more. If a layout only works at 19px, the layout is wrong.",
+        "section": "typography"
+      },
+      {
+        "name": "The Leading-by-Role Rule",
+        "body": "Line height belongs to the role, not the frame: lead 1.5, body 1.45, gloss 1.35, labels 1.2, titles 1.05.",
+        "section": "typography"
+      },
+      {
+        "name": "The Short Caps Rule",
+        "body": "Uppercase mono is for labels of four words or fewer. Anything longer is set in Hanken bold, sentence case.",
+        "section": "typography"
+      },
+      {
+        "name": "The Aligned Numbers Rule",
+        "body": "Any column of numbers (targets, metrics, percentages) uses tabular figures so the digits line up.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat Paper Rule",
+        "body": "Surfaces never cast shadows. Separate content with a mist or cloud panel, a hairline, or space.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Halo Not Glow Rule",
+        "body": "Rings are solid, zero-blur and a tint of the node's own colour. Blurred or coloured glows are not part of the system.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do write every title as a sentence that tells the story, so someone flicking through gets the argument from titles alone.",
+      "Do tag evidence: Experience example for what you've done, Hypothesis for what you'd test, Risk with a mitigation.",
+      "Do choose coral by background, per the Coral-by-Background Rule.",
+      "Do keep body text at 21px or more on slides and the type scale fixed.",
+      "Do give every section opener the same layout: numeral, kicker, opener title, lead, one diagram.",
+      "Do use tabular figures for any column of numbers."
+    ],
+    "donts": [
+      "Don't use `coral` (#F07A6A) as small text on a light background.",
+      "Don't use drop shadows, blurred glows or gradients for depth.",
+      "Don't use a thick coloured bar on the side of a card or callout; 1px is the maximum.",
+      "Don't set sentences in uppercase mono.",
+      "Don't shrink type to fit a frame; cut the copy instead.",
+      "Don't use monospace for anything that isn't a label, kicker, tag or number."
+    ]
+  }
+}

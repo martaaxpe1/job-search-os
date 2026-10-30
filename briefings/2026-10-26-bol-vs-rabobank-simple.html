@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rabobank or bol: hard terms</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #0E1A47;
+  --coral: #F07A6A;
+  --coral-text: #C2483A;
+  --slate: #5B6589;
+  --blush: #FBD9D1;
+  --hairline: #DDE1EE;
+  --paper: #FFFFFF;
+  --mist: #F4F5FA;
+  --cloud: #EBEEF8;
+  --display: 'Bricolage Grotesque', Arial, sans-serif;
+  --body: 'Hanken Grotesk', Arial, ui-sans-serif, system-ui, sans-serif;
+  --mono: 'Space Mono', 'Courier New', ui-monospace, monospace;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 16px/1.5 var(--body); -webkit-font-smoothing: antialiased; }
+:focus-visible { outline: 2px solid var(--coral-text); outline-offset: 2px; }
+main { max-width: 1080px; margin: 0 auto; padding: 40px 40px 96px; }
+.kicker { font: 700 12px/1.2 var(--mono); letter-spacing: .15em; text-transform: uppercase; color: var(--coral-text); margin: 0 0 10px; }
+h1 { font: 800 clamp(34px, 5vw, 52px)/1 var(--display); letter-spacing: -.03em; margin: 0; }
+h1 span { color: var(--coral-text); }
+h2 { font: 700 28px/1.1 var(--display); letter-spacing: -.02em; margin: 56px 0 8px; }
+.lead { color: var(--slate); font-size: 18px; margin: 12px 0 0; max-width: 64ch; }
+.hint { color: var(--slate); margin: 0 0 18px; max-width: 70ch; }
+
+.toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 18px; }
+.btn { font: 700 12px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; border: 1px solid var(--hairline); background: var(--paper); color: var(--ink); border-radius: 256px; padding: 11px 16px; cursor: pointer; }
+.btn:hover { border-color: var(--ink); }
+.savestate { font: 400 12px/1.3 var(--mono); color: var(--slate); }
+.savestate.bad { color: var(--coral-text); }
+
+.score { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 28px 0 0; }
+.score > div { border-radius: 14px; padding: 16px 18px; background: var(--mist); }
+.score .n { font: 800 48px/1 var(--display); letter-spacing: -.03em; font-variant-numeric: tabular-nums; }
+.score > div.b .n { color: var(--coral-text); }
+.score > div.e .n { color: var(--slate); }
+.score .l { font: 700 11px/1.3 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--slate); margin-top: 6px; }
+.unpicked { font: 400 12px/1.3 var(--mono); color: var(--coral-text); margin: 10px 0 0; }
+.unpicked:empty { display: none; }
+.auto-verdict { font: 700 24px/1.25 var(--display); margin: 20px 0 0; }
+.verdict { margin: 6px 0 0; font-size: 18px; max-width: 70ch; }
+
+/* Editable text */
+[contenteditable] { border-radius: 6px; outline: 1px solid transparent; outline-offset: 2px; cursor: text; transition: background-color .15s ease; }
+[contenteditable]:hover { outline-color: var(--hairline); }
+[contenteditable]:focus { outline: 1px solid var(--ink); background: var(--paper); }
+/* Inset the hover/focus box on editable text that isn't a padded table cell, without shifting the layout. */
+p[contenteditable], li[contenteditable], span[contenteditable], small[contenteditable] { padding: 4px 8px; margin-left: -8px; margin-right: -8px; outline-offset: 0; }
+p.verdict[contenteditable] { margin-top: 12px; }
+td[contenteditable] { outline-offset: -2px; }
+
+.wrap { overflow-x: auto; border: 1px solid var(--hairline); border-radius: 14px; }
+table { width: 100%; border-collapse: collapse; font-size: 15px; line-height: 1.45; }
+th, td { text-align: left; vertical-align: top; padding: 12px 14px; border-bottom: 1px solid var(--hairline); }
+thead th { font: 700 11px/1.3 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--slate); background: var(--mist); }
+tbody tr:last-child td { border-bottom: 0; }
+td.cat { font-weight: 700; min-width: 130px; }
+td.cat small { display: block; font-weight: 400; color: var(--slate); font-size: 13px; max-width: 16ch; }
+td.win { min-width: 150px; }
+.why { display: block; color: var(--slate); font-size: 13px; margin-top: 8px; max-width: 20ch; min-height: 1.45em; }
+.why:empty::before { content: 'Add a note'; color: var(--hairline); }
+.why:empty:focus::before { content: ''; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+tr.key td { background: var(--mist); font-weight: 700; }
+
+/* Winner picker */
+.pick { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; }
+.pick button { font: 700 11px/1.3 var(--mono); letter-spacing: .08em; text-transform: uppercase; border: 1px solid var(--hairline); background: var(--paper); color: var(--slate); border-radius: 256px; padding: 8px 14px; cursor: pointer; }
+.pick button:hover { border-color: var(--ink); color: var(--ink); }
+.pick button[aria-pressed="true"][data-val="a"] { background: var(--ink); border-color: var(--ink); color: var(--paper); }
+.pick button[aria-pressed="true"][data-val="b"] { background: var(--coral); border-color: var(--coral); color: var(--ink); }
+.pick button[aria-pressed="true"][data-val="e"] { background: var(--cloud); border-color: var(--slate); color: var(--ink); }
+
+.note { background: var(--blush); border-radius: 14px; padding: 14px 16px; margin: 18px 0 0; max-width: 78ch; }
+ul.assume { margin: 10px 0 0; padding-left: 20px; color: var(--slate); max-width: 78ch; }
+ul.assume li { margin-bottom: 6px; }
+.src { font-size: 13px; color: var(--slate); margin-top: 28px; }
+.src a { color: var(--slate); }
+
+@media print {
+  @page { size: A4; margin: 10mm 12mm 11mm; }
+  body { font-size: 12px; }
+  main { max-width: none; padding: 0; }
+  h1 { font-size: 32px; }
+  h2 { font-size: 20px; margin: 16px 0 8px; break-after: avoid; }
+  .lead { font-size: 13px; }
+  .toolbar, .hint, .unpicked { display: none !important; }
+  .score { margin-top: 14px; }
+  .score > div { padding: 10px 14px; }
+  .score .n { font-size: 30px; }
+  .auto-verdict { font-size: 17px; margin-top: 12px; }
+  .verdict { font-size: 13px; }
+  [contenteditable] { outline: none !important; }
+  .why:empty { display: none; }
+  .pick button[aria-pressed="false"] { display: none; }
+  .pick button { padding: 4px 10px; font-size: 11px; }
+  .wrap { overflow: visible; }
+  table { font-size: 12px; line-height: 1.4; }
+  th, td { padding: 7px 9px; }
+  thead th { font-size: 11px; }
+  tr { break-inside: avoid; }
+  .why, td.cat small { font-size: 11px; margin-top: 5px; }
+  ul.assume { font-size: 12px; line-height: 1.4; max-width: none; margin-top: 6px; }
+  ul.assume li { margin-bottom: 2px; }
+  .src { font-size: 11px; margin-top: 14px; }
+  .score > div, .pick button, thead th { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+@media (max-width: 720px) {
+  main { padding: 28px 16px 72px; }
+  .score { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<main>
+  <p class="kicker">Hard terms only · 26/10/2026</p>
+  <h1>Rabobank <span>or</span> bol</h1>
+  <p class="lead">What each offer gives that the other doesn't, on the terms in the documents. No role, people or culture: those are yours to weigh.</p>
+  <div class="toolbar">
+    <button type="button" class="btn" id="reset">Reset to original</button>
+    <span class="savestate" id="savestate" role="status"></span>
+  </div>
+
+  <div class="score" aria-label="Final score" aria-live="polite">
+    <div class="b"><div class="n" id="n-b">0</div><div class="l">bol wins</div></div>
+    <div><div class="n" id="n-a">0</div><div class="l">Rabobank wins</div></div>
+    <div class="e"><div class="n" id="n-e">0</div><div class="l">Even</div></div>
+  </div>
+  <p class="unpicked" id="unpicked"></p>
+  <p class="auto-verdict" id="autoVerdict" aria-live="polite"></p>
+  <p class="verdict" data-edit>bol pays clearly more: about €6.6K more net a year before the bonus, €18.9K with it. Rabobank wins on faster raises, a 36-hour week, and better pay if you're ill or pregnant. Pension and contract come out about even.</p>
+
+  <h2>Side by side</h2>
+  <p class="hint">Click any text to edit it, and pick who wins each row. Click a picked winner again to clear it. Everything saves in this browser.</p>
+  <div class="wrap">
+    <table>
+      <thead><tr><th>Category</th><th>Rabobank</th><th>bol</th><th>Wins</th></tr></thead>
+      <tbody>
+        <tr data-row="pay" data-default="b">
+          <td class="cat"><span data-edit>Gross and net pay</span><small data-edit>year 1, 2026 tax rules</small></td>
+          <td data-edit><b>Gross €104.4K a year:</b> base €81.6K + 8% holiday pay €6.5K + 13th month €6.8K + 10% benefit budget €9.5K.<br><b>Net ≈ €62.8K a year</b>, €5,234 a month on average.<br>No bonus.</td>
+          <td data-edit><b>Gross €120.5K a year:</b> base €111.6K + 8% holiday pay €8.9K.<br><b>Net ≈ €69.5K a year</b>, €5,788 a month on average.<br><b>Bonus on top:</b> ≈ €26.5K gross realistic (€27.9K at target), ≈ €12.2K net.</td>
+          <td class="win"><div class="pick"></div><span class="why" data-edit>€6.6K more net a year before the bonus (€554/month), €18.9K with it</span></td>
+        </tr>
+        <tr data-row="growth" data-default="a">
+          <td class="cat"><span data-edit>Pay growth</span><small data-edit>raises over 3 years</small></td>
+          <td data-edit>Yearly CAO raise (6% in 2026; 2027 still being negotiated) plus a 0–5% individual raise each April, until the scale maximum. You're €383 below the scale 09 maximum. +15–24% by end-2029.</td>
+          <td data-edit>No CAO. First raise 1/1/2028, merit-based after that. About +8% by end-2029 at 4% a year. More room in the band: up to €12,711/month.</td>
+          <td class="win"><div class="pick"></div><span class="why" data-edit>Grows faster, but doesn't catch up with bol's pay within 3 years</span></td>
+        </tr>
+        <tr data-row="pension" data-default="e">
+          <td class="cat"><span data-edit>Pension</span><small data-edit>year 1, at the starting salary</small></td>
+          <td data-edit>27% of €76.5K (pensionable income minus the franchise) goes into your pension: €20.6K. Rabobank pays 21.5% (€16.4K), you pay 5.5% (€4.2K, €350/month). You can lower your share to 3.5%.</td>
+          <td data-edit>Two schemes: BPF Detailhandel up to €79,409 (bol 18.56%, you 6.19%) and BeFrank above it (bol 10.5%, you 3.5%). €20.8K goes into your pension: bol pays €15.6K, you pay €5.2K (€433/month).</td>
+          <td class="win"><div class="pick"></div><span class="why" data-edit>Employer pays ~€850 more, you pay ~€990 less. About the same total going in.</span></td>
+        </tr>
+        <tr data-row="hours" data-default="a">
+          <td class="cat"><span data-edit>Working hours</span></td>
+          <td data-edit>36h a week, full-time. About 1,685 hours worked a year after leave.</td>
+          <td data-edit>40h a week, full-time (36h or 32h possible at lower pay). About 1,826 hours worked a year after leave.</td>
+          <td class="win"><div class="pick"></div><span class="why" data-edit>~140 fewer hours a year</span></td>
+        </tr>
+        <tr data-row="vacation" data-default="b">
+          <td class="cat"><span data-edit>Vacation days</span></td>
+          <td data-edit>26 days a year (187.2 hours at 36h), including one diversity day. Extra hours can be bought with the benefit budget.</td>
+          <td data-edit>32 days a year at your age (29, plus 3 from age 40): 256 hours at 40h. Public holidays can be swapped for days that matter to you.</td>
+          <td class="win"><div class="pick"></div><span class="why" data-edit>6 more days</span></td>
+        </tr>
+        <tr data-row="abroad" data-default="b">
+          <td class="cat"><span data-edit>Working abroad</span></td>
+          <td data-edit>Short periods, case by case.</td>
+          <td data-edit>Up to 8 weeks a year, max 4 in a row, EU fine.</td>
+          <td class="win"><div class="pick"></div><span class="why" data-edit></span></td>
+        </tr>
+        <tr data-row="contract" data-default="e">
+          <td class="cat"><span data-edit>Contract</span></td>
+          <td data-edit>Fixed-term to 15/11/2027, with a written intention to extend or convert. No non-compete in the terms we've seen.</td>
+          <td data-edit>12 months fixed-term, no stated intention. 9-month non-compete (10 named competitors, freelancing included). The 2027 bonus is lost if not renewed.</td>
+          <td class="win"><div class="pick"></div><span class="why" data-edit>Both about a year. Rabobank intends to convert; bol adds a non-compete.</span></td>
+        </tr>
+        <tr data-row="sick" data-default="a">
+          <td class="cat"><span data-edit>Sick pay</span></td>
+          <td data-edit>100% in year 1. 80% in year 2 (85–95% if you're partly back at work).</td>
+          <td data-edit>100% in year 1. 70% in year 2 (the legal minimum).</td>
+          <td class="win"><div class="pick"></div><span class="why" data-edit></span></td>
+        </tr>
+        <tr data-row="family" data-default="a">
+          <td class="cat"><span data-edit>Family leave</span></td>
+          <td data-edit>Maternity at 100% of salary. Paid parental leave ~€12.7K in total. Parental leave until the child is 12.</td>
+          <td data-edit>Maternity capped at the UWV maximum, about two-thirds of salary. Paid parental leave ~€14.6K in total. Age limit not stated (legal: 8).</td>
+          <td class="win"><div class="pick"></div><span class="why" data-edit>~€4–5K more over 16 weeks' maternity</span></td>
+        </tr>
+        <tr data-row="allowances" data-default="b">
+          <td class="cat"><span data-edit>Allowances</span></td>
+          <td data-edit>€1,400/yr development budget. ~€83/month home working and internet. Commuting covered.</td>
+          <td data-edit>Electric lease car, €1,177/month budget (pool car while fixed-term; cash allowance instead not yet confirmed). Public transport covered. €40/month internet. Study scheme, amount not stated.</td>
+          <td class="win"><div class="pick"></div><span class="why" data-edit>if you'd use the car or get the allowance</span></td>
+        </tr>
+        <tr data-row="grade" data-default="b">
+          <td class="cat"><span data-edit>Job grade</span></td>
+          <td data-edit>Scale 09, one scale below the vacancy (scale 10). Title: Senior Service Designer.</td>
+          <td data-edit>Scale 19, the level it was posted at. Letter title: "Specialist".</td>
+          <td class="win"><div class="pick"></div><span class="why" data-edit></span></td>
+        </tr>
+        <tr data-row="side" data-default="e">
+          <td class="cat"><span data-edit>Side work</span></td>
+          <td data-edit>Allowed, registered after you start.</td>
+          <td data-edit>Only selling on bol or competitor platforms is banned. Contract wording pending.</td>
+          <td class="win"><div class="pick"></div><span class="why" data-edit></span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Assumptions</h2>
+  <ul class="assume">
+    <li data-edit><b>Rabobank CAO raise: 3% a year from 2027.</b> It isn't 6% every year: the 6% (4% in January 2026, 2% in June 2026) was for the CAO that runs to 31/12/2026. The next CAO is still being negotiated. The unions are asking for 5% for 2027; Rabobank says its costs are too high.</li>
+    <li data-edit><b>Rabobank individual raise: 2.5% each April</b> (a "successful year"; 5% for an exceptional year, 0% if improvement is needed), until the scale maximum. Your €6,800 is €383 below the scale 09 maximum (€7,183), so you'd hit the ceiling in 2029.</li>
+    <li data-edit><b>Rabobank scale 10:</b> +5% on promotion, scale maximum €8,563. Anne gave no date, so this is a scenario, not a promise.</li>
+    <li data-edit><b>bol raises: none in 2027, then 4% a year</b>, merit-based, decided by management in calibration. bol has no CAO. Thijmen talked about 20–30% growth in the band "over the years".</li>
+    <li data-edit><b>bol bonus: 95% of the 25% target</b>, based on Thijmen's "3–5% below target on average".</li>
+    <li data-edit><b>Left out:</b> bol's lease car or allowance (up to €14K a year gross, not confirmed), a possible bol move to scale 20, and Rabobank's €1,400 development budget.</li>
+    <li data-edit>Pension uses each scheme's 2026 rules. Rabobank: 21.5% employer. bol: BPF Detailhandel up to €79,409, BeFrank above.</li>
+    <li data-edit><b>Pension, year 1:</b> at the starting salary, before any raise. Rabobank's pensionable income is 12 months' salary plus holiday pay and 13th month (€94,928), minus a €18,475 franchise. bol's assumes holiday pay is pensionable (€120,528); if it isn't, about €1.2K a year less goes in.</li>
+    <li data-edit><b>Net pay:</b> 2026 Dutch tax rules (35.75%, 37.56% and 49.5%, with the general and labour tax credits), after your own pension contribution, and no other deductions such as a mortgage or partner. Rabobank's benefit budget is counted as cash; spent on tax-free options it nets more. At these salaries each extra gross euro keeps only about 44 cents, because the labour tax credit tapers off on top of the 49.5% rate. bol pays holiday pay in May, so its regular months are a little below the average shown; Rabobank spreads holiday pay and the 13th month over the year.</li>
+  </ul>
+
+  <p class="src">Sources: bol offer letter, Employee Handbook 2026 and lease scheme; Rabobank offer; <a href="https://cnvstorageprd.blob.core.windows.net/media/documents/Rabobank_cao_2025-2026.pdf">Rabobank CAO 2025–2026</a> (raises, scales, individual raise, promotion, sick pay, development budget); <a href="https://www.cnv.nl/dienstverlening/banken/cao-rabobank/nieuws/rabobank-cnv-voorstellenbrief-voor-een-nieuwe-rabobank-cao-2026-09-09/">CNV proposal for the 2027 CAO</a>; <a href="https://rabobank.jobs/en/salary-checker/">Rabobank salary checker</a> (scales from 1 June 2026).</p>
+</main>
+
+<script>
+(function () {
+  const STORE_KEY = 'bol-vs-rabobank-hard-terms-v2';
+  const OLD_KEY = 'bol-vs-rabobank-hard-terms-v1';
+  const LABEL = { a: 'Rabobank', b: 'bol', e: 'Even' };
+  const edits = [...document.querySelectorAll('[data-edit]')];
+  const rows = [...document.querySelectorAll('tr[data-row]')];
+
+  // A stable name for each editable text, so saved edits survive rows being added.
+  function keyOf(el) {
+    const tr = el.closest('tr[data-row]');
+    if (tr) {
+      if (el.matches('td.cat span')) return tr.dataset.row + '-name';
+      if (el.matches('td.cat small')) return tr.dataset.row + '-sub';
+      if (el.classList.contains('why')) return tr.dataset.row + '-why';
+      return tr.dataset.row + '-' + (el.cellIndex === 1 ? 'a' : 'b');
+    }
+    if (el.closest('table.proj')) return 'proj-' + el.closest('tr').sectionRowIndex + '-' + el.cellIndex;
+    if (el.matches('ul.assume li')) return 'assume-' + [...el.parentElement.children].indexOf(el);
+    if (el.classList.contains('verdict')) return 'verdict';
+    if (el.classList.contains('note')) return 'note';
+    return 'x-' + edits.indexOf(el);
+  }
+  const keys = edits.map(keyOf);
+  const original = { texts: Object.fromEntries(edits.map((el, i) => [keys[i], el.innerHTML])), winners: Object.fromEntries(rows.map(r => [r.dataset.row, r.dataset.default])) };
+
+  // Earlier default wordings: a saved copy that still matches one of these was never edited, so it takes the current wording.
+  const OLD_WORDING = {
+    'verdict': [
+      "A draw on hard terms. bol wins on money: about €90K more over three years, most of it the bonus. Rabobank wins on time and protection: fewer hours, a safer contract, and better pay if you're ill or pregnant.",
+      "A draw on hard terms, 5–5. bol wins the biggest one, money: about €90K more over three years, most of it the bonus. Rabobank wins on hours and protection: a 36-hour week, a safer contract, a slightly better pension, and better pay if you're ill or pregnant.",
+      "bol pays clearly more: about €6.6K more net a year before the bonus, €18.9K with it, and ~€90K more over three years (gross plus pension). Rabobank wins on the other things: faster raises, a 36-hour week, a safer contract, and better pay if you're ill or pregnant.",
+      "bol pays clearly more: about €6.6K more net a year before the bonus, €18.9K with it. Rabobank wins on the other things: faster raises, a 36-hour week, a safer contract, and better pay if you're ill or pregnant.",
+      "Close on hard terms: 6–5 to Rabobank. bol pays clearly more: about €6.6K more net a year before the bonus, €18.9K with it, and ~€90K more over three years (gross plus pension). Rabobank wins more of the other rows: faster raises, a 36-hour week, a safer contract, a slightly better pension, and better pay if you're ill or pregnant."
+    ],
+    'hours-name': ['Hours and leave'],
+    'growth-why': ["Grows faster, but doesn't catch up within 3 years (see below)"],
+    'assume-0': ["Rabobank CAO raise: 3% a year from 2027. It isn't 6% every year: the 6% (4% in January 2026, 2% in June 2026) was for the CAO that runs to 31/12/2026. The next CAO is still being negotiated. The unions are asking for 5% for 2027; Rabobank says its costs are too high. At 5% a year, Rabobank's scale 10 case reaches €435K, and bol still leads by ~€72K with the bonus, but not without it."],
+    'assume-3': ["bol raises: none in 2027, then 4% a year, merit-based, decided by management in calibration. bol has no CAO. Thijmen talked about 20–30% growth in the band \"over the years\". At 0% raises bol's three-year total is €488K; at 3% it's €502K."],
+    'hours-a': ["36h a week, 26 days' leave. About 1,685 hours worked a year."],
+    'hours-b': ["40h a week, 32 days' leave. About 1,826 hours worked a year."]
+  };
+  const plain = html => { const d = document.createElement('div'); d.innerHTML = html; return d.textContent.replace(/\s+/g, ' ').trim(); };
+  const stale = (k, html) => (OLD_WORDING[k] || []).includes(plain(html));
+  // Key order of the first saved version (an array of texts in page order).
+  const V1_ROWS = ['money', 'hours', 'abroad', 'contract', 'sick', 'family', 'allowances', 'grade', 'side'];
+  const V1_KEYS = ['verdict',
+    ...V1_ROWS.flatMap(r => r === 'money' ? ['money-name', 'money-sub', 'money-a', 'money-b', 'money-why'] : [r + '-name', r + '-a', r + '-b', r + '-why']),
+    ...[0, 1, 2, 3].flatMap(i => [0, 1, 2, 3, 4, 5].map(j => `proj-${i}-${j}`)),
+    'note', ...[0, 1, 2, 3, 4, 5, 6].map(i => 'assume-' + i)];
+
+  let migrated = false;
+  let state = load();
+
+  function load() {
+    const fresh = JSON.parse(JSON.stringify(original));
+    const take = (k, html) => { if (k in fresh.texts && !stale(k, html)) fresh.texts[k] = html; };
+    try {
+      const raw = localStorage.getItem(STORE_KEY);
+      const old = raw ? null : localStorage.getItem(OLD_KEY);
+      const s = JSON.parse(raw || old || 'null');
+      if (s && raw && s.texts) Object.entries(s.texts).forEach(([k, html]) => take(k, html));
+      if (s && old && Array.isArray(s.texts) && s.texts.length === V1_KEYS.length) { V1_KEYS.forEach((k, i) => take(k, s.texts[i])); migrated = true; }
+      if (s && s.winners) Object.keys(fresh.winners).forEach(id => { if (id in s.winners) fresh.winners[id] = s.winners[id]; });
+      if (s && (s.rev || 0) < 2) { fresh.winners.pension = 'e'; fresh.winners.contract = 'e'; }
+    } catch (e) { /* storage unavailable: use the page as written */ }
+    return fresh;
+  }
+
+  // Only edited texts are saved, so untouched ones follow future updates of the page.
+  const toSave = () => ({ texts: Object.fromEntries(keys.filter(k => state.texts[k] !== original.texts[k]).map(k => [k, state.texts[k]])), winners: state.winners, rev: 2 });
+
+  let saveTimer = null;
+  function save() {
+    clearTimeout(saveTimer);
+    saveTimer = setTimeout(() => {
+      try {
+        localStorage.setItem(STORE_KEY, JSON.stringify(toSave()));
+        setSaved('Saved in this browser · ' + new Date().toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' }), false);
+      } catch (e) { setSaved('Not saved: browser storage is blocked here.', true); }
+    }, 300);
+  }
+  function setSaved(t, bad) { const el = document.getElementById('savestate'); el.textContent = t; el.classList.toggle('bad', !!bad); }
+
+  function render() {
+    edits.forEach((el, i) => {
+      el.setAttribute('contenteditable', 'true');
+      el.setAttribute('spellcheck', 'true');
+      if (el.innerHTML !== state.texts[keys[i]]) el.innerHTML = state.texts[keys[i]];
+    });
+    rows.forEach(r => {
+      const id = r.dataset.row;
+      const name = r.querySelector('td.cat [data-edit]').textContent.trim();
+      r.querySelector('.pick').innerHTML = ['a', 'b', 'e'].map(v =>
+        `<button type="button" data-val="${v}" aria-pressed="${state.winners[id] === v}" aria-label="${LABEL[v]}${v === 'e' ? '' : ' wins'}: ${name.replace(/"/g, '&quot;')}">${LABEL[v]}</button>`).join('');
+    });
+    tally();
+  }
+
+  function tally() {
+    const n = { a: 0, b: 0, e: 0 };
+    let none = 0;
+    rows.forEach(r => { const w = state.winners[r.dataset.row]; if (n[w] !== undefined) n[w]++; else none++; });
+    document.getElementById('n-a').textContent = n.a;
+    document.getElementById('n-b').textContent = n.b;
+    document.getElementById('n-e').textContent = n.e;
+    document.getElementById('unpicked').textContent = none ? `${none} row${none === 1 ? '' : 's'} without a winner yet` : '';
+    const even = n.e ? `, ${n.e} even` : '';
+    document.getElementById('autoVerdict').textContent =
+      n.a > n.b ? `Rabobank leads ${n.a}–${n.b}${even}.` : n.b > n.a ? `bol leads ${n.b}–${n.a}${even}.` : `Tied ${n.a}–${n.b}${even}.`;
+  }
+
+  document.addEventListener('click', e => {
+    const b = e.target.closest('.pick button');
+    if (!b) return;
+    const id = b.closest('tr').dataset.row;
+    const v = b.dataset.val;
+    state.winners[id] = state.winners[id] === v ? null : v;
+    b.parentElement.querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', String(x.dataset.val === state.winners[id])));
+    tally(); save();
+  });
+
+  document.addEventListener('input', e => {
+    const i = edits.indexOf(e.target.closest('[data-edit]'));
+    if (i < 0) return;
+    state.texts[keys[i]] = edits[i].innerHTML;
+    save();
+  });
+
+  // Paste as plain text, so formatting from elsewhere doesn't come along.
+  document.addEventListener('paste', e => {
+    if (!e.target.closest('[data-edit]')) return;
+    e.preventDefault();
+    const text = (e.clipboardData || window.clipboardData).getData('text/plain');
+    document.execCommand('insertText', false, text);
+  });
+
+  // Enter ends editing in single-line cells; Shift+Enter still adds a line break.
+  document.addEventListener('keydown', e => {
+    const el = e.target.closest('[data-edit]');
+    if (el && e.key === 'Enter' && !e.shiftKey && (el.tagName === 'SPAN' || el.tagName === 'SMALL' || el.classList.contains('num'))) {
+      e.preventDefault(); el.blur();
+    }
+  });
+
+  document.getElementById('reset').addEventListener('click', () => {
+    if (!confirm('Reset all texts and winners to the original version?')) return;
+    state = JSON.parse(JSON.stringify(original));
+    render(); save();
+  });
+
+  render();
+  if (migrated) save();
+  try { localStorage.getItem(STORE_KEY); setSaved('Saves automatically in this browser', false); }
+  catch (e) { setSaved('Browser storage is blocked here, so changes won\'t be kept.', true); }
+})();
+</script>
+</body>
+</html>

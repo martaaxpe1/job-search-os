@@ -1,0 +1,653 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>From Screens to Intent — draft v1</title>
+<style>
+  :root{
+    --paper:#F6F4EF; --ink:#1B1B1B; --muted:#66625B; --rule:#D8D3C8; --soft:#ECE8DF;
+    --accent:#B5441A; --done:#2F6B4F; --adapted:#8A6A12; --hyp:#B5441A;
+    --serif: "Iowan Old Style","Charter","Georgia",serif;
+    --sans: -apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.45}
+  /* top bar */
+  .bar{position:fixed;inset:0 0 auto 0;height:44px;display:flex;align-items:center;gap:18px;padding:0 28px;border-bottom:1px solid var(--rule);background:var(--paper);z-index:5;font-size:12.5px;color:var(--muted)}
+  .bar .sec{letter-spacing:.02em;white-space:nowrap}
+  .bar .sec.on{color:var(--ink);font-weight:600}
+  .bar .sec .m{opacity:.6;font-weight:400}
+  .bar .spacer{flex:1}
+  .bar button{font:inherit;color:inherit;background:none;border:1px solid var(--rule);border-radius:3px;padding:3px 8px;cursor:pointer}
+  .bar button:hover{border-color:var(--ink);color:var(--ink)}
+  .timer.over{color:var(--accent);font-weight:600}
+  /* slides */
+  .slide{display:none;min-height:100vh;padding:84px 64px 96px;max-width:1320px;margin:0 auto}
+  .slide.active{display:grid;grid-template-columns:168px 1fr;column-gap:40px;align-content:start}
+  .margin{font-size:12.5px;color:var(--muted);padding-top:8px;border-top:2px solid var(--ink)}
+  .margin .num{font-family:var(--serif);font-size:28px;color:var(--ink);display:block;line-height:1;margin-bottom:6px}
+  .main{min-width:0}
+  .kicker{font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 10px}
+  h1,h2{font-family:var(--serif);font-weight:500;letter-spacing:-.01em;margin:0 0 18px}
+  h1{font-size:64px;line-height:1.02;max-width:12ch}
+  h2{font-size:38px;line-height:1.1;max-width:24ch}
+  h3{font-size:15px;margin:0 0 6px;font-weight:650}
+  p{margin:0 0 12px;max-width:68ch}
+  .lede{font-size:20px;color:var(--ink);max-width:56ch}
+  .quiet{color:var(--muted)}
+  ul{margin:0 0 12px;padding-left:18px} li{margin:0 0 5px}
+  .cols{display:grid;gap:28px;margin-top:22px}
+  .c2{grid-template-columns:1fr 1fr} .c3{grid-template-columns:repeat(3,1fr)} .c2-1{grid-template-columns:1.6fr 1fr}
+  .block{border-top:1px solid var(--rule);padding-top:12px}
+  .callout{border-left:3px solid var(--accent);padding:6px 0 6px 16px;margin:22px 0 0;max-width:70ch;font-family:var(--serif);font-size:20px;line-height:1.35}
+  table{border-collapse:collapse;width:100%;font-size:15px;margin-top:18px}
+  th,td{text-align:left;vertical-align:top;padding:9px 12px 9px 0;border-top:1px solid var(--rule)}
+  th{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  tr.pick td{background:var(--soft)}
+  /* proof tags */
+  .tag{display:inline-block;font-size:11px;letter-spacing:.05em;text-transform:uppercase;padding:2px 7px;border-radius:2px;margin-left:6px;vertical-align:2px;white-space:nowrap}
+  .tag.done{background:var(--done);color:#fff}
+  .tag.adapted{background:var(--adapted);color:#fff}
+  .tag.hyp{border:1px dashed var(--hyp);color:var(--hyp)}
+  .legend{margin-top:40px;font-size:13px;color:var(--muted)} .legend .tag{margin:0 4px 0 0}
+  /* accordions */
+  details{border-top:1px solid var(--rule);padding:10px 0;max-width:80ch}
+  details:last-of-type{border-bottom:1px solid var(--rule)}
+  summary{cursor:pointer;font-weight:600;list-style:none;display:flex;gap:10px;align-items:baseline}
+  summary::-webkit-details-marker{display:none}
+  summary::before{content:"+";font-family:var(--serif);color:var(--accent);width:12px}
+  details[open] summary::before{content:"–"}
+  details > div{padding:8px 0 4px 22px}
+  .acc{margin-top:22px}
+  /* toggles */
+  .seg{display:inline-flex;border:1px solid var(--ink);border-radius:3px;overflow:hidden;margin:20px 0 12px}
+  .seg button{font:inherit;font-size:14px;background:none;border:0;padding:6px 14px;cursor:pointer;color:var(--ink)}
+  .seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+  .panel[hidden]{display:none}
+  /* strip / flow */
+  .strip{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:22px;border-top:2px solid var(--ink)}
+  .strip > div{padding:12px 14px 0 0;border-right:1px solid var(--rule);margin-right:14px}
+  .strip > div:last-child{border-right:0}
+  .strip .when{font-family:var(--serif);font-size:22px;display:block;margin-bottom:4px}
+  .flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:0;margin-top:22px}
+  .flow .step{flex:1 1 150px;border-top:2px solid var(--ink);padding:10px 14px 0 0;font-size:15px}
+  .flow .step b{display:block;font-family:var(--serif);font-weight:500;font-size:19px;margin-bottom:2px}
+  .flow .arrow{align-self:center;padding:0 8px;color:var(--muted)}
+  .flow .step.change{border-top:2px dashed var(--accent);color:var(--accent)}
+  .ph{border:1px dashed var(--muted);color:var(--muted);font-size:13px;padding:22px 16px;margin-top:16px;text-align:center}
+  /* demo */
+  .demo{margin-top:16px;border:1px solid var(--rule);background:#fff;padding:16px 18px;max-width:720px}
+  .msg{margin:0 0 10px;font-size:15px} .msg b{font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);display:block}
+  .check{font-size:13.5px;border-top:1px solid var(--rule);padding-top:10px;margin-top:6px}
+  .check.fail{color:var(--accent)} .check.pass{color:var(--done)}
+  .small{font-size:13px;color:var(--muted)}
+  /* notes */
+  .notes{display:none;grid-column:2;margin-top:28px;border-top:2px solid var(--accent);padding-top:10px;font-size:15px;max-width:80ch}
+  .notes::before{content:"Speaker notes";display:block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+  body.show-notes .notes{display:block}
+  .verify{color:var(--accent);font-weight:600}
+  .hint{position:fixed;right:24px;bottom:16px;font-size:12px;color:var(--muted)}
+  @media (max-width:900px){
+    .slide{padding:72px 18px 80px}
+    .slide.active{grid-template-columns:1fr}
+    .margin{margin-bottom:18px} .notes{grid-column:1}
+    .c2,.c3,.c2-1,.strip{grid-template-columns:1fr}
+    h1{font-size:44px} h2{font-size:30px}
+    .bar .sec:not(.on){display:none}
+  }
+  @media print{
+    .bar,.hint{display:none}
+    .slide{display:grid!important;grid-template-columns:168px 1fr;column-gap:40px;min-height:auto;page-break-after:always;padding:40px}
+    .notes{display:block}
+    .panel[hidden]{display:block}
+  }
+</style>
+</head>
+<body>
+
+<div class="bar" role="navigation" aria-label="Sections">
+  <span class="sec" data-sec="Framing">Framing <span class="m">1′</span></span>
+  <span class="sec" data-sec="Vision">1 Vision <span class="m">5′</span></span>
+  <span class="sec" data-sec="Standards">2 Standards <span class="m">4′</span></span>
+  <span class="sec" data-sec="Change">3 Change <span class="m">6′</span></span>
+  <span class="sec" data-sec="Success">4 Success <span class="m">3′</span></span>
+  <span class="sec" data-sec="Itch">5 First move <span class="m">2′</span></span>
+  <span class="sec" data-sec="Close">Close <span class="m">1′</span></span>
+  <span class="sec" data-sec="Appendix">Appendix</span>
+  <span class="spacer"></span>
+  <span class="count" id="count"></span>
+  <button id="timerBtn" title="T: start/pause · R: reset"><span class="timer" id="timer">00:00</span> / 22:00</button>
+  <button id="notesBtn" title="N">Notes</button>
+</div>
+
+<!-- 0 · TITLE -->
+<section class="slide" data-sec="Framing">
+  <div class="margin"><span class="num">00</span>Principal Craft Lead UX<br>Case study</div>
+  <div class="main">
+    <p class="kicker">bol · 8 October 2026 · Marta Axpe</p>
+    <h1>From screens to intent</h1>
+    <p class="lede">How I'd lead the UX craft at bol through the AI-first transition, treating designers as the users of that change.</p>
+    <p class="legend">Every claim is tagged:
+      <span class="tag done">Done before</span> something I've done
+      &nbsp;<span class="tag adapted">Adapted</span> built on something I've done or read
+      &nbsp;<span class="tag hyp">Hypothesis</span> something I'd test at bol</p>
+  </div>
+  <div class="notes">
+    <p>I approached this like a product. The users are bol's designers and Heads of Design, so I'll keep coming back to what changes for them on a Monday.</p>
+    <p>I haven't answered every prompt equally. I've focused on where the change actually happens, and I'll say what I left out. Everything is tagged, so you can see what I've done before and what's a hypothesis.</p>
+  </div>
+</section>
+
+<!-- 1 · WHAT I HEARD -->
+<section class="slide" data-sec="Framing">
+  <div class="margin"><span class="num">01</span>Framing</div>
+  <div class="main">
+    <h2>What I heard, and what I'm assuming</h2>
+    <div class="cols c2">
+      <div class="block">
+        <h3>From the brief</h3>
+        <ul>
+          <li>Engineering moves faster than design workflows</li>
+          <li>AI drafts the first pass of visual and interaction design</li>
+          <li>AI products can't be fully mocked upfront</li>
+          <li>New builder profiles blend design, product and engineering</li>
+        </ul>
+      </div>
+      <div class="block">
+        <h3>From Matthew (16 Sep)</h3>
+        <ul>
+          <li>A pilot tests two ways of working: AI inside each craft, or any craft executes while accountability stays with the craft</li>
+          <li>The shopper agent is live; the partner agent is in experiment mode, learning from traces and evals</li>
+          <li>Defining what quality UX at bol looks like is "the hard bit"</li>
+          <li>Upskilling versus craft time is a tightrope</li>
+        </ul>
+      </div>
+    </div>
+    <div class="acc">
+      <details><summary>My assumptions — please correct me</summary><div>
+        <ul>
+          <li>Heads of Design carry craft work on top of a full domain job</li>
+          <li>There's no shared, written definition of quality that people and AI tools can both use</li>
+          <li>Most designers are new to repositories, code review and evals</li>
+        </ul></div></details>
+      <details><summary>What I deliberately left out today</summary><div>
+        <ul>
+          <li>A full 2028 skills taxonomy</li>
+          <li>More than one example standard</li>
+          <li>A full metrics framework</li>
+          <li>Product vision for the shopping experience itself: that belongs to the domains</li>
+        </ul></div></details>
+    </div>
+  </div>
+  <div class="notes">
+    <p>Everyone now agrees designers will spend less time on screens. I'd rather spend our time on what that means at bol specifically.</p>
+  </div>
+</section>
+
+<!-- 2 · VISION HEADLINE -->
+<section class="slide" data-sec="Vision">
+  <div class="margin"><span class="num">02</span>1 · Vision</div>
+  <div class="main">
+    <h2>Design stops owning first drafts and starts owning intent</h2>
+    <div class="cols c2-1">
+      <div>
+        <h3>Why now</h3>
+        <ul>
+          <li>bol now has two kinds of shopper: people, and agents acting for them</li>
+          <li>And two kinds of maker: designers, and agents building with them</li>
+          <li>Both need bol's intent written down: what we're trying to achieve, when a pattern applies, how it should feel</li>
+        </ul>
+      </div>
+      <div class="block">
+        <h3>Two meanings of intent <span class="tag hyp">Hypothesis</span></h3>
+        <p><b>bol's intent</b> → the design language.</p>
+        <p><b>The shopper's intent</b> → how a need is understood and resolved when an agent shops. Product data and information architecture become UX craft.</p>
+      </div>
+    </div>
+    <p class="callout">When interfaces adapt to each person, nobody can review every screen. You can only define the language they adapt within, and check it.</p>
+  </div>
+  <div class="notes">
+    <p>Optional bridge for Maurice: bol has been through a platform shift before, with mobile. <span class="verify">[VERIFY Maurice's role before using this]</span></p>
+  </div>
+</section>
+
+<!-- 3 · THREE SHIFTS -->
+<section class="slide" data-sec="Vision">
+  <div class="margin"><span class="num">03</span>1 · Vision</div>
+  <div class="main">
+    <h2>Three shifts</h2>
+    <div class="cols c3">
+      <div class="block">
+        <h3>Screens → intent <span class="tag done">Done before</span></h3>
+        <p>The design system has been readable by machines for years. What agents miss is the language: the why, the when, the feel. Writing it down for agents becomes core craft work.</p>
+        <p class="small">Culligan design language, written for people</p>
+      </div>
+      <div class="block">
+        <h3>Handoffs → dialogue <span class="tag done">Done before</span></h3>
+        <p>Artefacts exist to move the conversation forward. A working thing on real data, made in a day, changes the quality of the decision.</p>
+        <p class="small">Report → design sprint (WEAREREASONABLEPEOPLE); coded prototype testing (lign.ai)</p>
+      </div>
+      <div class="block">
+        <h3>Domains → journeys <span class="tag hyp">Hypothesis</span></h3>
+        <p>Experience ownership follows the customer across domains, together with product. Domains stay accountable for their systems.</p>
+      </div>
+    </div>
+    <p class="callout">The honest cost: cognitive load goes up, and people protect what made them good. That's why designers are the users of this change.</p>
+  </div>
+  <div class="notes">
+    <p>The first two I've done in other forms. The third is a direction of travel I'd test, not a verdict on how bol is organised.</p>
+  </div>
+</section>
+
+<!-- 4 · DESIGNER 2028 -->
+<section class="slide" data-sec="Vision">
+  <div class="margin"><span class="num">04</span>1 · Vision</div>
+  <div class="main">
+    <h2>The designer at bol in 2028</h2>
+    <table>
+      <tr><th style="width:22%">Keep</th><th style="width:40%">Gain</th><th>Shift</th></tr>
+      <tr>
+        <td>User research and empathy<br>Interaction and visual craft<br>Systems thinking<br>Accessibility as baseline</td>
+        <td>Writing intent agents can use<br>Prototyping in code on real data<br>Designing agent behaviour: what it does alone, when it asks, how it reports back, how to undo<br>Evaluating output with traces and evals</td>
+        <td>Drawing every screen → judging what gets built<br>Handoff → shared artefacts<br>Domain screens → journeys, with product</td>
+      </tr>
+    </table>
+    <p class="callout">Detail isn't drawn screen by screen any more. It's written once into the language, and judged at the end.</p>
+    <div class="seg" role="group" aria-label="Lens">
+      <button type="button" data-lens="monday" aria-pressed="true">A designer's Monday</button>
+      <button type="button" data-lens="business" aria-pressed="false">What it buys the business</button>
+    </div>
+    <div class="panel" data-panel="monday">
+      <ul>
+        <li>Less pixel production and admin</li>
+        <li>More time with users, data and live prototypes</li>
+        <li>More say in what gets built, not just how it looks</li>
+        <li>Honestly: more context switching, so focus time is protected</li>
+      </ul>
+    </div>
+    <div class="panel" data-panel="business" hidden>
+      <ul>
+        <li>Decisions backed by evidence, sooner</li>
+        <li>Less rework</li>
+        <li>Consistent quality from AI output</li>
+        <li>Craft that keeps bol distinct when everyone has the same tools</li>
+      </ul>
+    </div>
+  </div>
+  <div class="notes">
+    <p>Same vision, two directions: what it means for a designer on Monday, and what it buys leadership.</p>
+  </div>
+</section>
+
+<!-- 5 · WHERE TO START -->
+<section class="slide" data-sec="Vision">
+  <div class="margin"><span class="num">05</span>1 · Vision</div>
+  <div class="main">
+    <h2>Three problems, in this order</h2>
+    <table>
+      <tr><th style="width:4%">#</th><th style="width:52%">Problem</th><th>Why this order</th></tr>
+      <tr class="pick"><td>1</td><td>bol's intent isn't written down in a form agents can use, so output drifts to the average</td><td>It's the precondition for the other two</td></tr>
+      <tr><td>2</td><td>People protect their expertise, and cognitive load rises</td><td>Without this, the language stays on paper</td></tr>
+      <tr><td>3</td><td>A domain structure versus journeys that cross it</td><td>Later, once there's evidence</td></tr>
+    </table>
+    <p style="margin-top:18px"><b>How I'd confirm this in 30 days:</b> listening tour with Heads of Design, craft leads and the UX Research Manager · one-week time audit · pilot read-out · journey data (traffic × domains crossed × known pain).</p>
+    <div class="acc">
+      <details><summary>Why this is more than efficiency</summary><div>
+        <p>Every craft's tools are now open to everyone. Anyone with an idea can show it as a working experience on real data, as a hypothesis to test. Cycles shorten everywhere. The choice is what to do with the time: ship more of the same, or discover and challenge more.</p>
+        <p>At Culligan I paused a smart-bottle concept because we couldn't hold two horizons at once. <span class="tag done">Done before</span> Shorter cycles mean fewer good ideas die for lack of capacity. We should still kill darlings, but because the evidence says so, not because we ran out of time.</p>
+      </div></details>
+    </div>
+  </div>
+  <div class="notes">
+    <p>Matthew said defining quality is the hard bit. I agree, and I'd put it first because everything else depends on it.</p>
+  </div>
+</section>
+
+<!-- 6 · STANDARDS: WHAT I MADE -->
+<section class="slide" data-sec="Standards">
+  <div class="margin"><span class="num">06</span>2 · Standards</div>
+  <div class="main">
+    <h2>I've written a design language before. At bol it has to work for people and agents</h2>
+    <div class="cols c2-1">
+      <div>
+        <h3>Culligan design language, layer 4: UX + UI <span class="tag done">Done before</span></h3>
+        <p class="small">My part: the personas, journeys and context-based UX character; co-designed the touchscreen and indicator toolkits and the accessibility work; approved the experiences.</p>
+        <div class="flow">
+          <div class="step"><b>Users</b>Water drinker, facilities manager, servicer, household</div>
+          <div class="arrow">→</div>
+          <div class="step"><b>One character</b>Simple · Trustworthy · Expert</div>
+          <div class="arrow">→</div>
+          <div class="step"><b>Adapted by context</b>Office: engaging · Home: personal, friendly · Under the sink: straightforward, proactive</div>
+        </div>
+        <div class="acc">
+          <details><summary>One colour, one meaning, on plastic and pixels</summary><div>
+            <ul><li>Azure marks critical touch points on the hardware, and the filtration process on screen</li>
+            <li>Indicators: white = all well, yellow = attention, orange = act now</li>
+            <li>Selected buttons light up; available options sit at half brightness</li></ul></div></details>
+          <details><summary>Motion that tells the truth about urgency</summary><div>
+            <ul><li>Calm for steady information; pulsing only when attention is critical</li>
+            <li>A breathing light, so the product feels at work in the background</li>
+            <li>Animation only when it follows from the interaction, and it can be reduced</li></ul></div></details>
+          <details><summary>Rules that come from real use</summary><div>
+            <ul><li>1–2 options: selecting is dispensing. 3 or more: separate steps</li>
+            <li>Shared office: reset to the most-used option. Home: remember the last choice</li></ul></div></details>
+        </div>
+      </div>
+      <div>
+        <div class="ph">Insert: layer-4 visuals (indicator examples, BFC screens across tiers, UX character by context)</div>
+        <div class="block" style="margin-top:22px">
+          <h3>At bol <span class="tag adapted">Adapted</span></h3>
+          <p>One character, adapted for consumer, partner and core.</p>
+          <details><summary>When is a standard universal?</summary><div>
+            <p>Only when a customer crosses the boundary, when shared tools or agents need one source of truth, or when the risk is organisation-wide: accessibility, trust, regulation. Everything else stays with the domain.</p>
+            <p class="small">At Culligan, most "local needs" in the IoT rollout turned out to be integration differences, not reasons for different components. <span class="tag done">Done before</span></p>
+          </div></details>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="notes">
+    <p>The UX layer of Culligan's design language was the part I owned. We started from who actually uses the products, and from that came one UX character, adjusted by context. Then the craft: azure means the same on plastic and on screen; indicators only pulse when it's urgent; and the rules came from real use.</p>
+  </div>
+</section>
+
+<!-- 7 · RULES / CHOICES / CHARACTER -->
+<section class="slide" data-sec="Standards">
+  <div class="margin"><span class="num">07</span>2 · Standards</div>
+  <div class="main">
+    <h2>Deciding which part becomes an algorithm is the craft</h2>
+    <p class="lede">Culligan's language called itself directional guidance, not an algorithm for design. For agents, part of it has to become one. <span class="tag adapted">Adapted</span></p>
+    <table>
+      <tr><th style="width:14%">Kind</th><th style="width:42%">Example from layer 4</th><th style="width:26%">For agents</th><th>Who decides</th></tr>
+      <tr><td><b>Rule</b></td><td>Indicator states: white, yellow, orange; movement reflects urgency</td><td>Applied and checked automatically</td><td>The system, with a check</td></tr>
+      <tr><td><b>Choice</b></td><td>Making the dispense point visible: nozzle length, lighting, pour targets</td><td>Agent proposes options</td><td>The designer picks</td></tr>
+      <tr><td><b>Character</b></td><td>Simple, trustworthy, expert</td><td>Stays human judgment, calibrated with examples</td><td>Designers, with peers</td></tr>
+    </table>
+    <p style="margin-top:18px">Lightweight for Heads of Design: not a new framework, a sorting exercise on guidance they already have.</p>
+    <p class="small">Maturity ladder (adapted from a published framing): human-readable → machine-accessible → machine-actionable → self-evaluating.</p>
+  </div>
+  <div class="notes">
+    <p>This is my answer to "how do you write principles for the machine?" Sort what you already have into three kinds, and only the first kind gets automated.</p>
+  </div>
+</section>
+
+<!-- 8 · ONE PRINCIPLE THREE WAYS -->
+<section class="slide" data-sec="Standards">
+  <div class="margin"><span class="num">08</span>2 · Standards</div>
+  <div class="main">
+    <h2>One principle, written three ways</h2>
+    <p class="lede" style="font-family:var(--serif)">"Never leave users wondering what to do next."</p>
+    <div class="cols c3">
+      <div class="block"><h3>1 · Why, for people <span class="tag done">Done before</span></h3><p>Users trust the product to be vigilant on their behalf. A dead end breaks that trust.</p></div>
+      <div class="block"><h3>2 · Rule, for agents <span class="tag hyp">Hypothesis</span></h3><p>Every agent turn ends in one of three: a clear next action, confirmation that the task is done, or a handover to a person. If it can't finish, it says why and what you can do.</p></div>
+      <div class="block"><h3>3 · Check <span class="tag hyp">Hypothesis</span></h3><p>Dead-end rate across traces, plus a human check that the next step is the right one.</p></div>
+    </div>
+    <div class="seg" role="group" aria-label="Principle">
+      <button type="button" data-demo="off" aria-pressed="true">Principle off</button>
+      <button type="button" data-demo="on" aria-pressed="false">Principle on</button>
+    </div>
+    <div class="demo">
+      <p class="msg"><b>Partner</b>My new offer isn't showing on the product page.</p>
+      <div data-dpanel="off">
+        <p class="msg"><b>Agent</b>Offers can be hidden for several reasons, for example stock levels, price or listing quality.</p>
+        <p class="check fail">Check: dead end. No next action, no handover.</p>
+      </div>
+      <div data-dpanel="on" hidden>
+        <p class="msg"><b>Agent</b>Your offer is hidden because its stock is set to 0. Update the stock and it will show again. Shall I open the offer for you?</p>
+        <p class="check pass">Check: passes. One clear next action, offered by the agent.</p>
+      </div>
+      <p class="small" style="margin:8px 0 0">Illustrative and scripted. Not bol's partner agent.</p>
+    </div>
+  </div>
+  <div class="notes">
+    <p>The principle comes from Culligan's layer 4. The rule and the check are what I'd write for bol. The same check fits how Matthew's team already learns from traces and evals.</p>
+    <p>For delegation: "…or what the agent did on their behalf."</p>
+  </div>
+</section>
+
+<!-- 9 · BEHAVIOURS -->
+<section class="slide" data-sec="Standards">
+  <div class="margin"><span class="num">09</span>2 · Standards</div>
+  <div class="main">
+    <h2>No new values. bol's five beliefs, translated into craft behaviours</h2>
+    <table>
+      <tr><th style="width:24%">bol belief</th><th>Craft behaviour, AI era</th></tr>
+      <tr><td>Customer crazy</td><td>Start from real customer and partner data; never ship generic</td></tr>
+      <tr><td>Fuelled by curiosity</td><td>Try the tool first, and say where it failed</td></tr>
+      <tr><td>Bold</td><td>Show what broke, not only what worked; challenge the average</td></tr>
+      <tr><td>Stronger together</td><td>The language is co-written; craft leads test together</td></tr>
+      <tr><td>Make it happen</td><td>Ship a tangible thing on real data, and measure it</td></tr>
+    </table>
+    <p class="small" style="margin-top:12px"><span class="tag adapted">Adapted</span> from bol's published culture beliefs</p>
+  </div>
+  <div class="notes">
+    <p>I didn't want to bring in new values. bol already has the right ones; the work is translating them into what a designer does differently.</p>
+  </div>
+</section>
+
+<!-- 10 · SIX-MONTH CHANGE -->
+<section class="slide" data-sec="Change">
+  <div class="margin"><span class="num">10</span>3 · Driving change</div>
+  <div class="main">
+    <h2>Tools change in weeks. Habits change in quarters</h2>
+    <p class="lede">The change I'd land in six months: write bol's design language for agents on one cross-domain journey, inside the existing pilot, not next to it. <span class="tag hyp">Hypothesis</span></p>
+    <p class="small">Squad: designer · PM · engineer · one sceptical designer. Journey chosen by data.</p>
+    <div class="strip">
+      <div><span class="when">M0–1</span>Listen and baseline. Pick the journey. I prototype part of it myself.</div>
+      <div><span class="when">M1–3</span>Co-write the first principles, three ways. AI as auditor: edge cases, simulated partner behaviour, labelled apart from real research.</div>
+      <div><span class="when">M3–5</span>Run it. Does output pass review more often? Did discovery time grow?</div>
+      <div><span class="when">M5–6</span>Read-out to Heads of Design and the MT. Decide what becomes universal. Pick the next two journeys.</div>
+    </div>
+    <div class="acc">
+      <details><summary>Exit criteria, agreed upfront</summary><div>
+        <p>What the data has to show to continue, to change course, or to stop. If the data says the bar is wrong, the bar changes: it's the product.</p></div></details>
+    </div>
+  </div>
+  <div class="notes">
+    <p>One journey, one squad, inside the pilot Matthew is already running. Small enough to land, visible enough to learn from.</p>
+  </div>
+</section>
+
+<!-- 11 · HOW I'D DRIVE IT -->
+<section class="slide" data-sec="Change">
+  <div class="margin"><span class="num">11</span>3 · Driving change</div>
+  <div class="main">
+    <h2>Designed for people, not announced to them</h2>
+    <div class="cols c3">
+      <div class="block"><h3>Test it first, together <span class="tag done">Done before</span></h3><p>Every new tool or workflow goes through a shared test bench with the Engineering, Data and Product craft leads before designers are asked to use it.</p></div>
+      <div class="block"><h3>Sceptics first</h3><p>Start with the designers who defend the craft. Their objections show where it breaks.</p></div>
+      <div class="block"><h3>Relief first</h3><p>Take one unglamorous task off the Heads of Design before asking for anything.</p></div>
+      <div class="block"><h3>Clear boundaries</h3><p>Craft direction is mine to lead. Delivery and performance stay with the domains.</p></div>
+      <div class="block"><h3>Learn on live work <span class="tag done">Done before</span></h3><p>A light shared foundation, then pairing on real journey work, inside delivery time rather than competing with it.</p></div>
+      <div class="block"><h3>What gets rewarded <span class="tag hyp">Hypothesis</span></h3><p>Update competency expectations together with the Heads of Design.</p></div>
+    </div>
+    <div class="acc">
+      <details><summary>Rituals, built on bol's own</summary><div>
+        <ul><li><b>Open craft lab, monthly:</b> what we found, what broke, what worries us. I go first, including my own failures.</li>
+        <li><b>Three-minute demos:</b> show a working thing on real data, not slides.</li>
+        <li><b>Designer council:</b> rotating and cross-domain, sceptics included; co-owns the language, modelled on bol's culture trust.</li></ul></div></details>
+      <details><summary>Two kinds of reward</summary><div>
+        <p><b>Intrinsic:</b> seeing decisions land, backed by data, with less admin. <b>Structural:</b> what the organisation recognises. The first makes people want it; the second makes it last.</p>
+        <p class="callout" style="font-size:18px">We'll be tired either way. Tired from admin and tired from making something you can see land are not the same tiredness.</p></div></details>
+    </div>
+  </div>
+  <div class="notes">
+    <p>Proof that reward creates pull: at Culligan, review attendance grew because people saw the work getting better. At WEAREREASONABLEPEOPLE, developers started asking for the sprint format.</p>
+  </div>
+</section>
+
+<!-- 12 · PROOF: CULLIGAN SPREAD -->
+<section class="slide" data-sec="Change">
+  <div class="margin"><span class="num">12</span>3 · Driving change</div>
+  <div class="main">
+    <h2>I've done this without authority before</h2>
+    <div class="flow">
+      <div class="step"><b>My hands</b>Pelican / Twist touchscreens</div><div class="arrow">→</div>
+      <div class="step"><b>Language</b>Layer 4: users, character, toolkits</div><div class="arrow">→</div>
+      <div class="step"><b>Assets</b>Why + toolkit + real screens per tier</div><div class="arrow">→</div>
+      <div class="step"><b>Teams</b>In-home and commercial category roadmaps</div><div class="arrow">→</div>
+      <div class="step"><b>Products</b>BFC: all six layers. Red Dot 2026</div>
+    </div>
+    <p class="small" style="margin-top:12px">Underneath: design reviews every two weeks, where attendance grew · office hours when teams got stuck</p>
+    <div class="cols c3">
+      <div class="block"><h3>Short term <span class="tag done">Done before</span></h3><p>One six-layer language. Each category redesigned its flagship on it.</p></div>
+      <div class="block"><h3>Long term <span class="tag done">Done before</span></h3><p>It outlived my involvement. The first product built on all six layers won a Red Dot.</p></div>
+      <div class="block"><h3>What I'd change</h3><p>Approval ended up in one central brand gate. At hardware speed that works. At AI speed it becomes the bottleneck: encode the checkable parts, keep human review for intent and character.</p></div>
+    </div>
+  </div>
+  <div class="notes">
+    <p>Getting it adopted was the harder part, because nobody reported to me. Attendance at the reviews grew because people could see the work getting better. Then we made it usable without us, and teams took it into their own roadmaps.</p>
+    <p>If asked about the mandate: in the end it became mandatory for new products. I won't have that lever at bol, so I'd rely on what made it stick before the mandate.</p>
+    <p class="verify">[Confirm the number of business units before saying one]</p>
+  </div>
+</section>
+
+<!-- 13 · SUCCESS -->
+<section class="slide" data-sec="Success">
+  <div class="margin"><span class="num">13</span>4 · Success</div>
+  <div class="main">
+    <h2>Success is behaviour changing, not frameworks existing</h2>
+    <table>
+      <tr><th style="width:24%">Signal</th><th>What I'd look at</th></tr>
+      <tr><td>Language maturity</td><td>Where the pilot journey sits on the ladder</td></tr>
+      <tr><td>Time</td><td>Share of design time on discovery versus delivery</td></tr>
+      <tr><td>Speed to evidence</td><td>From a question to a decision backed by real data</td></tr>
+      <tr><td>Quality</td><td>Review rejection rate of AI-assisted work, and the reasons</td></tr>
+      <tr><td>Fix speed</td><td>Time to detect and fix a UX issue in production</td></tr>
+      <tr><td>People</td><td>Satisfaction and cognitive load, tracked together, through the existing engagement survey and the pilot</td></tr>
+    </table>
+    <div class="acc">
+      <details><summary>Quality as a loop, decided by reversibility</summary><div>
+        <p>Fix fast where an experience is reversible and low-risk. Prevent upfront where the stakes are high: checkout, payments, partner payouts, trust.</p></div></details>
+      <details><summary>What each peer gets</summary><div>
+        <ul><li><b>Engineering:</b> the language in a form their agents can use</li>
+        <li><b>Product:</b> evidence, sooner</li>
+        <li><b>Product Analytics:</b> data and insights open to everyone</li>
+        <li><b>UX Research:</b> research focused on the blind spots, and organisational memory agents can retrieve</li></ul>
+        <p>UX joins the agentic development vision as the owner of intent.</p></div></details>
+    </div>
+  </div>
+  <div class="notes">
+    <p>Every speed signal is paired with a quality or people signal. If cognitive load rises and satisfaction doesn't, the change is badly designed, not the people.</p>
+  </div>
+</section>
+
+<!-- 14 · FIRST MOVE -->
+<section class="slide" data-sec="Itch">
+  <div class="margin"><span class="num">14</span>5 · First move</div>
+  <div class="main">
+    <h2>First, I'd make the Heads of Design's job easier</h2>
+    <table>
+      <tr><th style="width:5%"></th><th style="width:60%">Hurdle</th><th>Basis</th></tr>
+      <tr><td>H1</td><td>Craft work sits on top of a full domain job and keeps not getting picked up</td><td>Heard</td></tr>
+      <tr class="pick"><td>H2</td><td>Reviewing more AI-assisted work with no shared bar, so review load rises and quality debates become opinion</td><td>Assumed</td></tr>
+      <tr><td>H3</td><td>Upskilling designers in code, repositories and evals with no time or tool budget</td><td>Heard</td></tr>
+      <tr><td>H4</td><td>Nobody owns the seams between partner, consumer and core journeys</td><td>Assumed</td></tr>
+      <tr><td>H5</td><td>Making the business case upward for craft investment</td><td>Heard</td></tr>
+    </table>
+    <p style="margin-top:18px"><b>My pick, H2:</b> a first-pass check built from the language, so reviews focus on intent, not pixels.</p>
+    <p class="callout">That's my assumption. Is it the right hurdle?</p>
+  </div>
+  <div class="notes">
+    <p>"Heard" means Matthew told me in our last conversation; "assumed" means inferred. Ask the question and let Matthew answer.</p>
+  </div>
+</section>
+
+<!-- 15 · CLOSE -->
+<section class="slide" data-sec="Close">
+  <div class="margin"><span class="num">15</span>Close</div>
+  <div class="main">
+    <h2>Why this role</h2>
+    <ul class="lede">
+      <li>It's an innovation brief wearing a design hat</li>
+      <li>Designers deserve to be treated as the users of this change, not its subjects</li>
+      <li>The answer has to hold at bol's scale, and to its values: AI work has a compute and energy cost, and bol is a B Corp</li>
+    </ul>
+    <p class="callout">Questions, and please correct my assumptions.</p>
+  </div>
+  <div class="notes"><p>Keep this under a minute. End on the question, not a summary.</p></div>
+</section>
+
+<!-- 16 · APPENDIX -->
+<section class="slide" data-sec="Appendix">
+  <div class="margin"><span class="num">16</span>Appendix</div>
+  <div class="main">
+    <h2>If you want to go deeper</h2>
+    <div class="acc">
+      <details><summary>Business case: from craft signal to business signal</summary><div>
+        <p>Review rejection rate → review time and rework → time to market. Discovery time → decisions backed by evidence → fewer features built that don't move a metric.</p></div></details>
+      <details><summary>Risks and known unknowns</summary><div>
+        <ul><li>Cognitive load and burnout</li><li>Journey ownership clashing with domain accountability</li><li>The cost of maintaining a language for agents</li><li>Compute and energy cost</li><li>People changing code they don't understand</li><li>Simulated evidence mistaken for real research</li></ul></div></details>
+      <details><summary>When energy dips</summary><div>
+        <ul><li>Measure contribution, not attendance</li><li>A stop/continue rule: if a ritual isn't earning its time after two cycles, shrink it or stop it</li><li>Rotate hosts; show work, not slides</li><li>Go to the sceptics first and ask why</li><li>Sponsor cover for the why, never for the how</li></ul>
+        <p class="small"><span class="tag hyp">Hypothesis</span> No dip happened in my Culligan reviews; this is the plan for when one does.</p></div></details>
+      <details><summary>Context is the infrastructure (SunSpot)</summary><div>
+        <p>I built findsunspot.com with AI tools. The interface looked polished, but the product was wrong: shade was calculated from building centre points, not terrace shapes. I fixed it by feeding in real data, the city's terrace permit polygons. Generic output is a missing-input problem, not a prompting problem. <span class="tag done">Done before</span></p></div></details>
+      <details><summary>Backup principle for partners: signal urgency honestly</summary><div>
+        <p>The white / yellow / orange logic from Culligan, rewritten for partner notifications. Check: over-alerting rate.</p></div></details>
+      <details><summary>Regulation as part of the universal standard</summary><div>
+        <p>European Accessibility Act; EU AI Act transparency duties. <span class="verify">[VERIFY dates before citing]</span></p></div></details>
+    </div>
+  </div>
+  <div class="notes"><p>Open only if asked.</p></div>
+</section>
+
+<div class="hint">← → navigate · N notes · T timer</div>
+
+<script>
+(function(){
+  var slides=[].slice.call(document.querySelectorAll('.slide'));
+  var secs=[].slice.call(document.querySelectorAll('.bar .sec'));
+  var count=document.getElementById('count');
+  var i=0;
+  function show(n){
+    i=Math.max(0,Math.min(slides.length-1,n));
+    slides.forEach(function(s,k){s.classList.toggle('active',k===i)});
+    var sec=slides[i].dataset.sec;
+    secs.forEach(function(s){s.classList.toggle('on',s.dataset.sec===sec)});
+    count.textContent=(i+1)+' / '+slides.length;
+    try{history.replaceState(null,'','#'+(i+1))}catch(e){}
+    window.scrollTo(0,0);
+  }
+  var start=parseInt((location.hash||'#1').slice(1),10);
+  show(isNaN(start)?0:start-1);
+
+  // timer
+  var t=document.getElementById('timer'),running=false,elapsed=0,last=0,iv=null;
+  function fmt(s){var m=Math.floor(s/60),r=s%60;return (m<10?'0':'')+m+':'+(r<10?'0':'')+r}
+  function tick(){var now=Date.now();elapsed+= (now-last)/1000;last=now;var s=Math.floor(elapsed);t.textContent=fmt(s);t.classList.toggle('over',s>=22*60)}
+  function toggleTimer(){running=!running;if(running){last=Date.now();iv=setInterval(tick,500)}else{clearInterval(iv)}}
+  function resetTimer(){elapsed=0;t.textContent='00:00';t.classList.remove('over')}
+  document.getElementById('timerBtn').addEventListener('click',toggleTimer);
+  document.getElementById('notesBtn').addEventListener('click',function(){document.body.classList.toggle('show-notes')});
+
+  document.addEventListener('keydown',function(e){
+    var tag=(e.target.tagName||'').toLowerCase();
+    if(tag==='summary'||tag==='button'||tag==='input'||tag==='textarea')return;
+    if(e.key==='ArrowRight'||e.key==='PageDown'||e.key===' '){e.preventDefault();show(i+1)}
+    else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();show(i-1)}
+    else if(e.key==='Home'){show(0)} else if(e.key==='End'){show(slides.length-1)}
+    else if(e.key==='n'||e.key==='N'){document.body.classList.toggle('show-notes')}
+    else if(e.key==='t'||e.key==='T'){toggleTimer()}
+    else if(e.key==='r'||e.key==='R'){resetTimer()}
+  });
+
+  // two-lens and demo toggles
+  function wire(attr,panelAttr){
+    document.querySelectorAll('['+attr+']').forEach(function(btn){
+      btn.addEventListener('click',function(){
+        var group=btn.parentElement, val=btn.getAttribute(attr), scope=group.parentElement;
+        group.querySelectorAll('button').forEach(function(b){b.setAttribute('aria-pressed',b===btn?'true':'false')});
+        scope.querySelectorAll('['+panelAttr+']').forEach(function(p){p.hidden=p.getAttribute(panelAttr)!==val});
+      });
+    });
+  }
+  wire('data-lens','data-panel');
+  wire('data-demo','data-dpanel');
+
+  window.addEventListener('beforeprint',function(){document.querySelectorAll('details').forEach(function(d){d.open=true})});
+})();
+</script>
+</body>
+</html>

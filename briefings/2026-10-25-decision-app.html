@@ -1,0 +1,827 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rabobank or bol</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #0E1A47;
+  --coral: #F07A6A;
+  --coral-display: #E0604F;
+  --coral-text: #C2483A;
+  --coral-deep: #B84233;
+  --slate: #5B6589;
+  --blush: #FBD9D1;
+  --periwinkle: #D9DEEF;
+  --hairline: #DDE1EE;
+  --paper: #FFFFFF;
+  --mist: #F4F5FA;
+  --cloud: #EBEEF8;
+  --display: 'Bricolage Grotesque', Arial, sans-serif;
+  --body: 'Hanken Grotesk', Arial, ui-sans-serif, system-ui, sans-serif;
+  --mono: 'Space Mono', 'Courier New', ui-monospace, monospace;
+  --a: var(--ink);
+  --b: var(--coral);
+}
+* { box-sizing: border-box; }
+html { background: var(--paper); }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 16px/1.5 var(--body); -webkit-font-smoothing: antialiased; }
+button, input, select, textarea { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--coral-text); outline-offset: 2px; }
+
+/* Header */
+.top { padding: 40px 40px 22px; border-bottom: 1px solid var(--hairline); }
+.kicker { font: 700 12px/1.2 var(--mono); letter-spacing: .15em; text-transform: uppercase; color: var(--coral-text); margin: 0 0 10px; }
+h1 { font: 800 clamp(36px, 5.5vw, 60px)/.95 var(--display); letter-spacing: -.035em; margin: 0; }
+h1 .vs { color: var(--coral-text); }
+.lead { font-size: 18px; color: var(--slate); margin: 14px 0 0; max-width: 66ch; }
+.toolbar { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; align-items: center; }
+.btn { font: 700 12px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; border: 1px solid var(--ink); background: var(--paper); color: var(--ink); border-radius: 256px; padding: 11px 16px; cursor: pointer; }
+.btn:hover { background: var(--cloud); }
+.btn.quiet { border-color: var(--hairline); }
+.savestate { font: 400 12px/1.3 var(--mono); color: var(--slate); margin-left: auto; }
+.savestate.bad { color: var(--coral-text); }
+
+nav.jump { position: sticky; top: 0; z-index: 5; background: var(--paper); display: flex; gap: 20px; flex-wrap: wrap; padding: 14px 40px; border-bottom: 1px solid var(--hairline); font: 700 12px/1.2 var(--mono); letter-spacing: .1em; text-transform: uppercase; }
+nav.jump a { color: var(--ink); text-decoration: none; }
+nav.jump a:hover { color: var(--coral-text); }
+
+/* Layout */
+.layout { display: grid; grid-template-columns: minmax(0, 1fr) 380px; gap: 40px; padding: 32px 40px 120px; max-width: 1520px; margin: 0 auto; }
+#summary { position: sticky; top: 64px; align-self: start; max-height: calc(100vh - 80px); overflow: auto; }
+section { margin-bottom: 64px; scroll-margin-top: 64px; }
+h2 { font: 700 34px/1.05 var(--display); letter-spacing: -.02em; margin: 0 0 8px; }
+.hint { color: var(--slate); margin: 0 0 22px; max-width: 72ch; }
+.lbl { font: 700 11px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--slate); margin-right: 6px; }
+
+/* Side-by-side table */
+.table-wrap { overflow-x: auto; margin: 0 0 28px; border: 1px solid var(--hairline); border-radius: 14px; }
+table.sbs { width: 100%; border-collapse: collapse; font-size: 14px; font-variant-numeric: tabular-nums; }
+table.sbs th, table.sbs td { padding: 9px 12px; text-align: left; border-bottom: 1px solid var(--hairline); white-space: nowrap; }
+table.sbs thead th { font: 700 11px/1.2 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--slate); background: var(--mist); }
+table.sbs td.num, table.sbs th.num { text-align: right; }
+table.sbs tbody tr:last-child td { border-bottom: 0; }
+table.sbs tfoot td { font-weight: 700; background: var(--mist); border-top: 2px solid var(--ink); border-bottom: 0; }
+table.sbs a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--hairline); }
+table.sbs a:hover { color: var(--coral-text); }
+.win-a { color: var(--ink); font-weight: 700; }
+.win-b { color: var(--coral-deep); font-weight: 700; }
+.even { color: var(--slate); }
+
+/* Segmented buttons */
+.seg { font: 700 13px/1 var(--body); font-variant-numeric: tabular-nums; min-width: 36px; height: 32px; padding: 0 10px; border: 1px solid var(--hairline); background: var(--paper); color: var(--ink); border-radius: 256px; cursor: pointer; }
+.seg:hover { border-color: var(--ink); }
+.seg[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: var(--paper); }
+.seg.s-b[aria-pressed="true"] { background: var(--coral); border-color: var(--coral); color: var(--ink); }
+.group { display: flex; align-items: center; gap: 4px; flex-wrap: wrap; }
+
+/* Category cards */
+.cat { background: var(--mist); border-radius: 14px; padding: 18px 20px 16px; margin-bottom: 14px; scroll-margin-top: 64px; }
+.cat.off { background: var(--paper); box-shadow: inset 0 0 0 1px var(--hairline); }
+.cat.off h3 { color: var(--slate); }
+.cat-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 12px; }
+.cat h3 { font: 700 22px/1.2 var(--display); margin: 0; }
+.opts { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.opt { background: var(--paper); border-radius: 10px; padding: 12px 14px 12px; border-top: 3px solid var(--a); min-width: 0; }
+.opt-b { border-top-color: var(--b); }
+.opt-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; gap: 8px; }
+.optname { font: 700 11px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; }
+.open-badge:empty { display: none; }
+.open-badge { font: 700 10px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; background: var(--blush); color: var(--ink); border-radius: 256px; padding: 5px 9px; }
+textarea.facts { display: block; width: calc(100% + 16px); margin: 0 -8px 10px; padding: 6px 8px; border: 1px solid transparent; border-radius: 6px; background: transparent; resize: none; overflow: hidden; font-size: 15px; line-height: 1.45; }
+textarea.facts:hover { border-color: var(--hairline); }
+textarea.facts:focus { outline: none; border-color: var(--ink); }
+.why-wrap { margin-top: 12px; }
+.why-wrap .lbl { display: block; margin-bottom: 4px; }
+textarea.why { display: block; width: calc(100% + 16px); margin: 0 -8px; padding: 4px 8px; border: 1px solid transparent; border-radius: 6px; background: transparent; resize: none; overflow: hidden; font-size: 14px; line-height: 1.45; color: var(--slate); }
+textarea.why:hover { border-color: var(--hairline); }
+textarea.why:focus { outline: none; border-color: var(--ink); background: var(--paper); color: var(--ink); }
+.chips { list-style: none; margin: 10px 0 0; padding: 10px 0 0; border-top: 1px solid var(--hairline); display: flex; flex-direction: column; gap: 4px; }
+.chips:empty { display: none; }
+.chip { font-size: 13px; line-height: 1.35; color: var(--slate); display: flex; gap: 6px; }
+.chip b { font-family: var(--mono); color: var(--ink); }
+.chip.con b { color: var(--coral-text); }
+.contrib { font: 700 12px/1.3 var(--mono); letter-spacing: .04em; color: var(--slate); margin-top: 12px; }
+
+/* Summary */
+.sum { border: 1px solid var(--hairline); border-radius: 20px; padding: 22px 24px 24px; background: var(--paper); }
+.tot { margin-bottom: 14px; }
+.tot-row { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
+.tname { font: 700 12px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; }
+.tpct { font: 800 44px/1 var(--display); letter-spacing: -.03em; font-variant-numeric: tabular-nums; }
+.tpts { font: 400 12px/1 var(--mono); color: var(--slate); }
+.bar { height: 10px; background: var(--cloud); border-radius: 256px; overflow: hidden; margin-top: 6px; }
+.bar span { display: block; height: 100%; border-radius: 256px; background: var(--a); transition: width .25s ease; }
+.tot-b .bar span { background: var(--b); }
+.ruled { display: inline-block; font: 700 10px/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; background: var(--blush); border-radius: 256px; padding: 5px 9px; margin-top: 6px; }
+.headline { font: 700 22px/1.2 var(--display); margin: 18px 0 8px; }
+.sub { margin: 0 0 8px; font-size: 15px; line-height: 1.45; }
+.sub .k { font: 700 11px/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--slate); display: block; margin-bottom: 3px; }
+.note { background: var(--blush); border-radius: 14px; padding: 12px 14px; margin: 14px 0 0; font-size: 14px; line-height: 1.45; }
+.note .k { font: 700 11px/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; display: block; margin-bottom: 4px; }
+.sum h4 { font: 700 11px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--slate); margin: 22px 0 10px; padding-top: 16px; border-top: 1px solid var(--hairline); }
+.dv-axis { display: grid; grid-template-columns: 104px 1fr 34px; font: 700 10px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--slate); margin-bottom: 6px; }
+.dv-axis .ends { display: flex; justify-content: space-between; }
+.dv-row { display: grid; grid-template-columns: 104px 1fr 34px; align-items: center; gap: 0; font-size: 13px; margin-bottom: 6px; }
+.dv-name { padding-right: 8px; line-height: 1.35; }
+.dv-track { display: grid; grid-template-columns: 1fr 1px 1fr; height: 14px; align-items: center; }
+.dv-mid { background: var(--ink); height: 18px; }
+.dv-l { display: flex; justify-content: flex-end; }
+.dv-l span, .dv-r span { display: block; height: 10px; border-radius: 2px; }
+.dv-l span { background: var(--a); }
+.dv-r span { background: var(--b); }
+.dv-val { font: 700 12px/1 var(--mono); text-align: right; font-variant-numeric: tabular-nums; }
+.dv-val.vb { color: var(--coral-text); }
+.empty { color: var(--slate); font-size: 14px; margin: 0; }
+.progress { list-style: none; margin: 0; padding: 0; font-size: 14px; }
+.progress li { display: flex; justify-content: space-between; gap: 10px; padding: 5px 0; border-bottom: 1px solid var(--hairline); }
+.progress li:last-child { border-bottom: 0; }
+.progress .n { font: 700 13px/1.4 var(--mono); white-space: nowrap; }
+
+/* Pros & cons */
+.pc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.pc-col { border-top: 3px solid var(--a); padding-top: 14px; min-width: 0; }
+.pc-col.b { border-top-color: var(--b); }
+.pc-col h3 { font: 700 24px/1.1 var(--display); margin: 0 0 4px; }
+.balance { font: 400 12px/1.4 var(--mono); color: var(--slate); margin: 0 0 14px; }
+.pc-col h4 { font: 700 11px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; margin: 18px 0 8px; }
+.pc-col h4.con { color: var(--coral-text); }
+.items { list-style: none; margin: 0; padding: 0; }
+.item { background: var(--mist); border-radius: 10px; padding: 8px 10px 8px; margin-bottom: 6px; }
+.item textarea { display: block; width: 100%; border: 1px solid transparent; border-radius: 6px; background: transparent; resize: none; overflow: hidden; padding: 4px 6px; font-size: 15px; line-height: 1.4; }
+.item textarea:focus { outline: none; border-color: var(--ink); background: var(--paper); }
+.item-meta { display: flex; gap: 6px; align-items: center; margin-top: 4px; flex-wrap: wrap; }
+select { font: 400 12px/1.2 var(--mono); border: 1px solid var(--hairline); background: var(--paper); border-radius: 256px; padding: 6px 10px; cursor: pointer; max-width: 100%; }
+.x { margin-left: auto; border: 0; background: transparent; color: var(--slate); font-size: 20px; line-height: 1; width: 30px; height: 30px; border-radius: 50%; cursor: pointer; }
+.x:hover { background: var(--cloud); color: var(--ink); }
+.add { font: 700 12px/1 var(--mono); letter-spacing: .06em; border: 1px dashed var(--slate); background: transparent; color: var(--ink); border-radius: 256px; padding: 9px 14px; cursor: pointer; margin-top: 4px; }
+.add:hover { background: var(--cloud); border-style: solid; }
+
+/* Dealbreakers */
+.db { background: var(--mist); border-radius: 14px; padding: 14px 16px; margin-bottom: 10px; display: grid; grid-template-columns: auto 1fr auto; gap: 8px 12px; align-items: start; border-left: 4px solid transparent; }
+.db.on { border-left-color: var(--coral); }
+.db.hit { background: var(--blush); }
+.check { display: flex; align-items: center; gap: 6px; font: 700 11px/1.2 var(--mono); letter-spacing: .06em; text-transform: uppercase; padding-top: 7px; cursor: pointer; white-space: nowrap; }
+.check input { width: 18px; height: 18px; accent-color: var(--ink); margin: 0; }
+input[type="text"] { width: 100%; border: 1px solid transparent; border-radius: 6px; background: transparent; padding: 5px 8px; font-size: 15px; }
+input[type="text"]:hover { border-color: var(--hairline); }
+input[type="text"]:focus { outline: none; border-color: var(--ink); background: var(--paper); }
+.db-meta { grid-column: 2 / 3; display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; font: 400 12px/1.2 var(--mono); color: var(--slate); }
+.db-meta label { display: flex; gap: 6px; align-items: center; }
+
+@media (max-width: 1120px) {
+  .layout { grid-template-columns: minmax(0, 1fr); }
+  #summary { position: static; max-height: none; order: -1; }
+}
+@media (max-width: 720px) {
+  .top, nav.jump, .layout { padding-left: 16px; padding-right: 16px; }
+  .opts, .pc-grid { grid-template-columns: 1fr; }
+  .savestate { margin-left: 0; width: 100%; }
+  .db { grid-template-columns: 1fr auto; }
+  .db .check { grid-column: 1 / 2; }
+  .db-meta { grid-column: 1 / -1; }
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <p class="kicker">Decision · private · updated 26/10 with bol's offer</p>
+  <h1>Rabobank <span class="vs">or</span> bol</h1>
+  <p class="lead">Weights and scores are a first pass, from both offers, bol's handbook and Monday's call. Change any you disagree with: the result updates as you go and is saved in this browser.</p>
+  <div class="toolbar">
+    <button type="button" class="btn quiet" data-act="export-md">Export notes (.md)</button>
+    <button type="button" class="btn quiet" data-act="export-json">Back up (.json)</button>
+    <button type="button" class="btn quiet" data-act="import">Restore backup</button>
+    <button type="button" class="btn quiet" data-act="reset">Reset to this version</button>
+    <span class="savestate" id="savestate" role="status"></span>
+  </div>
+</header>
+
+<nav class="jump" aria-label="Sections">
+  <a href="#score">Side by side</a>
+  <a href="#proscons">Pros &amp; cons</a>
+  <a href="#dealbreakers">Dealbreakers</a>
+</nav>
+
+<div class="layout">
+  <main>
+    <section id="score" aria-labelledby="h-score">
+      <h2 id="h-score">Side by side</h2>
+      <p class="hint">Weight: Off (doesn't count), 1 (nice to have), 2 (matters), 3 (could decide it alone). Score each option 1–5, where 5 is best for you. A <b>?</b> in the notes marks something bol still has to answer. Click a selected button again to clear it.</p>
+      <div class="table-wrap"><table class="sbs" id="sbs"></table></div>
+      <div id="cats"></div>
+    </section>
+
+    <section id="proscons" aria-labelledby="h-pc">
+      <h2 id="h-pc">Pros and cons</h2>
+      <p class="hint">Tag each one with a category and it shows up under that category above, to help you score.</p>
+      <div class="pc-grid" id="pc"></div>
+    </section>
+
+    <section id="dealbreakers" aria-labelledby="h-db">
+      <h2 id="h-db">Dealbreakers</h2>
+      <p class="hint">Tick the ones that are real dealbreakers for you. If one is triggered, that option is ruled out whatever it scores. The statuses reflect what's known as of 26/10.</p>
+      <div id="dbs"></div>
+      <button type="button" class="add" data-act="db-add">+ Add a dealbreaker</button>
+    </section>
+  </main>
+
+  <aside id="summary" aria-label="Result so far"></aside>
+</div>
+
+<input type="file" id="importFile" accept="application/json,.json" hidden>
+
+<script>
+(function () {
+  const STORE_KEY = 'bol-vs-rabobank-decision-v2';
+  const OPT = { a: 'Rabobank', b: 'bol' };
+  const OTHER = { a: 'b', b: 'a' };
+  let seq = 0;
+  const nid = p => p + Date.now().toString(36) + (seq++).toString(36);
+  const $ = s => document.querySelector(s);
+  const esc = s => String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+
+  function C(id, name, weight, sa, sb, a, b, why) { return { id, name, weight, why, a: { facts: a, score: sa }, b: { facts: b, score: sb } }; }
+  function I(text, cat) { return { id: nid('i'), text, cat: cat || '' }; }
+  function D(text, applies, sa, sb) { return { id: nid('d'), text, applies, active: false, status: { a: sa || 'unknown', b: sb || 'unknown' } }; }
+
+  function defaults() {
+    return {
+      version: 2,
+      categories: [
+        C('money', 'Money', 2, 3, 5,
+          `€6,800/month, 36h. €104.4K cash a year (8% holiday pay, 13th month, 10% benefit budget). ~€120.9K with pension (21.5% employer). €71.73 per hour worked. No bonus. ~€83/month home-working and internet.`,
+          `€9,300/month, 40h. €120.5K cash a year incl. 8% holiday pay. ~€136.1K with pension (employer ~€15.6K; your share ~€5.2K). €74.54 per hour worked. Bonus target 25% on company OKRs: never zero, on average a little under target, so realistically €22–27K. Lease budget €1,177/month: allowance instead of a pool car on a fixed-term contract? (asked Thijmen)`,
+          `bol is ~€15K a year ahead on cash plus pension and ahead per hour too, before the bonus and the car. Rabobank isn't bad money, just clearly less.`),
+        C('contract', 'Contract', 2, 3, 2,
+          `Fixed-term to 15/11/2027, with a written intention to extend or convert. 1-month probation. Contract received, not signed.`,
+          `Fixed-term 12 months, bol's standard for every hire. 1-month probation. Ends 30/11/2027. If not renewed: no 2027 bonus (you must be employed on 31/12) and a 9-month non-compete (Amazon, Zalando, TikTok, Coolblue and 6 more, freelancing included). Protection in that case requested from Thijmen (?)`,
+          `Both are about a year fixed-term. Rabobank has a written intention to convert; bol adds the bonus cliff and the non-compete if it doesn't renew. Raise bol to 3 if Thijmen agrees to the protection.`),
+        C('family', 'Family terms', 2, 5, 3,
+          `16 weeks pregnancy and maternity leave at 100% of salary. Paid parental leave weeks 1–4 at 100%, weeks 5–9 at 70% capped (~€12.7K in total). 26 weeks of parental leave until the child is 12.`,
+          `No top-up on pregnancy and maternity leave (Thijmen confirmed): capped at the UWV maximum, about two-thirds of your salary, ~€4–5K less than Rabobank over 16 weeks. Paid parental leave at 70% of full salary, no cap (~€14.6K in total). Unpaid leave lowers the bonus.`,
+          `Rabobank is well above the legal minimum. bol is at the minimum on maternity pay, slightly better than Rabobank on paid parental leave.`),
+        C('flex', 'Flexibility', 2, 3, 4,
+          `36h, hybrid. 26 days' leave. Working abroad: short periods, case by case. Side work "totally fine", registered after you start (Anne, 26/10).`,
+          `40h; 36h or 32h possible at lower pay (not four 9-hour days). ~50% office. 32 days' leave at your age. Up to 8 weeks a year from abroad, max 4 in a row, EU fine. Side work: only selling on bol or a competitor's platform is banned; contract wording requested (?)`,
+          `bol wins on leave days and working from Spain. Rabobank wins on 36h by default and certainty about side work.`),
+        C('title', 'Title & level', 3, 2, 5,
+          `Senior Service Designer, scale 09. The vacancy was Senior Experience Designer, scale 10. The title likely changes only with a move to 10.`,
+          `Principal Craft Lead UX, scale 19: "leadership role and recognised specialist at a strategic level". Heads-of-Craft level, on the UX Management Team. The letter says "Specialist"; role name in the contract requested.`,
+          `Rabobank places you below the posted level and below your seniority. bol is a principal role at Heads-of-Craft level.`),
+        C('work', 'The work', 3, 3, 4,
+          `Hands-on service design in Business Lending: journeys for entrepreneurs, where policy, process and the advisor conversation are one service. A multi-year transformation; design maturity still being built.`,
+          `Set the direction for bol's design craft through the AI shift. Year one, per Ronald: design standards, the time-wasting basics automated, team fundamentals. You set the direction; the Craft Enablement team carries it out.`,
+          `bol is the topic you've been building toward. Rabobank is more hands-on design, which you may miss at bol.`),
+        C('career', 'Fit with your career plan', 3, 2, 4,
+          `Senior IC: your secondary target, the one you're "open to, by necessity". Financial services isn't on your industry list. "Pure IC role with no path to team leadership" is on your say-no list.`,
+          `Closer to your primary target: leadership, design connected to business strategy. No team of your own. E-commerce and AI; B Corp.`,
+          `bol is close to your primary target, not on it (no team). Rabobank hits two of your say-no signals.`),
+        C('growth', 'Growth', 2, 2, 3,
+          `No promise or date for scale 10: "very much dependent on how you are landing and performing". Framework shared only after you start. Scale 09 reframed as matching your background. Yearly CAO raises.`,
+          `First salary review 1/1/2028; bol says the starting salary already allows for that. 20–30% room within scale 19 over the years; scale 20 "maybe"; an IC track for a few years now; internal moves possible (e.g. Head of Design). A big CV step toward Head of / Director.`,
+          `Neither gives criteria or a date. bol has band room, a stated IC track and a stronger CV step, but no raise for 13 months.`),
+        C('people', 'People', 2, 4, 4,
+          `Anne backed you through the process; her 26/10 reply was cooler ("thought you'd already signed"). Emin, Manjari. You know who you'd work for.`,
+          `Manager: Maurice, implied (OKRs, weekly or biweekly check-ins). Ronald invested and candid. Peers: Heads of Craft and Heads of Design, Matthew among them. Thijmen transparent throughout.`,
+          `Even: a manager you know at Rabobank, senior people invested in you at bol.`),
+        C('culture', 'Culture & pace', 1, 3, 4,
+          `Structured, regulated, cooperative. Bankers' Oath in the first 3 months. Political, as in any big bank.`,
+          `Autonomy "ridiculously big", fast in Consumer, very visible. Quarterly OKR check-ins.`,
+          `Your call. Scored bol higher for autonomy and pace; lower it if you want structure.`),
+        C('hard', 'How hard the job is', 1, 4, 3,
+          `Easier in principle, though political. Risks: under-challenged, stuck at scale 09, contract not renewed.`,
+          `A new role nobody has done before, judged by the CPTO. The stretch Ronald named: crisp influence at scale. His year-one criteria match your own plan, so you'd start aligned. Risk: struggling where everyone can see it.`,
+          `Scored as ease and risk: Rabobank is easier to do well in year one. bol's upside is counted under growth and career fit.`),
+        C('daily', 'Daily life', 1, 4, 4,
+          `Utrecht, hybrid. NS Business Card or commuting allowance. ~€83/month home-working and internet.`,
+          `Utrecht (Papendorp), ~50% office, shuttle from Utrecht Centraal. Public transport fully covered. €40/month internet. On-site gym and restaurant. Start 1/12, first salary end of December.`,
+          `Even.`)
+      ],
+      pros: {
+        a: [
+          I(`Contract in hand, terms known, with a written intention to extend or convert.`, 'contract'),
+          I(`36h by default, with a 21.5% employer pension.`, 'flex'),
+          I(`Family terms well above the legal minimum: 100% maternity pay for 16 weeks, parental leave weeks 1–4 at 100%, leave until the child is 12.`, 'family'),
+          I(`Side work "totally fine", registered after start.`, 'flex'),
+          I(`A manager you know, who backed you.`, 'people'),
+          I(`Hands-on service design in a long transformation, with room to shape how design works there.`, 'work'),
+          I(`Easier to do well in year one.`, 'hard')
+        ],
+        b: [
+          I(`Principal role, scale 19, at Heads-of-Craft level on the UX Management Team, with a mandate from the CPTO. The closest to your primary target.`, 'title'),
+          I(`AI and design craft at scale: the topic you've been building toward with lign.ai and your own AI work.`, 'work'),
+          I(`~€136K cash plus pension against ~€121K, more per hour as well, plus a 25% target bonus (realistically €22–27K).`, 'money'),
+          I(`Lease budget of €1,177/month, possibly as a monthly allowance.`, 'money'),
+          I(`Up to 8 weeks a year from abroad (Spain is fine), 32 leave days, 36h or 32h possible.`, 'flex'),
+          I(`Room to grow 20–30% in the band, scale 20 possible, an established IC track, internal moves.`, 'growth'),
+          I(`Paid parental leave at 70% of full salary, with no cap.`, 'family'),
+          I(`Ronald invested in the role, Maurice already met, Thijmen transparent throughout.`, 'people')
+        ]
+      },
+      cons: {
+        a: [
+          I(`Scale 09 and Senior Service Designer sit below the posted level (scale 10) and below your seniority.`, 'title'),
+          I(`No date or criteria for scale 10, and scale 09 reframed as matching your background.`, 'growth'),
+          I(`~€15K a year less than bol on cash plus pension, and no bonus.`, 'money'),
+          I(`Fixed-term to 15/11/2027.`, 'contract'),
+          I(`A senior IC role, your secondary target. "Pure IC role with no path to team leadership" is on your say-no list.`, 'career'),
+          I(`Financial services isn't one of your industries.`, 'career'),
+          I(`Working abroad only case by case, and 26 days' leave.`, 'flex'),
+          I(`Political, as in any big bank.`, 'culture')
+        ],
+        b: [
+          I(`12-month fixed-term. If bol doesn't renew, you lose the 2027 bonus (~€22–27K) and a 9-month non-compete still applies.`, 'contract'),
+          I(`The non-compete covers Coolblue, Zalando, Amazon and TikTok among others, freelancing included, and the list can grow each January.`, 'contract'),
+          I(`No maternity top-up: pay capped at the UWV maximum, about two-thirds of your salary for 16 weeks.`, 'family'),
+          I(`No salary review until 1/1/2028.`, 'growth'),
+          I(`A new, very visible role judged by the CPTO, with no authority over the Heads of Design.`, 'hard'),
+          I(`The stretch is real: crisp influence at scale, and your assessment's development areas (Courage, Being Bold).`, 'hard'),
+          I(`More setting direction than doing the design: others carry it out.`, 'work'),
+          I(`40h by default; four 9-hour days not possible.`, 'flex'),
+          I(`The offer letter says "Specialist", on the Non-Tech scale.`, 'title')
+        ]
+      },
+      dealbreakers: [
+        D(`Side freelancing ruled out.`, 'both', 'no', 'unknown'),
+        D(`Fixed-term contract with no maternity top-up, while family plans are 1–2 years out. (Rabobank is fixed-term too, but pays 100%.)`, 'b', 'unknown', 'yes'),
+        D(`No criteria or target date for scale 10.`, 'a', 'yes', 'unknown')
+      ]
+    };
+  }
+
+  function valid(s) { return s && s.version === 2 && Array.isArray(s.categories) && s.pros && s.cons && Array.isArray(s.dealbreakers); }
+  function load() {
+    try {
+      const raw = localStorage.getItem(STORE_KEY);
+      if (raw) { const s = JSON.parse(raw); if (valid(s)) return s; }
+    } catch (e) { /* storage unavailable: fall back to defaults */ }
+    return defaults();
+  }
+
+  let state = load();
+  let saveTimer = null;
+  function save() {
+    clearTimeout(saveTimer);
+    saveTimer = setTimeout(() => {
+      try { localStorage.setItem(STORE_KEY, JSON.stringify(state)); setSaved('Saved in this browser · ' + new Date().toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' }), false); }
+      catch (e) { setSaved('Not saved: browser storage is blocked. Use Back up to keep your work.', true); }
+    }, 250);
+  }
+  function setSaved(t, bad) { const el = $('#savestate'); el.textContent = t; el.classList.toggle('bad', !!bad); }
+
+  const getCat = id => state.categories.find(c => c.id === id);
+  const catName = id => { const c = getCat(id); return c ? c.name : ''; };
+  const findItem = el => state[el.dataset.kind][el.dataset.opt].find(x => x.id === el.dataset.id);
+  const findDb = id => state.dealbreakers.find(x => x.id === id);
+  const appliesTo = db => db.applies === 'both' ? ['a', 'b'] : [db.applies];
+  const openCount = s => (String(s).match(/\?/g) || []).length;
+
+  function autosize(t) { t.style.height = 'auto'; t.style.height = t.scrollHeight + 'px'; }
+  function autosizeAll() { document.querySelectorAll('textarea').forEach(autosize); }
+
+  /* ---------- Rendering ---------- */
+
+  function segs(act, attrs, values, current, extraClass, label) {
+    return values.map(v => `<button type="button" class="seg ${extraClass}" data-act="${act}" ${attrs} data-val="${v}" aria-pressed="${current === v}">${label ? label(v) : v}</button>`).join('');
+  }
+
+  function renderCats() {
+    $('#cats').innerHTML = state.categories.map(c => `
+      <article class="cat ${c.weight === 0 ? 'off' : ''}" id="cat-${c.id}" data-cat="${c.id}">
+        <div class="cat-head">
+          <h3>${esc(c.name)}</h3>
+          <div class="group" role="group" aria-label="Weight for ${esc(c.name)}">
+            <span class="lbl">Weight</span>
+            ${segs('weight', `data-cat="${c.id}"`, [0, 1, 2, 3], c.weight, 'w', v => v === 0 ? 'Off' : v)}
+          </div>
+        </div>
+        <div class="opts">
+          ${['a', 'b'].map(o => `
+            <div class="opt opt-${o}">
+              <div class="opt-head"><span class="optname">${OPT[o]}</span><span class="open-badge" id="open-${c.id}-${o}"></span></div>
+              <textarea class="facts" rows="2" data-act="facts" data-cat="${c.id}" data-opt="${o}" aria-label="${OPT[o]} notes on ${esc(c.name)}">${esc(c[o].facts)}</textarea>
+              <div class="group" role="group" aria-label="${OPT[o]} score for ${esc(c.name)}">
+                <span class="lbl">Score</span>
+                ${segs('score', `data-cat="${c.id}" data-opt="${o}"`, [1, 2, 3, 4, 5], c[o].score, 's s-' + o)}
+              </div>
+              <ul class="chips" id="chips-${c.id}-${o}"></ul>
+            </div>`).join('')}
+        </div>
+        <div class="why-wrap">
+          <span class="lbl">Why these scores</span>
+          <textarea class="why" rows="1" data-act="why" data-cat="${c.id}" aria-label="Why these scores for ${esc(c.name)}" placeholder="Your reasoning">${esc(c.why)}</textarea>
+        </div>
+        <div class="contrib" id="contrib-${c.id}"></div>
+      </article>`).join('');
+  }
+
+  function itemHtml(kind, o, it) {
+    const cats = `<option value="">No category</option>` + state.categories.map(c => `<option value="${c.id}" ${it.cat === c.id ? 'selected' : ''}>${esc(c.name)}</option>`).join('');
+    const attrs = `data-kind="${kind}" data-opt="${o}" data-id="${it.id}"`;
+    return `<li class="item">
+      <textarea rows="1" data-act="item-text" ${attrs} aria-label="${OPT[o]} ${kind === 'pros' ? 'pro' : 'con'}" placeholder="Write it down…">${esc(it.text)}</textarea>
+      <div class="item-meta">
+        <select data-act="item-cat" ${attrs} aria-label="Category">${cats}</select>
+        <button type="button" class="x" data-act="item-del" ${attrs} aria-label="Remove">×</button>
+      </div>
+    </li>`;
+  }
+
+  function renderProsCons() {
+    $('#pc').innerHTML = ['a', 'b'].map(o => `
+      <div class="pc-col ${o}">
+        <h3>${OPT[o]}</h3>
+        <p class="balance" id="bal-${o}"></p>
+        <h4>Pros</h4>
+        <ul class="items">${state.pros[o].map(it => itemHtml('pros', o, it)).join('')}</ul>
+        <button type="button" class="add" data-act="item-add" data-kind="pros" data-opt="${o}">+ Add a pro</button>
+        <h4 class="con">Cons</h4>
+        <ul class="items">${state.cons[o].map(it => itemHtml('cons', o, it)).join('')}</ul>
+        <button type="button" class="add" data-act="item-add" data-kind="cons" data-opt="${o}">+ Add a con</button>
+      </div>`).join('');
+  }
+
+  function renderDealbreakers() {
+    const statusOpts = cur => [['unknown', 'Not known yet'], ['no', 'Not triggered'], ['yes', 'Triggered']]
+      .map(([v, l]) => `<option value="${v}" ${cur === v ? 'selected' : ''}>${l}</option>`).join('');
+    $('#dbs').innerHTML = state.dealbreakers.map(d => `
+      <div class="db ${d.active ? 'on' : ''}" data-db="${d.id}">
+        <label class="check"><input type="checkbox" data-act="db-active" data-id="${d.id}" ${d.active ? 'checked' : ''}> Counts</label>
+        <input type="text" data-act="db-text" data-id="${d.id}" value="${esc(d.text)}" aria-label="Dealbreaker" placeholder="Describe the dealbreaker">
+        <button type="button" class="x" data-act="db-del" data-id="${d.id}" aria-label="Remove dealbreaker">×</button>
+        <div class="db-meta">
+          <label>Applies to
+            <select data-act="db-applies" data-id="${d.id}">
+              <option value="both" ${d.applies === 'both' ? 'selected' : ''}>Both</option>
+              <option value="a" ${d.applies === 'a' ? 'selected' : ''}>Rabobank</option>
+              <option value="b" ${d.applies === 'b' ? 'selected' : ''}>bol</option>
+            </select>
+          </label>
+          ${appliesTo(d).map(o => `<label>${OPT[o]} <select data-act="db-status" data-id="${d.id}" data-opt="${o}">${statusOpts(d.status[o])}</select></label>`).join('')}
+        </div>
+      </div>`).join('') || `<p class="empty">No dealbreakers yet.</p>`;
+  }
+
+  /* ---------- Calculations ---------- */
+
+  function totals(excludeId) {
+    const rows = state.categories.filter(c => c.weight > 0 && c.a.score && c.b.score && c.id !== excludeId);
+    let W = 0, a = 0, b = 0;
+    rows.forEach(c => { W += c.weight; a += c.weight * c.a.score; b += c.weight * c.b.score; });
+    const max = W * 5;
+    return { rows, W, a, b, max, pa: W ? Math.round(a / max * 100) : null, pb: W ? Math.round(b / max * 100) : null };
+  }
+  const leaderOf = t => t.a > t.b ? 'a' : t.b > t.a ? 'b' : null;
+
+  function closestFlip(t, L) {
+    const T = OTHER[L];
+    const G = Math.abs(t.a - t.b);
+    let best = null;
+    // Fewest score steps wins; then the heavier category; then raising the trailing option over lowering the leader.
+    const consider = cand => {
+      if (!best || cand.k < best.k || (cand.k === best.k && (cand.w > best.w || (cand.w === best.w && cand.who === T && best.who !== T)))) best = cand;
+    };
+    t.rows.forEach(c => {
+      const w = c.weight, k = Math.ceil(G / w);
+      const result = w * k > G ? 'ahead' : 'level';
+      if (c[T].score + k <= 5) consider({ c, who: T, from: c[T].score, to: c[T].score + k, k, w, result });
+      if (c[L].score - k >= 1) consider({ c, who: L, from: c[L].score, to: c[L].score - k, k, w, result });
+    });
+    return best;
+  }
+
+  function ruledOut(o) {
+    return state.dealbreakers.filter(d => d.active && appliesTo(d).includes(o) && d.status[o] === 'yes');
+  }
+
+  /* ---------- Derived views ---------- */
+
+  function renderTable(t) {
+    const dot = (c, o) => c[o].score ? c[o].score : '–';
+    const rows = state.categories.map(c => {
+      const counted = c.weight > 0 && c.a.score && c.b.score;
+      const d = counted ? c.weight * (c.b.score - c.a.score) : null;
+      const diff = d === null ? '<span class="even">–</span>' : d === 0 ? '<span class="even">Even</span>' :
+        `<span class="win-${d > 0 ? 'b' : 'a'}">${d > 0 ? OPT.b : OPT.a} +${Math.abs(d)}</span>`;
+      return `<tr>
+        <td><a href="#cat-${c.id}">${esc(c.name)}</a></td>
+        <td class="num">${c.weight === null ? '–' : c.weight === 0 ? 'Off' : c.weight}</td>
+        <td class="num">${dot(c, 'a')}</td>
+        <td class="num">${counted ? c.weight * c.a.score : '–'}</td>
+        <td class="num">${dot(c, 'b')}</td>
+        <td class="num">${counted ? c.weight * c.b.score : '–'}</td>
+        <td>${diff}</td>
+      </tr>`;
+    }).join('');
+    $('#sbs').innerHTML = `
+      <thead><tr><th>Category</th><th class="num">Weight</th><th class="num">${OPT.a}</th><th class="num">× weight</th><th class="num">${OPT.b}</th><th class="num">× weight</th><th>Edge</th></tr></thead>
+      <tbody>${rows}</tbody>
+      <tfoot><tr><td>Total</td><td class="num">${t.W || '–'}</td><td></td><td class="num">${t.W ? t.a + ' / ' + t.max : '–'}</td><td></td><td class="num">${t.W ? t.b + ' / ' + t.max : '–'}</td>
+      <td>${!t.W ? '' : t.a === t.b ? '<span class="even">Even</span>' : `<span class="win-${t.b > t.a ? 'b' : 'a'}">${t.b > t.a ? OPT.b : OPT.a} +${Math.abs(t.b - t.a)}</span>`}</td></tr></tfoot>`;
+  }
+
+  function derived() {
+    // Per-category badges, chips and contribution lines
+    state.categories.forEach(c => {
+      const card = document.querySelector(`.cat[data-cat="${c.id}"]`);
+      if (card) card.classList.toggle('off', c.weight === 0);
+      ['a', 'b'].forEach(o => {
+        const badge = document.getElementById(`open-${c.id}-${o}`);
+        if (badge) { const n = openCount(c[o].facts); badge.textContent = n ? n + ' open' : ''; }
+        const chips = document.getElementById(`chips-${c.id}-${o}`);
+        if (chips) {
+          const pros = state.pros[o].filter(i => i.cat === c.id && i.text.trim());
+          const cons = state.cons[o].filter(i => i.cat === c.id && i.text.trim());
+          chips.innerHTML = pros.map(i => `<li class="chip pro"><b>+</b><span>${esc(i.text)}</span></li>`).join('') +
+                            cons.map(i => `<li class="chip con"><b>−</b><span>${esc(i.text)}</span></li>`).join('');
+        }
+      });
+      const el = document.getElementById(`contrib-${c.id}`);
+      if (!el) return;
+      if (c.weight === null) el.textContent = 'Set a weight to count this.';
+      else if (c.weight === 0) el.textContent = 'Not counted.';
+      else if (!c.a.score || !c.b.score) el.textContent = 'Score both to count this.';
+      else {
+        const d = c.weight * (c.b.score - c.a.score);
+        el.innerHTML = d === 0 ? 'Even here.' :
+          `<span class="win-${d > 0 ? 'b' : 'a'}">${d > 0 ? OPT.b : OPT.a} +${Math.abs(d)}</span> · weight ${c.weight} × ${Math.abs(c.b.score - c.a.score)} point${Math.abs(c.b.score - c.a.score) === 1 ? '' : 's'} apart`;
+      }
+    });
+
+    // Pros & cons counts
+    ['a', 'b'].forEach(o => {
+      const el = document.getElementById('bal-' + o);
+      if (el) el.textContent = `${state.pros[o].length} pros · ${state.cons[o].length} cons`;
+    });
+
+    // Dealbreaker highlight
+    state.dealbreakers.forEach(d => {
+      const el = document.querySelector(`.db[data-db="${d.id}"]`);
+      if (el) el.classList.toggle('hit', d.active && appliesTo(d).some(o => d.status[o] === 'yes'));
+    });
+
+    const t = totals();
+    renderTable(t);
+    renderSummary(t, totals('money'), t.rows.some(c => c.id === 'money'));
+  }
+
+  function renderSummary(t, tNoMoney, moneyCounted) {
+    const L = leaderOf(t);
+    const out = [];
+    out.push(`<div class="sum"><p class="kicker">Result so far</p>`);
+
+    ['a', 'b'].forEach(o => {
+      const pct = t.W ? t[o === 'a' ? 'pa' : 'pb'] : null;
+      out.push(`<div class="tot tot-${o}">
+        <div class="tot-row"><span class="tname">${OPT[o]}</span><span class="tpts">${t.W ? `${t[o]} / ${t.max} pts` : ''}</span></div>
+        <div class="tot-row"><span class="tpct">${pct == null ? '–' : pct + '%'}</span></div>
+        <div class="bar" aria-hidden="true"><span style="width:${pct || 0}%"></span></div>
+        ${ruledOut(o).length ? `<span class="ruled">Ruled out by a dealbreaker</span>` : ''}
+      </div>`);
+    });
+
+    if (!t.W) {
+      out.push(`<p class="headline">Set a weight and both scores in at least one category.</p>`);
+    } else if (!L) {
+      out.push(`<p class="headline">Dead even, ${t.a} points each.</p>`);
+      out.push(`<p class="sub">The scores can't decide this. Look at the dealbreakers and the pros and cons.</p>`);
+    } else {
+      const T = OTHER[L];
+      const gap = Math.abs(t.a - t.b);
+      out.push(`<p class="headline">${OPT[L]} leads by ${gap} point${gap === 1 ? '' : 's'}.</p>`);
+      const forL = t.rows.map(c => { const d = c.weight * (c.b.score - c.a.score); return { c, v: L === 'b' ? d : -d }; });
+      const top = forL.filter(x => x.v > 0).sort((x, y) => y.v - x.v)[0];
+      const against = forL.filter(x => x.v < 0).sort((x, y) => x.v - y.v)[0];
+      if (top) out.push(`<p class="sub"><span class="k">Biggest reason</span>${esc(top.c.name)}, +${top.v} for ${OPT[L]}.</p>`);
+      out.push(`<p class="sub"><span class="k">Biggest pull the other way</span>${against ? `${esc(against.c.name)}, +${-against.v} for ${OPT[T]}.` : 'Nothing pulls the other way.'}</p>`);
+      const f = closestFlip(t, L);
+      if (f) {
+        const verb = f.who === T ? 'Raising' : 'Lowering';
+        const effect = f.result === 'ahead' ? `put ${OPT[T]} ahead` : 'make it a tie';
+        const close = f.k === 1 ? ' One point on one score changes the result, so this is a close call.' : '';
+        out.push(`<p class="sub"><span class="k">Closest flip</span>${verb} ${OPT[f.who]}'s ${esc(f.c.name)} score from ${f.from} to ${f.to} would ${effect}.${close}</p>`);
+      } else {
+        out.push(`<p class="sub"><span class="k">Closest flip</span>No single score change flips it. The lead holds unless several scores or weights change.</p>`);
+      }
+      if (moneyCounted && tNoMoney.W) {
+        const L2 = leaderOf(tNoMoney);
+        const verdict = L2 === L ? `${OPT[L]} still leads.` : L2 ? `${OPT[L2]} leads instead.` : 'It\'s a tie.';
+        out.push(`<p class="sub"><span class="k">Without money</span>${OPT.a} ${tNoMoney.pa}% · ${OPT.b} ${tNoMoney.pb}%. ${verdict}</p>`);
+      }
+    }
+
+    ['a', 'b'].forEach(o => {
+      const ro = ruledOut(o);
+      if (ro.length) out.push(`<div class="note"><span class="k">${OPT[o]} is ruled out</span>${ro.map(d => esc(d.text)).join('<br>')}</div>`);
+    });
+
+    // Where the difference comes from
+    out.push(`<h4>Where the difference comes from</h4>`);
+    const rows = t.rows.map(c => ({ c, d: c.weight * (c.b.score - c.a.score) })).sort((x, y) => Math.abs(y.d) - Math.abs(x.d));
+    if (!rows.length) {
+      out.push(`<p class="empty">Appears once a category has a weight and both scores.</p>`);
+    } else {
+      const MAX = 12; // weight 3 × 4 points apart
+      out.push(`<div class="dv-axis"><span></span><span class="ends"><span>← ${OPT.a}</span><span>${OPT.b} →</span></span><span></span></div>`);
+      rows.forEach(({ c, d }) => {
+        const w = Math.min(100, Math.abs(d) / MAX * 100);
+        out.push(`<div class="dv-row">
+          <span class="dv-name">${esc(c.name)}</span>
+          <span class="dv-track" aria-label="${esc(c.name)}: ${d === 0 ? 'even' : (d > 0 ? OPT.b : OPT.a) + ' +' + Math.abs(d)}">
+            <span class="dv-l">${d < 0 ? `<span style="width:${w}%"></span>` : ''}</span>
+            <span class="dv-mid"></span>
+            <span class="dv-r">${d > 0 ? `<span style="width:${w}%"></span>` : ''}</span>
+          </span>
+          <span class="dv-val ${d > 0 ? 'vb' : ''}">${d === 0 ? '0' : '+' + Math.abs(d)}</span>
+        </div>`);
+      });
+    }
+
+    // Still open
+    const openB = state.categories.filter(c => openCount(c.b.facts)).map(c => c.name);
+    const openA = state.categories.filter(c => openCount(c.a.facts)).map(c => c.name);
+    const dbUnknown = state.dealbreakers.filter(d => d.active && appliesTo(d).some(o => d.status[o] === 'unknown')).length;
+    out.push(`<h4>Still open</h4><ul class="progress">
+      <li><span>${OPT.b}: waiting on Thijmen</span><span class="n">${openB.length ? esc(openB.join(', ')) : 'none'}</span></li>
+      ${openA.length ? `<li><span>${OPT.a}</span><span class="n">${esc(openA.join(', '))}</span></li>` : ''}
+      <li><span>Ticked dealbreakers not known yet</span><span class="n">${dbUnknown}</span></li>
+    </ul>`);
+    out.push(`</div>`);
+    $('#summary').innerHTML = out.join('');
+  }
+
+  /* ---------- Export / import ---------- */
+
+  function download(name, text, type) {
+    const blob = new Blob([text], { type });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = name;
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  }
+  const today = () => new Date().toISOString().slice(0, 10);
+  const cell = s => String(s == null ? '' : s).replace(/\|/g, '\\|').replace(/\n+/g, ' ');
+
+  function toMarkdown() {
+    const t = totals(), tNoMoney = totals('money'), L = leaderOf(t);
+    const md = [];
+    md.push(`# Rabobank or bol: decision snapshot, ${today()}`, '');
+    md.push('## Result', '');
+    if (t.W) {
+      md.push(`- ${OPT.a}: ${t.pa}% (${t.a} / ${t.max} pts)`, `- ${OPT.b}: ${t.pb}% (${t.b} / ${t.max} pts)`);
+      md.push(L ? `- ${OPT[L]} leads by ${Math.abs(t.a - t.b)} points.` : '- Dead even.');
+      if (t.rows.some(c => c.id === 'money') && tNoMoney.W) md.push(`- Without money: ${OPT.a} ${tNoMoney.pa}% · ${OPT.b} ${tNoMoney.pb}%`);
+    } else md.push('- Not enough weights and scores yet.');
+    ['a', 'b'].forEach(o => { const ro = ruledOut(o); if (ro.length) md.push(`- **${OPT[o]} ruled out:** ${ro.map(d => d.text).join('; ')}`); });
+    md.push('', '## Weights and scores', '', `| Category | Weight | ${OPT.a} | ${OPT.b} | Edge | Why |`, '|---|---|---|---|---|---|');
+    state.categories.forEach(c => {
+      const d = c.weight > 0 && c.a.score && c.b.score ? c.weight * (c.b.score - c.a.score) : null;
+      md.push(`| ${cell(c.name)} | ${c.weight === null ? '' : c.weight === 0 ? 'Off' : c.weight} | ${c.a.score || ''} | ${c.b.score || ''} | ${d === null ? '' : d === 0 ? 'Even' : (d > 0 ? OPT.b : OPT.a) + ' +' + Math.abs(d)} | ${cell(c.why)} |`);
+    });
+    md.push('', '## Notes per category', '');
+    state.categories.forEach(c => { md.push(`### ${c.name}`, `- **${OPT.a}:** ${c.a.facts}`, `- **${OPT.b}:** ${c.b.facts}`, ''); });
+    md.push('## Pros and cons', '');
+    ['a', 'b'].forEach(o => {
+      md.push(`### ${OPT[o]}`, '', '**Pros**');
+      state.pros[o].forEach(i => md.push(`- ${i.text}${i.cat ? ' _(' + catName(i.cat) + ')_' : ''}`));
+      md.push('', '**Cons**');
+      state.cons[o].forEach(i => md.push(`- ${i.text}${i.cat ? ' _(' + catName(i.cat) + ')_' : ''}`));
+      md.push('');
+    });
+    const statusLabel = { unknown: 'not known yet', no: 'not triggered', yes: 'TRIGGERED' };
+    md.push('## Dealbreakers', '');
+    state.dealbreakers.forEach(d => md.push(`- [${d.active ? 'x' : ' '}] ${d.text} (${appliesTo(d).map(o => OPT[o] + ': ' + statusLabel[d.status[o]]).join('; ')})`));
+    return md.join('\n') + '\n';
+  }
+
+  $('#importFile').addEventListener('change', e => {
+    const f = e.target.files && e.target.files[0];
+    if (!f) return;
+    const r = new FileReader();
+    r.onload = () => {
+      try {
+        const s = JSON.parse(r.result);
+        if (!valid(s)) throw new Error('bad');
+        state = s; renderAll(); save();
+      } catch (err) { alert('That file isn\'t a backup from this version of the page.'); }
+      e.target.value = '';
+    };
+    r.readAsText(f);
+  });
+
+  /* ---------- Events ---------- */
+
+  function pressGroup(btn, val) {
+    btn.parentElement.querySelectorAll('button.seg').forEach(x => x.setAttribute('aria-pressed', String(+x.dataset.val === val)));
+  }
+
+  document.addEventListener('click', e => {
+    const b = e.target.closest('[data-act]');
+    if (!b || b.tagName === 'TEXTAREA' || b.tagName === 'INPUT' || b.tagName === 'SELECT') return;
+    const act = b.dataset.act;
+    const c = b.dataset.cat ? getCat(b.dataset.cat) : null;
+    switch (act) {
+      case 'weight': {
+        const v = +b.dataset.val;
+        c.weight = c.weight === v ? null : v;
+        pressGroup(b, c.weight);
+        break;
+      }
+      case 'score': {
+        const o = b.dataset.opt, v = +b.dataset.val;
+        c[o].score = c[o].score === v ? null : v;
+        pressGroup(b, c[o].score);
+        break;
+      }
+      case 'item-add': {
+        const it = I('', '');
+        state[b.dataset.kind][b.dataset.opt].push(it);
+        renderProsCons(); autosizeAll();
+        const t = document.querySelector(`textarea[data-id="${it.id}"]`);
+        if (t) t.focus();
+        break;
+      }
+      case 'item-del': {
+        const list = state[b.dataset.kind][b.dataset.opt];
+        const i = list.findIndex(x => x.id === b.dataset.id);
+        if (i > -1) list.splice(i, 1);
+        renderProsCons(); autosizeAll();
+        break;
+      }
+      case 'db-add': {
+        const d = D('', 'both');
+        state.dealbreakers.push(d);
+        renderDealbreakers();
+        const t = document.querySelector(`input[data-act="db-text"][data-id="${d.id}"]`);
+        if (t) t.focus();
+        break;
+      }
+      case 'db-del': {
+        state.dealbreakers = state.dealbreakers.filter(x => x.id !== b.dataset.id);
+        renderDealbreakers();
+        break;
+      }
+      case 'export-md': download(`decision-rabobank-or-bol-${today()}.md`, toMarkdown(), 'text/markdown'); return;
+      case 'export-json': download(`decision-rabobank-or-bol-backup-${today()}.json`, JSON.stringify(state, null, 2), 'application/json'); return;
+      case 'import': $('#importFile').click(); return;
+      case 'reset':
+        if (!confirm('Reset to the 26/10 version? This clears your changes to weights, scores, notes, pros and cons. Back up first if you want to keep them.')) return;
+        state = defaults(); renderAll();
+        break;
+      default: return;
+    }
+    derived(); save();
+  });
+
+  document.addEventListener('input', e => {
+    const t = e.target;
+    const act = t.dataset && t.dataset.act;
+    if (!act || t.tagName === 'SELECT' || t.type === 'checkbox') return;
+    switch (act) {
+      case 'facts': getCat(t.dataset.cat)[t.dataset.opt].facts = t.value; break;
+      case 'why': getCat(t.dataset.cat).why = t.value; break;
+      case 'item-text': findItem(t).text = t.value; break;
+      case 'db-text': findDb(t.dataset.id).text = t.value; break;
+      default: return;
+    }
+    if (t.tagName === 'TEXTAREA') autosize(t);
+    derived(); save();
+  });
+
+  document.addEventListener('change', e => {
+    const t = e.target;
+    const act = t.dataset && t.dataset.act;
+    if (!act) return;
+    switch (act) {
+      case 'item-cat': findItem(t).cat = t.value; break;
+      case 'db-active': findDb(t.dataset.id).active = t.checked; t.closest('.db').classList.toggle('on', t.checked); break;
+      case 'db-applies': findDb(t.dataset.id).applies = t.value; renderDealbreakers(); break;
+      case 'db-status': findDb(t.dataset.id).status[t.dataset.opt] = t.value; break;
+      default: return;
+    }
+    derived(); save();
+  });
+
+  let resizeTimer = null;
+  window.addEventListener('resize', () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(autosizeAll, 150); });
+
+  function renderAll() {
+    renderCats(); renderProsCons(); renderDealbreakers();
+    derived(); autosizeAll();
+  }
+
+  renderAll();
+  try { localStorage.getItem(STORE_KEY); setSaved('Saves automatically in this browser', false); }
+  catch (e) { setSaved('Browser storage is blocked here. Use Back up to keep your work.', true); }
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(autosizeAll);
+})();
+</script>
+</body>
+</html>

@@ -1,34 +1,184 @@
 # Application Tracker — Marta Axpe
-Last updated: 2026-09-21
+Last updated: 2026-10-30
 
-**Summary:** 81 applications | Apr 2025 – Sept 2026
-- Active / Interviewing: 3 (Rabobank/Senior Experience Designer — Round 3 completed 18/09/26, strongly positive, in-person final round to be scheduled week of 28/09/26; bol.com/Principal Craft Lead UX — Round 1 video interview confirmed for 11/09/26 with Thijmen Klompmaker, will include notice period/salary/benefits discussion; Cyient (healthcare client TBD)/Senior Service Designer — CV + details sent to recruiter Priya 18/09/26)
-- Pending response: 1 (Kraft Heinz/Associate Director Global Innovation Technology)
+**🏁 SEARCH CLOSED 30/10/26.** bol.com is the job (start 1/12/26). Onboarding plan: Claude Doc "Starting at bol" (https://claude.ai/artifact/WSZiKmsRALPeEk2xf4y7Tu).
+
+**Summary:** 82 applications | Apr 2025 – Oct 2026
+- **Offer accepted: 1 (bol.com/Principal Craft Lead UX — €9,300/month at 40h, scale 19 Non-Tech, 12-month fixed-term — accepted in writing 27/10/26, start 1/12/26, screening started; contract received 29/10/26, sign by Thu 5/11/26)**
+- **Ending: 1 (Rabobank/Senior Service Designer — accepted 15/10/26, contract signed 29/10/26; ending it within the 1-month probation: `briefings/2026-10-29-rabobank-exit-after-signing.md`. Confirmation from Rabobank not yet logged)**
+- To withdraw: 2 (Kraft Heinz/Associate Director Global Innovation Technology; [Anonymized client, via FreeFlow]/Freelance CX-UX Researcher — applied 28/09/26). Search closed 30/10/26
 - Offer received, declined: 1 (Packback)/
 - Final round reached: 1 (Adidas)
-- Rejected: ~54 (incl. TUI/Senior Innovation & Digitalisation Manager, 26/08/26, no reasoning given; Barilla/Long Term Transformative Innovation & Strategic Partnerships Manager, 02/09/26, no reasoning given despite an 83/100 fit score; RoomPriceGenie/Head of UX, 21/09/26, Round 3 — specific feedback given, see entry below; Adyen/Senior Service Designer Platform Engineering, 21/09/26, Round 1 — role filled by another candidate, recruiter wants to stay in touch for future Service Design openings) | Ghosted: 14 (incl. INTERSPORT/Digital Experience Manager, Corecom Consulting/Senior UX Designer, Apple/Experience Strategist — all marked 18/09/26 after 6+ weeks silent; oneUp/Director of Innovation — marked 21/09/26, nearly 3 months silent since last follow-up) | Not for me: 3
+- Rejected: ~54 (incl. TUI/Senior Innovation & Digitalisation Manager, 26/08/26, no reasoning given; Barilla/Long Term Transformative Innovation & Strategic Partnerships Manager, 02/09/26, no reasoning given despite an 83/100 fit score; RoomPriceGenie/Head of UX, 21/09/26, Round 3 — specific feedback given, see entry below; Adyen/Senior Service Designer Platform Engineering, 21/09/26, Round 1 — role filled by another candidate, recruiter wants to stay in touch for future Service Design openings) | Ghosted: 15 (incl. INTERSPORT/Digital Experience Manager, Corecom Consulting/Senior UX Designer, Apple/Experience Strategist — all marked 18/09/26 after 6+ weeks silent; oneUp/Director of Innovation — marked 21/09/26, nearly 3 months silent since last follow-up; Cyient (healthcare client TBD)/Senior Service Designer — recruiter Priya went silent after a LinkedIn follow-up, marked 28/09/26) | Not for me: 3
+
+---
+
+## ✅ OFFER ACCEPTED
+
+### bol.com — Principal Craft Lead UX
+- **Applied:** 18/08/26
+- **Status:** ✅ **Offer accepted 27/10/26 in writing. Start Tue 1/12/26. Screening started 27/10/26.** Specialist, job family Tech Expertise (the role: Principal Craft Lead UX), salary group 19 Non-Tech, €9,300/month at 40h (€120,528/yr incl. 8% holiday allowance), bonus target 25% / max 37.5% on company results, BPF Detailhandel + BeFrank pension (employer ~€15.6K/yr), 12-month fixed-term with 1-month probation, start 1/12/26, lease category 3 (€1,177/month; pool car on fixed-term), 9-month non-compete (10 named competitors incl. Coolblue, Zalando, Amazon, TikTok). Expiry date blank in the letter. Background check via Validata. Analysis and draft email: `briefings/2026-10-26-bol-offer-analysis.md`. Offer call prep: `briefings/2026-10-22-prep-bol-offer-call.md`. Final round was Thu 22/10/26 with Ronald van Rijn (Chief Product, Technology & Data Officer, "CPTO"; on bol's board), online, 45 min. Signals were positive (debrief: `briefings/2026-10-22-debrief-bol-final-ronald.md`). Round 2 with Maurice Jongerius + Matthew Harper completed 08/10/26; Marta was one of 2 candidates (out of 5) to advance. (Round 1 recruiter screen with Thijmen Klompmaker done 14/09/26.)
+- **Rabobank overlap:** Marta accepted Rabobank on 15/10/26, chose bol on 26/10/26, and is withdrawing from Rabobank on Wed 28/10/26 (see the Rabobank entry).
+- **Type:** Fixed-term 12 months (per the 26/10/26 offer; the posting implied permanent)
+- **Location:** Utrecht (bol HQ, Papendorp)
+- **Salary range:** JD states €8,473–€9,533/month gross base. Annualized (×12): €101,676–€114,396/year base; with standard NL 8% holiday allowance added: €109,810–€123,548/year total. Marta's updated target (€115–120K base, floor €85K — raised 07/09/26) sits right at/above the top of the stated base band — well-positioned to ask for the top of range.
+- **bol pay structure (confirmed 26/10/26 from the Employee Handbook 2026, appendix 2):** General (Non-Tech) scale 19 runs €109,820 / €137,274 / €164,729 a year incl. holiday allowance (min / midpoint / max), i.e. €8,474 / €10,592 / €12,711 a month. The posted €8,473–9,533 is exactly 80–90% of the midpoint (the €10,590 inferred on 15/10 was the midpoint, not the top). The €9,300 offer is 88% of midpoint; €9,500 would be 90%. Tech scale 19 starts at €139,840. First individual raise for a 1/12 starter: 1/1/2028.
+- **Referral:** No — no connection found in `connection-tracker.md`; cold application
+- **Resume version:** Not confirmed — check with Marta
+- **Cover letter:** Not confirmed — check with Marta
+- **Connection at company:** None in `connection-tracker.md` — bol.com not yet tracked there
+- **Work product sent:** No — Marta shared her portfolio with the application, per the JD's explicit request ("please make sure to include your portfolio")
+- **Fit score:** Not yet run via `/job-fit-scorer`
+- **Company tier:** Not yet tracked in `target-companies.md` — large NL e-commerce platform (14M customers, 43,300 partners)
+- **Prior attempt:** ⚠️ Applied to bol.com once before — Product Craft Lead, applied 21/05/25, auto-rejected (see Full History). ~15 months ago, well past a typical 6-12 month cooldown. Different role this time (Principal Craft Lead UX — a craft-leadership/influence-without-authority role reporting into the UX Management Team, distinct from the earlier "Product Craft Lead" title) and the prior attempt was an auto-reject with no real review, so this is a genuinely different shot.
+- **Role notes:** Principal-level craft leadership role, not a people-manager role — Heads of Design do not report to this position; influence is earned through craft credibility and cross-functional frameworks (Engineering, Product, Product Analytics leadership), not direct authority. Explicit mandate from the CPTO Management Team to define bol's design craft direction through the AI transition. Joins the UX Management Team.
+- **Status update (22/09/26):** Moved forward to next stage — Thijmen confirmed via email. Two parts: (1) scheduling team to arrange next interview, plus a brief prep call with Thijmen beforehand; (2) HRorganizer assessment (personality questionnaire + ability test, powered by AON's "scales"/cut-e test suite) to complete before the second interview — separate email with the assessment link to follow.
+- **Last action:** 27/10/26 Thijmen answered (see History); Marta accepted in writing the same day, start 1/12/26, and asked for next steps. Screening started.
+- **Next action (27/10/26):**
+  - Complete the screening: line up two or three referees, and check the CV dates match what they'll confirm (incl. the YouTube project's end date)
+  - Payroll form: apply loonheffingskorting at bol (only payroll employer; freelance income doesn't count)
+  - When the contract arrives: if it still says "Specialist", raise the title (Principal Craft Lead UX)
+  - After start: register freelance work in AFAS InSite for Maurice's approval; lease allowance from the start
+  - Update LinkedIn only after Anne knows and the screening has cleared
+- **Previous last action:** 26/10/26 Emailed Thijmen with follow-up questions (sent the same evening): 2027 bonus and non-compete if bol doesn't renew (asked as a check, with a pro-rata request), side freelancing outside e-commerce/retail, lease allowance vs pool car and switching mid-year, role title in the contract, screening with no current employer (Validata vs DISA). No base-salary ask.
+- **Previous next action (26/10/26, email sent):** Wait for Thijmen's answers. Marta promised her decision by Wed 28/10 (or as soon as bol answers the bonus/non-compete point). Holding line to Anne if not sent yet: answer by Thu 29/10. Comparison: `briefings/2026-10-26-bol-vs-rabobank-hard-terms.pdf`.
+- **Previous next action (26/10/26, after the call transcript):** Marta promised Thijmen an answer **by Wed 28/10**. Email Thijmen tonight or Tue 27/10 morning (draft in `briefings/2026-10-26-bol-offer-analysis.md`, section 6). Recommended: drop the €9,500 ask (Thijmen said the salary was already set higher to cover the skipped first review, benchmarked against the Heads of Design, and Marta said on the call the number was as expected). One ask: if bol doesn't continue the contract, the 2027 bonus is paid pro rata and the non-compete doesn't apply. Questions: title in the contract, lease allowance vs pool car on fixed-term, side-activity/IP wording. Holding line to Anne: answer by Thu 29/10.
+- **Previous next action (22/10/26, after the offer email):** Confirm Mon 26/10 14:30 with Thijmen. On the call: get base and band position, hours, employer pension %, bonus payout history, contract type, side-activity rule, and the full terms in writing; ask for €9,500 if the base is below it; aim for the written offer by Wed 28/10 and an answer by Mon 2/11 (two weeks before the Rabobank start). Then run `/negotiate` with the actual figures. Still worth sending the thank-you to Ronald.
+- **Previous next action (22/10/26, before the offer email):** Send a thank-you email to Ronald (he invited questions by email) that answers the skipped "what would you postpone" half of Q3; draft paragraph in the debrief, section 6. Wait for Thijmen's outcome by Mon 26/10. If it's an offer, use `briefings/2026-10-20-bol-offer-checklist.md`, then decide between bol and Rabobank.
+- **Previous next action (15/10/26):** Prep saved to `briefings/2026-10-15-prep-bol-final-cpto.md`. Prep call with Thijmen next week, before the 22nd (date not logged): ask about Ronald's focus, the 08/10 feedback, format, and decision timing; tell him the Rabobank status. Log the 08/10 round (`/interview-debrief`) and the Unspoken Summit outcome. After the outcome, decide between bol and Rabobank.
+- **Previous next action (30/09/26):** Interview confirmed Thu 08/10/26. Receive case from Thijmen (~30/09) and complete it before 08/10; schedule/attend prep call with Thijmen (ask what Maurice cares about, case format/expected time/presentation vs. submission). Run `/interview-prep` for Maurice once case arrives. Assessment done. Old next action for reference: Complete HRorganizer assessment once the link arrives (personality test untimed, ability test timed — no retake except one component, best result counts). Prep for the ability test (numerical/verbal/inductive-deductive reasoning) — practice resources identified 22/09/26. Await scheduling team for next interview date + prep call with Thijmen. Run `/interview-debrief` was already done for the Sep 14 round — next debrief due after Round 2.
+- **History:**
+  - 18/08/26 Applied — portfolio included per JD request
+  - 07/09/26 Availability submitted for first interview
+  - 07/09/26 Interview confirmed: Fri 11/09/26, 14:30–15:00 CEST, video call (Teams), with Thijmen Klompmaker; will cover general job topics plus notice period/salary/benefits
+  - 14/09/26 Interview rescheduled from 11/09/26 to this afternoon (same format — 30-min recruiter screen, Thijmen Klompmaker). Pre-call, applied learnings from the same-day Adyen recruiter screen (see `interview-history.md` Sep 14 entry): (1) recruiter screens can go deeper than the stated logistics-only agenda — keep Story 2/Story 14 metrics fused and ready to fire cold, not just inside the TMAY script; (2) scripted content (why-bol, AI/craft POV, comp) tends to land close to as-written — trust the prep doc; (3) don't let a good question to Thijmen (e.g. "how do the Heads of Craft work together day to day") replace volunteering the matching proof point (Story 12/13) first.
+  - 22/09/26 Advanced to next stage — HRorganizer assessment (personality + ability test) assigned, second interview + prep call with Thijmen to be scheduled
+  - 25/09/26 HRorganizer assessment completed. Ability: Verbal = high (top of scale, "fast and accurate"); Numerical = average; Inductive (rules & interrelations) = average. Personality: less directing / less persuasive / less prudent; more agreeable, conscientious, conceptual, imaginative, open to change. Job-profile talents: Communicates Effectively, Curiosity, Customer Crazy, Manages Complexity, Stronger Together. Development areas: Business Insight, Courage, Make It Happen, Being Bold. Auto-reply: role-specific minimum scores apply; recruiter will contact before the interview if not met. No contact = cleared.
+  - 29/09/26 Email from Thijmen: HR assessment "looks good". Process reordered — interview with Maurice moves up to Round 2 (was Round 3) because R1 conversations surfaced more relevant insight than expected and the team is enthusiastic about the candidates. Case assignment being adjusted to fit; revised case due from Thijmen ~30/09/26. Scheduling team to contact Marta for the Maurice interview; short prep call with Thijmen to follow once it's confirmed.
+  - 30/09/26 Interview with Maurice Jongerius confirmed: Thu 08/10/26 at 14:00 at the bol office; Matthew Harper will also be present. Marta will receive a case to complete before the interview, plus a prep call with Thijmen.
+  - 07/10/26 Prep call with Thijmen: the Maurice round is not final (5 candidates, 2 go to a final). Panel-stated weak point: product design within a larger organisation like bol. Prep saved to `briefings/2026-10-07-bol-thijmen-debrief-product-design-prep.md`
+  - 08/10/26 Round 2 with Maurice Jongerius + Matthew Harper completed (case presented; voice-over prep in `briefings/2026-10-08-bol-voiceover-cheat-sheet.md`)
+  - Advanced to the final round (date of notice not logged) — final on Thu 22/10/26
+  - 15/10/26 Rabobank offer accepted; continuing with the bol final, decision after the bol outcome
+  - 15/10/26 Final-round interviewer confirmed: Ronald van Rijn (CPTO). Prep call with Thijmen to follow next week. `/interview-prep` run — saved to `briefings/2026-10-15-prep-bol-final-cpto.md`
+  - 22/10/26 Final round with Ronald van Rijn completed; debrief saved to `briefings/2026-10-22-debrief-bol-final-ronald.md`
+  - 22/10/26 Thijmen emailed the same day: bol wants to make an offer. Offer call proposed Mon 26/10/26 14:30
+  - 22/10/26 Final round with Ronald van Rijn completed (45 min, conversation, no case). Signals positive: joining language, his year-one success criteria matched her approach, invited follow-up questions by email. Outcome from Thijmen by Mon 26/10. Debrief: `briefings/2026-10-22-debrief-bol-final-ronald.md`
+  - 26/10/26 Offer call with Thijmen (14:30) and written offer received, with the Employee Handbook 2026 and the lease scheme. €9,300/month at 40h, scale 19 Non-Tech, 12-month fixed-term, start 1/12/26. `/negotiate` run: `briefings/2026-10-26-bol-offer-analysis.md`
+  - 26/10/26 Call details (transcript): 36h or 32h possible (not 4×9); 32 leave days at her age; working abroad 8 wks/yr, max 4 in a row, EU fine; bonus never zero, last year slightly above target, on average 3–5% below; salary set "a little bit higher" to cover the skipped first review, benchmarked against the Heads of Design; growth 20–30% within scale 19, scale 20 possible, IC track exists, internal moves possible; manager implied Maurice (OKRs, weekly/biweekly check-ins); no maternity top-up above the UWV cap; lease budget can be taken as a monthly allowance (to confirm for fixed-term). Marta said she's comparing side by side and will answer by Wed 28/10. €9,500 not asked.
+  - 26/10/26 Follow-up email sent to Thijmen (bonus/non-compete if not renewed, side work, lease allowance/pool car, title, screening). Hard-terms comparison PDF made: bol leads 5–4, 3 even.
+  - 26/10/26 Marta decided on bol
+  - 27/10/26 Thijmen's answers: no 2027 bonus if not employed on 31/12/2027, no pro-rata; offered a 1/1 start instead (cleared with Maurice). Side work: Outside Business Activities policy (May 2024), paid freelance allowed with Maurice's approval via AFAS, no paid talks/workshops on bol or e-commerce. Lease: allowance from the start, switch to a car later. Screening fine for freelancers. Title and non-compete not answered. Notes: `briefings/2026-10-27-bol-acceptance-reply.md`
+  - 27/10/26 Accepted in writing, start 1/12/26 (chose 1/12 over 1/1 despite the bonus risk; no further asks). Screening started
+
+### Rabobank — Senior Service Designer, CITO SD&T CD Business Clients *(applied as: Senior Experience Designer, Business Lending — JR_00142376)*
+- **Applied:** 23/07/26
+- **Status:** ⚠️ **Ending within probation (30/10/26).** Marta accepted bol on 27/10/26. Offer accepted 15/10/26 (written offer dated 14/10/26). Contract signed 29/10/26 before the bol contract arrived; the 1-month probation clause allows ending it with immediate effect. Exit plan: `briefings/2026-10-29-rabobank-exit-after-signing.md`. Rabobank's confirmation not yet logged. Was due to start Mon 16/11/26.
+- **Title / scale:** Senior Service Designer, scale 09. The vacancy was Senior Experience Designer, scale 10 (€5,994–8,563/month). Discussed with Anne before the written offer: scale 09 is a "soft landing", because some people have struggled with the responsibility that comes with scale 10. She said it doesn't speak to Marta's seniority and that she expects Marta to move to scale 10 quickly. The title most likely changes together with the scale move.
+- **Manager:** Anne Gerssen (Chapter Lead Design Business, W&R) | **Recruiter:** Sylvana Janssen (Recruiter IT)
+- **Location:** Utrecht, Croeselaan 18 — hybrid
+- **Contract:** Fixed-term 16/11/26 – 15/11/27, with a written declaration of intent to extend or convert to permanent (decided with the manager, based on performance and team possibilities). Probation 1 month.
+- **Compensation (from the offer letter):**
+  - Base €6,800 gross/month for 36h (Rabobank full-time) — negotiated +€100 over the previous offer (€6,700)
+  - Holiday allowance 8% (€6,528/yr) + 13th month (€6,800/yr) → **€94,928 gross/yr**
+  - Employee Benefit Budget 10% (€9,492.80/yr) → **€104,420.80/yr incl. EBB**
+  - 40h-equivalent base €90,666/yr (career-plan floor €85K, target €115–120K)
+  - Pension: defined contribution, Rabobank Pension Fund — employer 21.5%, employee 5.5% (can lower to 3.5% at each year-end)
+  - Personal development budget €1,400/yr on top of the regular training budget
+  - Home-working allowance €42.80 net/month at 5 home days (pro rata), internet allowance €40 net/month, NS Business Card or commuting allowance (max 50 km one way, pro rata)
+  - Leave: 187.2 hours/yr (pro rata for 2026)
+  - Scale 09 range per the letter: €60,354.72–€86,201.64/yr — €6,800 sits near the top, so little in-scale room before the scale 10 move
+- **Conditions still open:** screening (diploma copies, reference check); assessment and approval of outside activities — a condition for starting, get lign.ai / freelance approval confirmed in writing; Bankers' Oath within 3 months of start
+- **Referral:** No
+- **Resume version:** Tailored (Rabobank Senior Experience Designer) — journey mapping/service blueprinting bullet led, Philips Healthworks correction applied, skills section updated for service design keywords
+- **Cover letter:** Yes — sent
+- **Connection at company:** None in connection-tracker.md — Rabobank not yet on target-companies.md
+- **Work product sent:** No
+- **Fit score:** 85/100 — APPLY IMMEDIATELY (Design function weighting)
+- **Company tier:** Not yet tracked in target-companies.md — large corporate/financial services, fits "large corporates broadly" preference but outside top-2 industry preference (water/sustainability)
+- **Prior attempt:** ⚠️ Applied to Rabobank once before — Tech Lab Lead, applied 24/02/26, auto-rejected (see Full History). ~5 months ago. Different role and domain (Tech Lab vs. Design Chapter/Business Lending), and the prior one was an auto-reject with no real review, so this is a genuinely different shot — but worth knowing if it comes up.
+- **Interviewers:** Round 1: Emin Sinani (Team Lead — cares most about design/business alignment and process; loves AI). Round 2 (17/08/26): Emin Sinani again, plus Robert Paauwe (MT member — not the hiring manager for this role, but a management-team-level stakeholder in the room). Round 3 (03/09/26, rescheduled from 31/08/26): Anne Gerssen (Hiring Manager, Chapter Lead Design Business — TU Delft alum like Marta; trusts Emin's read) — finally appears as predicted in interview-history.md's Round 2 next-round prediction — plus Manjari Sahu. Round 4 (29/09/26, in person, final): Manjari Sahu + Hans Kemp (Chapter Lead Enterprise Experience a.i.).
+- **Insider intel:** Friend Youp (Rabobank) gave real-time prep tips 03/08/26, 24/08/26, and 02/09/26 — see connection-tracker.md and briefings/2026-08-03-prep-rabobank.md / briefings/2026-08-24-prep-rabobank-round3.md
+- **Last action:** 26/10/26 Holding line sent to Anne after her answers (no date named)
+- **Next action (27/10/26):** Withdraw on Wed 28/10/26: book 10 minutes with Anne in the morning, call her, confirm by email on her thread, email Sylvana, then WhatsApp Youp. Cheat sheet: `briefings/2026-10-28-anne-call-cheat-sheet.md`; full plan: `briefings/2026-10-26-rabobank-withdrawal.md`. Don't sign the contract or send more screening documents. Once done, mark this entry WITHDRAWN.
+- **Previous next action (superseded 27/10/26):**
+  - **Contract received, not yet signed (as of 22/10/26).** Email to Anne planned for Fri 23/10 with questions before signing: the path and target date for scale 10 (frameworks for 09 vs 10, conditions, who decides, development plan via GROW), how the outside-activities approval works, and working from Spain. It closes by asking for a few days to go through her answers before signing. Timed so her answers land alongside the bol terms (bol offer call Mon 26/10)
+  - Send diploma copies and complete screening; get outside activities approved in writing before 16/11/26
+  - Ask Anne what she wants to see before the scale 10 move, and whether the title changes with it (get the answer by email)
+  - Checkpoints for the scale/title move: yearly review, and contract conversion before 15/11/27
+  - bol.com final round done 22/10/26, outcome by Mon 26/10/26 — decide between bol and Rabobank once it's known
+  - Decide what to do with the other open processes (Kraft Heinz, FreeFlow, transport programme)
+- **History:**
+  - 23/07/26 Applied
+  - 03/08/26 Recruiter callback received — first interview stage
+  - 03/08/26 Call confirmed for 05/08/26 14:00; insider intel received from Youp; prep package generated
+  - 04/08/26 Tweaked portfolio sent; interview confirmation email received (title corrected to Senior Experience Designer, JR_00142376; confirmed 30-min phone format; outside-interests/COI topic flagged for discussion)
+  - 05/08/26 Round 1 phone screen with Emin Sinani — passed, advancing to Round 2
+  - 12/08/26 Round 2 confirmed: Monday 17/08/26, 45 min, with Emin Sinani + Robert Paauwe (MT member, not hiring manager for this role)
+  - 17/08/26 Round 2 portfolio review completed — debrief logged in interview-history.md
+  - 24/08/26 Round 3 confirmed via message from Bo (Rabobank): Monday 31/08/26, 08:00 CEST, 45 min, virtual, with Anne Gerssen (Hiring Manager) and Manjari Sahu
+  - 24/08/26 `/interview-prep` run — full package generated, saved to `briefings/2026-08-24-prep-rabobank-round3.md`; interviewer research done (Anne Gerssen's own Danske Bank Business Banking → Rabobank path directly mirrors Weakness 1 defense; Manjari Sahu's TheyDo/design-maturity conference talk gives a genuine tool-user connection point); cumulative signal map built across all 3 rounds — structure/support concern (Robert Paauwe, R2) flagged as highest-priority open item (interviewer likely different; Emin returns later for portfolio review)
+  - 02/09/26 Round 3 rescheduled to Thursday 03/09/26. Youp gave major new intel via WhatsApp the night before — see prep doc's Late-Breaking Update section for full detail
+  - 03/09/26 Round 3 started but cut short ~15-20 min in due to Marta's connection (Sardinia, poor wifi); rescheduled by mutual agreement to resume later
+  - 18/09/26 Round 3 continuation/completion with Anne Gerssen solo — full case walkthrough, credibility challenge handled well, strongly positive close; in-person final round to be scheduled for week of 28/09/26 — debrief logged in interview-history.md
+  - 19/09/26 `/interview-prep` run for the final round — full package generated, saved to `briefings/2026-09-19-prep-rabobank-round4-final.md`; fresh web research added (Rabobank engineering culture shift to event-driven credit-risk assessment, relevant "why Rabobank" color); cumulative signal map updated to 4 session-appearances — "what are you looking for" flagged as the highest-priority open gap (asked twice, 5/10 both times, generalized "assertion instead of proof moment" pattern)
+  - 26/09/26 Final-round panel confirmed: Manjari Sahu + Hans (lead from another team, surname TBD) — Anne not listed. Youp: Hans looks for motivation specific to Rabobank/the industry. Supplement prep saved to `briefings/2026-09-26-prep-rabobank-round4-panel-update.md`
+  - 29/09/26 Round 4 (final, in-person) completed — Marta feels it went well. Anne Gerssen will call Friday 02/10/26. Debrief pending (`/interview-debrief` with transcript).
+  - Early Oct 26 (exact date not logged) Verbal offer at scale 09, €6,700/month. Anne explained the scale 09 soft landing and expects a quick move to scale 10. Negotiation prep: `briefings/2026-10-06-negotiate-rabobank-recruiter-call.md`, `briefings/2026-10-07-rabobank-call-cheat-sheet.md`
+  - Negotiated base up €100 to €6,800/month
+  - 14/10/26 Written offer received from Sylvana Janssen (start 16/11/26, fixed-term to 15/11/27)
+  - 15/10/26 Offer accepted
+  - Contract received (date not logged), not yet signed as of 22/10/26
+  - ~23/10/26 Emailed Anne questions before signing: path and target date for scale 10, outside-activities approval, working from Spain
+  - 26/10/26 Anne replied: no promise or date for scale 10 ("dependent on how you are landing and performing"), side activities "totally fine" (registered after start), working abroad case by case. Marta sent a holding line
+  - 26/10/26 Marta decided on bol
+  - 27/10/26 bol accepted in writing. Rabobank withdrawal set for Wed 28/10/26
 
 ---
 
 ## 🟢 ACTIVE
 
-### Cyient (healthcare client TBD) — Senior Service Designer (via recruiter Priya)
+### [Anonymized consumer products company] — Freelance CX/UX Researcher (via FreeFlow)
+- **Applied:** 28/09/26
+- **Status:** To withdraw — search closed 30/10/26 (bol accepted). Was: application sent — motivation note + tailored CV submitted. End client's identity is anonymized by FreeFlow (staffing agency); not yet disclosed.
+- **Type:** Freelance/contract, 32–36h/week, start ASAP, duration TBC
+- **Location:** Hybrid, NL — international scope
+- **Salary range:** JD stated €90–105/h all-in, excl. VAT. Below Marta's €110/h freelance IC target (career-plan.md) — form asked to include the rate with the motivation/CV upload; confirm with Marta what figure was actually submitted.
+- **Referral:** No — cold, inbound via FreeFlow agency listing
+- **Resume version:** Tailored from `MartaAxpe_CV_2026_Polaroid_2.docx` baseline via `/resume-tailor` — bullets reframed research-first (downleveled from the baseline's "Experience Design Director" framing since the JD is an IC research contract, not a leadership role): new lead bullet on Twist consumer research/evaluation, IoT dashboard/back-office servicing bullet added, PCB bullet trimmed to the coordination fact only, Tikkie experimentation bullet promoted to lead in the WEAREREASONABLEPEOPLE role. Cut: Apple Wallet companion-app bullet, visual-brand-language/Red Dot Award bullet, €450K budget bullet, people-management bullet at WEAREREASONABLEPEOPLE — all leadership/design-system-flavored, not research-relevant. Skills section rewritten to lead with qualitative/quantitative research, dropping design-system and team-leadership skill lines.
+- **Cover letter:** Short motivation note (not a full cover letter) — drafted across several rounds: opens with the in-house/consultancy domain-breadth line, then Culligan physical/IoT product work plus the back-office servicing angle (added per Marta's direction), then ABN AMRO Tikkie's 10 quant/qual experiments, then Clorox Poett's LATAM regional research, closing with a neutral transparency note flagging she's in the final stage of a separate hiring process (Rabobank Round 4) that could close in a similar timeframe.
+- **Connection at company:** None — end client's identity not disclosed
+- **Work product sent:** No
+- **Fit score:** 82/100 — APPLY IMMEDIATELY (`/job-fit-scorer`, equal-weighted dimensions since "CX/UX Researcher" doesn't map cleanly to a named function). Skill Match 19/20 (near-perfect, including the "physical consumer products" strong-plus — Twist/PCB/manufacturing background is a genuine differentiator here), Seniority Fit 16/20, Culture Signals 18/20, Comp Range 15/20 (rate below target), Growth Trajectory 14/20 (lateral to the leadership trajectory, but valuable as runway income + domain reinforcement given the freelance-income gap noted in career-plan.md).
+- **Company tier:** Not tracked — end client unknown. Speculative, unconfirmed pattern-match against `target-companies.md` suggested Philips or Signify as possible fits (physical consumer products, NL hybrid) — not verified, do not treat as fact.
+- **Notes:** Same-day application deadline (Mon 28/09, 09:00 CET) — tight turnaround from JD receipt to submission. Overqualification risk (Director/Head-level titles vs. an IC contract) was flagged and mitigated at the bullet level in the resume rather than in the motivation note.
+- **Last action:** Applied 28/09/26 — motivation note + tailored CV submitted via the FreeFlow application form
+- **Next action:** Follow up if no response by 05/10/26. If a recruiter call happens, ask directly which end client this is.
+- **History:**
+  - 28/09/26 `/job-fit-scorer` run — 82/100, APPLY IMMEDIATELY
+  - 28/09/26 `/resume-tailor` run against the Polaroid_2 baseline — bullets reframed research-first, leadership/budget/design-system bullets cut
+  - 28/09/26 Motivation note drafted and refined across several rounds (domain-breadth opener moved to lead, PCB detail trimmed, Tikkie experiments added, Clorox LATAM regional emphasis added, IoT/back-office servicing detail added per Marta's direction, transparency caveat about a competing process added)
+  - 28/09/26 Applied
+
+### ~~Cyient (healthcare client TBD) — Senior Service Designer (via recruiter Priya)~~ — GHOSTED 28/09/26
 - **Applied:** N/A — inbound recruiter outreach; CV + candidate details sent 18/09/26
-- **Status:** 🟡 Application sent — CV and candidate info submitted; asked recruiter to disclose end client/team
+- **Status:** Ghosted — recruiter Priya never replied by the 25/09/26 follow-up date; Marta followed up directly on LinkedIn, no response there either
 - **Type:** Fixed-term contract (1+ year) via staffing agency (Cyient) — end client (healthcare sector) undisclosed until shortlisted
 - **Location:** Amsterdam, NL
 - **Salary range:** Not stated by recruiter; Marta quoted €115,000 gross/year (permanent-equivalent target, per career-plan.md)
 - **Referral:** No — inbound recruiter-sourced (Cyient, contact: Priya)
 - **Resume version:** Reused `MartaAxpe_CV_2026_Service Design_Adyen.docx` baseline as-is — contact header "Password: Welcome2026" line flagged for removal before sending
 - **Cover letter:** No
-- **Connection at company:** None — end client not disclosed; Cyient/Priya not yet in `connection-tracker.md`
+- **Connection at company:** None — end client never disclosed; Cyient/Priya not yet in `connection-tracker.md`
 - **Work product sent:** No
 - **Fit score:** 65/100 — APPLY WITH REFERRAL ONLY (borderline). Strong on core service-design/research craft (service design, UX research, journey mapping, service blueprints, Figma, Confluence, ecosystem mapping all confirmed via experience-library.md update); gaps on Heuristic Evaluation and Azure DevOps (had first-hand Azure cloud exposure via Culligan IoT infra, not Azure DevOps project-planning tool specifically). Comp Range and Growth Trajectory were the weakest dimensions — undisclosed client, no listed comp, and a 1-year contract that doesn't advance the IKEA/leadership trajectory.
 - **Company tier:** Not tracked — not in target-companies.md; healthcare is not a listed priority industry
-- **Last action:** Sent CV + nationality/notice/visa/salary details to recruiter Priya, 18/09/26; asked for client/team disclosure
-- **Next action:** Await recruiter response; follow up if no reply by 25/09/26
+- **Last action:** Followed up with recruiter Priya on LinkedIn after no reply by the 25/09/26 deadline — no response.
+- **Next action:** None — closed. End client was never even disclosed, so no separate company/target-list thread to revisit here — this was purely a Priya/Cyient relationship, and it went nowhere.
 - **History:**
   - 18/09/26 Inbound recruiter email with JD; job-fit-scored at 65/100; CV reviewed and reused from Adyen baseline; reply with candidate details sent
+  - 25/09/26 Follow-up deadline passed with no reply from Priya
+  - 28/09/26 Followed up directly on LinkedIn — no response; marked ghosted
 
 ### [Client TBD] — Service Designer, Transport Transformation Programme (via recruiter Carlijn Tweebeeke)
 - **Applied:** N/A — inbound recruiter outreach, 10/09/26
@@ -92,32 +242,6 @@ Last updated: 2026-09-21
   - 21/08/26 Applied — comp field answered €95,000–€105,000 depending on package
   - 26/08/26 Rejected — no reasoning given
 
-### bol.com — Principal Craft Lead UX
-- **Applied:** 18/08/26
-- **Status:** 🟢 Interview Scheduled — Round 1, preliminary video interview, rescheduled from Fri 11/09/26 to this afternoon, 14/09/26, Microsoft Teams, with Thijmen Klompmaker. Confirmation email notes the call covers general job topics plus practical items (notice period, salary, benefits).
-- **Type:** Permanent
-- **Location:** NL (bol.com HQ Utrecht) — not explicitly stated in JD text provided
-- **Salary range:** JD states €8,473–€9,533/month gross base. Annualized (×12): €101,676–€114,396/year base; with standard NL 8% holiday allowance added: €109,810–€123,548/year total. Marta's updated target (€115–120K base, floor €85K — raised 07/09/26) sits right at/above the top of the stated base band — well-positioned to ask for the top of range.
-- **Referral:** No — no connection found in `connection-tracker.md`; cold application
-- **Resume version:** Not confirmed — check with Marta
-- **Cover letter:** Not confirmed — check with Marta
-- **Connection at company:** None in `connection-tracker.md` — bol.com not yet tracked there
-- **Work product sent:** No — Marta shared her portfolio with the application, per the JD's explicit request ("please make sure to include your portfolio")
-- **Fit score:** Not yet run via `/job-fit-scorer`
-- **Company tier:** Not yet tracked in `target-companies.md` — large NL e-commerce platform (14M customers, 43,300 partners)
-- **Prior attempt:** ⚠️ Applied to bol.com once before — Product Craft Lead, applied 21/05/25, auto-rejected (see Full History). ~15 months ago, well past a typical 6-12 month cooldown. Different role this time (Principal Craft Lead UX — a craft-leadership/influence-without-authority role reporting into the UX Management Team, distinct from the earlier "Product Craft Lead" title) and the prior attempt was an auto-reject with no real review, so this is a genuinely different shot.
-- **Role notes:** Principal-level craft leadership role, not a people-manager role — Heads of Design do not report to this position; influence is earned through craft credibility and cross-functional frameworks (Engineering, Product, Product Analytics leadership), not direct authority. Explicit mandate from the CPTO Management Team to define bol's design craft direction through the AI transition. Joins the UX Management Team.
-- **Status update (22/09/26):** Moved forward to next stage — Thijmen confirmed via email. Two parts: (1) scheduling team to arrange next interview, plus a brief prep call with Thijmen beforehand; (2) HRorganizer assessment (personality questionnaire + ability test, powered by AON's "scales"/cut-e test suite) to complete before the second interview — separate email with the assessment link to follow.
-- **Last action:** Received "moving forward" email from Thijmen, 22/09/26, with HRorganizer assessment instructions.
-- **Next action:** Complete HRorganizer assessment once the link arrives (personality test untimed, ability test timed — no retake except one component, best result counts). Prep for the ability test (numerical/verbal/inductive-deductive reasoning) — practice resources identified 22/09/26. Await scheduling team for next interview date + prep call with Thijmen. Run `/interview-debrief` was already done for the Sep 14 round — next debrief due after Round 2.
-- **History:**
-  - 18/08/26 Applied — portfolio included per JD request
-  - 07/09/26 Availability submitted for first interview
-  - 07/09/26 Interview confirmed: Fri 11/09/26, 14:30–15:00 CEST, video call (Teams), with Thijmen Klompmaker; will cover general job topics plus notice period/salary/benefits
-  - 14/09/26 Interview rescheduled from 11/09/26 to this afternoon (same format — 30-min recruiter screen, Thijmen Klompmaker). Pre-call, applied learnings from the same-day Adyen recruiter screen (see `interview-history.md` Sep 14 entry): (1) recruiter screens can go deeper than the stated logistics-only agenda — keep Story 2/Story 14 metrics fused and ready to fire cold, not just inside the TMAY script; (2) scripted content (why-bol, AI/craft POV, comp) tends to land close to as-written — trust the prep doc; (3) don't let a good question to Thijmen (e.g. "how do the Heads of Craft work together day to day") replace volunteering the matching proof point (Story 12/13) first.
-  - 22/09/26 Advanced to next stage — HRorganizer assessment (personality + ability test) assigned, second interview + prep call with Thijmen to be scheduled
-  - 25/09/26 HRorganizer assessment completed. Ability: Verbal = high (top of scale, "fast and accurate"); Numerical = average; Inductive (rules & interrelations) = average. Personality: less directing / less persuasive / less prudent; more agreeable, conscientious, conceptual, imaginative, open to change. Job-profile talents: Communicates Effectively, Curiosity, Customer Crazy, Manages Complexity, Stronger Together. Development areas: Business Insight, Courage, Make It Happen, Being Bold. Auto-reply: role-specific minimum scores apply; recruiter will contact before the interview if not met. No contact = cleared.
-
 ### ~~Adyen — Senior Service Designer, Platform Engineering~~ — REJECTED 21/09/26
 - **Applied:** 18/08/26
 - **Status:** ❌ Rejected 21/09/26 — role filled. Alina replied to Marta's 21/09/26 follow-up: the other final-stage candidate signed over the weekend, role is officially closed. No fit concern raised — she reiterated a "very positive impression" from the R1 conversation and said she'd have moved Marta forward under normal circumstances; this matches what she disclosed live on the 14/09/26 call (pipeline timing, not a fit issue). She explicitly wants to stay in touch for when the Service Design function expands, and called out Marta as "great to speak with throughout the process." Full process for reference: Recruiter Screen → Hiring Manager Interview → Portfolio Interview (2 case studies) → Design Challenge → Leadership Interview → Board/GLT Interview — Marta only reached stage 1.
@@ -144,7 +268,7 @@ Last updated: 2026-09-21
 
 ### Kraft Heinz — Associate Director, Global Innovation Technology
 - **Applied:** 15/08/26
-- **Status:** Submitted — Pending Response
+- **Status:** To withdraw — search closed 30/10/26 (bol accepted)
 - **Type:** Permanent
 - **Location:** Amsterdam, NL
 - **Salary range:** Not stated in JD — estimated medium confidence, likely at or above €100K–€110K target for a Director-level role at a global public CPG
@@ -270,40 +394,6 @@ Last updated: 2026-09-21
 - **History:**
   - 03/08/26 Applied
   - 20/08/26 Rejected (date confirmed by Marta; exact rejection date not specified)
-
-### Rabobank — Senior Experience Designer, Business Lending (Design Chapter) — JR_00142376
-- **Applied:** 23/07/26
-- **Status:** 🟢 Round 3 completed (18/09/26) — strongly positive, Anne explicitly said "quite positive" and skipped a decision-gate callback to schedule directly. In-person final round to be scheduled for week of 28/09/26, panel TBD.
-- **Note:** Corrected 04/08/26 — official interview confirmation email confirmed title as "Senior Experience Designer" (JR_00142376), not "Strategic Service Designer" as previously recorded here. Resume-version note (line below) already had it right.
-- **Location:** Utrecht, NL — hybrid
-- **Salary range:** €5,994–8,563 gross/month (scale 10, 36h week) + 13th month + 8% holiday allowance + 10% Employee Benefit Budget — full package estimate ~€91K–130K/year, right at target
-- **Referral:** No
-- **Resume version:** Tailored (Rabobank Senior Experience Designer) — journey mapping/service blueprinting bullet led, Philips Healthworks correction applied, skills section updated for service design keywords
-- **Cover letter:** Yes — sent
-- **Connection at company:** None in connection-tracker.md — Rabobank not yet on target-companies.md, consider adding if this progresses
-- **Work product sent:** No
-- **Fit score:** 85/100 — APPLY IMMEDIATELY (Design function weighting)
-- **Company tier:** Not yet tracked in target-companies.md — large corporate/financial services, fits "large corporates broadly" preference but outside top-2 industry preference (water/sustainability)
-- **Prior attempt:** ⚠️ Applied to Rabobank once before — Tech Lab Lead, applied 24/02/26, auto-rejected (see Full History). ~5 months ago. Different role and domain (Tech Lab vs. Design Chapter/Business Lending), and the prior one was an auto-reject with no real review, so this is a genuinely different shot — but worth knowing if it comes up.
-- **Interviewers:** Round 1: Emin Sinani (Team Lead — cares most about design/business alignment and process; loves AI). Round 2 (17/08/26): Emin Sinani again, plus Robert Paauwe (MT member — not the hiring manager for this role, but a management-team-level stakeholder in the room). Round 3 (03/09/26, rescheduled from 31/08/26): Anne Gerssen (Hiring Manager, Chapter Lead Design Business — TU Delft alum like Marta; trusts Emin's read) — finally appears as predicted in interview-history.md's Round 2 next-round prediction — plus Manjari Sahu.
-- **Insider intel:** Friend Youp (Rabobank) gave real-time prep tips 03/08/26, 24/08/26, and 02/09/26 — see connection-tracker.md and briefings/2026-08-03-prep-rabobank.md / briefings/2026-08-24-prep-rabobank-round3.md
-- **Last action:** Round 3 continuation completed 18/09/26 with Anne Gerssen solo (Manjari dropped out last-minute again) — full Pelican case walkthrough, a direct "where do you come in" credibility challenge (handled well — see interview-history.md), reflection question, motivation/fit question, and a conflict-style/negative-trigger question. Outcome strongly positive; in-person final round to be scheduled for week of 28/09/26.
-- **Next action:** Await scheduling for the in-person final round (week of 28/09/26). Round 4 prep package generated 19/09/26 — see `briefings/2026-09-19-prep-rabobank-round4-final.md`. Highest-priority items going in: (1) a story-anchored "what are you looking for" answer (career-plan.md Weakness 3 script + Story 7/lign.ai isolation moment) — the abstract-answer pattern recurred on this question again Sep 18; (2) volunteer the conflict-of-interest disclosure and "why Rabobank" EIB/sustainability script unprompted, early in the conversation — both still unused after 4 combined session-appearances across 3 rounds, this is very likely the last round; (3) fuse the "global leader in drinking water solutions, 90+ countries" qualifier to "Culligan" on first use — said 15+ times Sep 18 with zero uses, now in front of the actual decision-maker; (4) confirm the panel once known and background-check anyone beyond Anne/Manjari.
-- **History:**
-  - 23/07/26 Applied
-  - 03/08/26 Recruiter callback received — first interview stage
-  - 03/08/26 Call confirmed for 05/08/26 14:00; insider intel received from Youp; prep package generated
-  - 04/08/26 Tweaked portfolio sent; interview confirmation email received (title corrected to Senior Experience Designer, JR_00142376; confirmed 30-min phone format; outside-interests/COI topic flagged for discussion)
-  - 05/08/26 Round 1 phone screen with Emin Sinani — passed, advancing to Round 2
-  - 12/08/26 Round 2 confirmed: Monday 17/08/26, 45 min, with Emin Sinani + Robert Paauwe (MT member, not hiring manager for this role)
-  - 17/08/26 Round 2 portfolio review completed — debrief logged in interview-history.md
-  - 24/08/26 Round 3 confirmed via message from Bo (Rabobank): Monday 31/08/26, 08:00 CEST, 45 min, virtual, with Anne Gerssen (Hiring Manager) and Manjari Sahu
-  - 24/08/26 `/interview-prep` run — full package generated, saved to `briefings/2026-08-24-prep-rabobank-round3.md`; interviewer research done (Anne Gerssen's own Danske Bank Business Banking → Rabobank path directly mirrors Weakness 1 defense; Manjari Sahu's TheyDo/design-maturity conference talk gives a genuine tool-user connection point); cumulative signal map built across all 3 rounds — structure/support concern (Robert Paauwe, R2) flagged as highest-priority open item (interviewer likely different; Emin returns later for portfolio review)
-  - 02/09/26 Round 3 rescheduled to Thursday 03/09/26. Youp gave major new intel via WhatsApp the night before — see prep doc's Late-Breaking Update section for full detail
-  - 03/09/26 Round 3 started but cut short ~15-20 min in due to Marta's connection (Sardinia, poor wifi); rescheduled by mutual agreement to resume later
-  - 18/09/26 Round 3 continuation/completion with Anne Gerssen solo — full case walkthrough, credibility challenge handled well, strongly positive close; in-person final round to be scheduled for week of 28/09/26 — debrief logged in interview-history.md
-  - 19/09/26 `/interview-prep` run for the final round — full package generated, saved to `briefings/2026-09-19-prep-rabobank-round4-final.md`; fresh web research added (Rabobank engineering culture shift to event-driven credit-risk assessment, relevant "why Rabobank" color); cumulative signal map updated to 4 session-appearances — "what are you looking for" flagged as the highest-priority open gap (asked twice, 5/10 both times, generalized "assertion instead of proof moment" pattern)
-  - 26/09/26 Final-round panel confirmed: Manjari Sahu + Hans (lead from another team, surname TBD) — Anne not listed. Youp: Hans looks for motivation specific to Rabobank/the industry. Supplement prep saved to `briefings/2026-09-26-prep-rabobank-round4-panel-update.md`
 
 ### ~~oneUp — Director of Innovation (Food)~~ *(was: Principal Innovation Consultant)* — GHOSTED
 - **Applied:** 03/03/26

@@ -1,0 +1,795 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>From Delivery to Discovery — draft v5</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#222; --head:#333; --muted:#6d6d6d; --line:#9a9a9a; --soft:#eeeeee; --softer:#f6f6f6;
+  --teal:#21C2B0; --orange:#F2944A; --blue:#94B8DE; --dark:#000;
+  --hfont:"Archivo","Arial Narrow",Arial,sans-serif;
+  --bfont:"Montserrat","Helvetica Neue",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:#d9d9d9;font-family:var(--bfont);color:var(--ink);overflow:hidden}
+.stage{position:absolute;left:50%;top:50%;width:1600px;height:900px;transform-origin:center center}
+.slide{position:absolute;inset:0;width:1600px;height:900px;background:#fff;display:none;overflow:hidden}
+.slide.active{display:block}
+/* chrome */
+.hdr{position:absolute;top:36px;left:84px;right:84px;display:flex;align-items:center;gap:30px}
+.co{background:var(--soft);font-size:12px;padding:6px 8px;color:#333}
+.hdr .ln{flex:1;height:1.5px;background:var(--line)}
+.hdr .nm{font-size:12px;letter-spacing:.04em}
+.pg{position:absolute;right:0;bottom:0;width:74px;height:74px;border-top-left-radius:74px;background:#d6d6d6}
+.pg span{position:absolute;right:12px;bottom:12px;color:#fff;font-weight:700;font-size:17px}
+.sec{position:absolute;top:118px;left:84px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.t{position:absolute;top:140px;left:84px;right:84px;font-family:var(--hfont);font-weight:800;text-transform:uppercase;font-size:30px;color:var(--head);margin:0;letter-spacing:-.005em}
+.tr{position:absolute;top:190px;left:84px;right:84px;height:1.5px;background:#b9b9b9}
+.big{font-family:var(--hfont);font-weight:800;text-transform:uppercase;font-size:56px;line-height:1.02;color:var(--head);margin:0}
+.body{position:absolute;top:222px;left:84px;right:84px;bottom:70px}
+p{margin:0 0 12px;line-height:1.55;font-size:16px}
+.lead{font-size:18px;font-weight:600;margin-bottom:10px}
+.light{font-weight:300}
+.small{font-size:13px;color:var(--muted);line-height:1.5}
+.stmt{font-weight:300;font-size:40px;line-height:1.38;color:#111;margin:0}
+.stmt b{font-weight:700}
+ul{margin:0 0 10px;padding-left:0;list-style:none} li{margin:0 0 7px;font-size:15.5px;line-height:1.5}
+li::before{content:"→ ";color:#888}
+.grid{display:grid;gap:36px}
+.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
+.g-l{grid-template-columns:0.9fr 1.3fr}
+.rule{border-top:1.5px solid #c9c9c9;padding-top:14px}
+h3{font-size:17px;font-weight:700;margin:0 0 6px}
+h4{font-size:13px;font-weight:700;margin:0 0 6px;letter-spacing:.06em;text-transform:uppercase}
+.goal{font-style:italic;font-weight:300;color:#555;margin:-2px 0 8px;font-size:15px}
+/* tags */
+.tag{display:inline-block;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;padding:3px 8px;border-radius:20px;vertical-align:3px;margin-left:8px;white-space:nowrap;font-family:var(--bfont)}
+.tag.ex{background:var(--head);color:#fff}
+.tag.hy{border:1.2px dashed var(--orange);color:#c96a1f}
+/* circles */
+.circ{border-radius:50%;display:flex;align-items:center;justify-content:center;text-align:center;flex-direction:column}
+.c-dark{background:#333;color:#fff}
+.c-white{background:#fff;box-shadow:0 6px 24px rgba(0,0,0,.08)}
+.halo{box-shadow:0 0 0 16px #e3e3e3}
+/* tables */
+table{border-collapse:collapse;width:100%}
+th{font-size:12px;letter-spacing:.06em;text-transform:uppercase;text-align:left;color:#555;font-weight:700;padding:8px 14px 8px 0;border-bottom:1.5px solid #999}
+td{font-size:14.5px;line-height:1.45;padding:10px 14px 10px 0;border-bottom:1px dotted #bbb;vertical-align:top}
+td.b{font-weight:700}
+/* dark slides */
+.dark{background:#000;color:#fff}
+.dark .co{background:#fff;color:#000}.dark .hdr .ln{background:#666}.dark .hdr .nm{color:#fff}
+.dark .pg{background:#555}
+.dark .bigt{position:absolute;left:84px;right:84px;font-family:var(--hfont);font-weight:800;text-transform:uppercase;color:var(--blue);line-height:1}
+.hline{position:absolute;left:84px;right:84px;height:1.5px;background:#777}
+/* details */
+details{border-top:1px dotted #bbb;padding:8px 0}
+details:last-of-type{border-bottom:1px dotted #bbb}
+summary{cursor:pointer;font-weight:600;font-size:15px;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"+  ";color:#888;font-weight:400}
+details[open] summary::before{content:"–  "}
+details > div{padding:8px 0 2px 18px}
+.ph{border:1.5px dashed #aaa;color:#888;font-size:13px;display:flex;align-items:center;justify-content:center;text-align:center;padding:16px}
+/* ui */
+.ui{position:fixed;top:10px;right:14px;display:flex;gap:8px;z-index:20;font-family:var(--bfont);font-size:12px}
+.ui button,.ui span{background:#fff;border:1px solid #bbb;border-radius:3px;padding:4px 9px;color:#333;font:inherit;cursor:pointer}
+.ui .over{color:#c0392b;font-weight:700}
+#notes{position:fixed;left:0;right:0;bottom:0;max-height:34vh;overflow:auto;background:#111;color:#eee;font-size:14.5px;line-height:1.5;padding:14px 22px;display:none;z-index:15}
+#notes.on{display:block}
+#notes .nlab{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--orange);margin-bottom:4px}
+#notes p{font-size:14.5px;margin:0 0 8px}
+.notes{display:none}
+.verify{color:#F2944A;font-weight:700}
+svg text{font-family:var(--bfont)}
+@media print{
+  @page{size:1600px 900px;margin:0}
+  html,body{overflow:visible;background:#fff}
+  .ui,#notes{display:none!important}
+  .stage{position:static;transform:none!important;width:1600px;height:auto}
+  .slide{position:relative;display:block!important;page-break-after:always}
+}
+</style>
+</head>
+<body>
+<div class="ui">
+  <span id="count">1 / 1</span>
+  <button id="timerBtn" title="T start/pause · R reset"><span id="timer">00:00</span> / 22:00</button>
+  <button id="notesBtn" title="N">Notes</button>
+</div>
+<div id="notes"></div>
+
+<div class="stage" id="stage">
+
+<!-- 00 TITLE -->
+<section class="slide dark">
+  <div class="hdr"><span class="co">bol</span><span class="ln"></span><span class="nm">MARTA AXPE</span></div>
+  <div class="hline" style="top:520px"></div>
+  <div class="bigt" style="top:570px;font-size:96px">From delivery<br>to discovery</div>
+  <div style="position:absolute;left:900px;top:700px;color:var(--blue);font-family:var(--hfont);font-weight:700;font-size:26px;text-transform:uppercase">Principal Craft Lead UX · case study · 08 Oct 2026</div>
+  <div class="hline" style="top:800px"></div>
+  <div style="position:absolute;left:84px;top:830px;color:#aaa;font-size:13px">
+    <span class="tag ex" style="margin:0 6px 0 0;background:#fff;color:#000">Experience example</span> something I've done that supports the argument
+    &nbsp;&nbsp;<span class="tag hy" style="margin:0 6px 0 0">Hypothesis</span> something I'd test at bol</div>
+  <div class="pg"><span>00</span></div>
+  <div class="notes">
+    <p>Working title. Alternatives: "Designers as makers" · "The bol designer in 2028" · "Less delivery, more discovery".</p>
+    <p>Storyline in one breath: AI is changing what a designer's day is made of. My vision is a bol designer who works as a maker and spends most of their time on discovery. That only works if people change how they behave, so the standard I'd introduce is a behaviour framework, made practical through one way of working. I'd land it in six months by starting with one squad and the people most sceptical of it, measure whether behaviour changes, and start by making the Heads of Design's job easier.</p>
+  </div>
+</section>
+
+<!-- 01 STRATEGIC GOAL -->
+<section class="slide">
+  <div class="hdr"><span class="co">bol</span><span class="ln"></span><span class="nm">MARTA AXPE</span></div>
+  <div style="position:absolute;top:150px;left:84px;width:720px">
+    <div class="small" style="letter-spacing:.12em;text-transform:uppercase;margin-bottom:14px">1 · Vision</div>
+    <p class="big">Every<br>designer<br>a maker</p>
+    <div style="height:1.5px;background:#999;width:720px;margin:36px 0 40px -20px"></div>
+    <p class="lead" style="font-size:22px;line-height:1.45;font-weight:300">By 2028, every designer at bol works as a <b>maker</b>: creating artefacts that open a dialogue with every craft, and spending more time discovering what's worth building for the future of e-commerce.</p>
+    
+  </div>
+  <div style="position:absolute;left:880px;top:170px;width:640px;display:flex;flex-direction:column;gap:26px">
+    <div style="display:flex;gap:26px;align-items:center"><div class="circ c-dark halo" style="width:120px;height:120px;flex:none;font-weight:700;font-size:15px">Makes</div><div><h3>What a maker does</h3><p class="light" style="font-size:15px;margin:0">Turns an idea into something working, on real data and in code, in days, so people can react to it, question it and improve it.</p></div></div>
+    <div style="display:flex;gap:26px;align-items:center"><div class="circ" style="width:120px;height:120px;flex:none;font-weight:700;font-size:15px;background:#21C2B0;color:#fff;box-shadow:0 0 0 16px #d8f3ef">Discovers</div><div><h3>Why discovery</h3><p class="light" style="font-size:15px;margin:0">When AI takes over production, the value moves to deciding what to build. Time spent testing ideas is how bol shapes what shopping becomes, for customers and partners.</p></div></div>
+    <div style="display:flex;gap:26px;align-items:center"><div class="circ c-white" style="width:120px;height:120px;flex:none;font-weight:700;font-size:15px;border:1.5px solid #333;box-shadow:0 0 0 16px #eee">Together</div><div><h3>Never alone</h3><p class="light" style="font-size:15px;margin:0">Makers work alongside product, engineering and data. The artefact is how the crafts think together.</p></div></div>
+  </div>
+  <div class="pg"><span></span></div>
+  <div class="notes"><p>This is the vision for the team. A maker is a designer whose artefacts start the right conversations with every other craft, so bol spends its time on what's worth building next.</p></div>
+</section>
+
+<!-- 02 WHAT'S CHANGING -->
+<section class="slide">
+  <div class="hdr"><span class="co">bol</span><span class="ln"></span><span class="nm">MARTA AXPE</span></div>
+  <h2 class="t">Four forces change what a designer's day is made of</h2><div class="tr"></div>
+  <div class="body grid g-l">
+    <div>
+      <p class="lead">Four forces, read as changes to a designer's day</p>
+      <p class="light">The brief names four forces reshaping UX at bol. Each one changes what a designer's time is made of, and what makes a designer valuable.</p>
+      <p class="light" style="margin-top:28px"><b style="font-weight:600">What Matthew shared:</b> a pilot is already testing two ways of working; defining what quality UX at bol looks like is "the hard bit"; and upskilling versus craft time is a tightrope.</p>
+    </div>
+    <div>
+      <table>
+        <tr><th style="width:42%">Force (from the brief)</th><th>What it means for a designer</th></tr>
+        <tr><td class="b">Engineering moves faster than design workflows</td><td>Handoffs become the bottleneck. Designers need to work where the product is built.</td></tr>
+        <tr><td class="b">AI drafts the first pass of visual and interaction design</td><td>Drawing screens stops being the value. Framing and judging become it.</td></tr>
+        <tr><td class="b">AI products can't be fully mocked upfront</td><td>Designers specify behaviour as well as screens, and test it live.</td></tr>
+        <tr><td class="b">New builder profiles blend design, product and engineering</td><td>Everyone makes, so someone has to hold the intent and the quality bar.</td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="pg"><span>02</span></div>
+  <div class="notes">
+    <p>I read the brief as a people challenge first, because what a designer does all day is changing. The vision starts there.</p>
+  </div>
+</section>
+
+<!-- 03 VISION: DESIGNER 2028 -->
+<section class="slide">
+  <div class="hdr"><span class="co">bol</span><span class="ln"></span><span class="nm">MARTA AXPE</span></div>
+  <div class="sec">1 · Vision</div>
+  <h2 class="t">By 2028, designers spend most of their week on discovery, not production</h2><div class="tr"></div>
+  <div class="body grid" style="grid-template-columns:1fr 1.05fr;gap:56px">
+    <div>
+      <p class="lead">What's left of production is guarding the guardrails <span class="tag hy">Hypothesis</span></p>
+      <h4 style="margin-top:14px">Where the week goes <span class="small" style="text-transform:none;letter-spacing:0;font-weight:400">· illustrative shape, baselined in month 1</span></h4>
+      <svg width="640" height="150" viewBox="0 0 640 150">
+        <text x="0" y="22" font-size="13" font-weight="600">Today</text>
+        <rect x="70" y="8" width="320" height="24" fill="#333"/><rect x="390" y="8" width="130" height="24" fill="#21C2B0"/><rect x="520" y="8" width="110" height="24" fill="#cfcfcf"/>
+        <text x="0" y="74" font-size="13" font-weight="600">2028</text>
+        <rect x="70" y="60" width="150" height="24" fill="#555"/><rect x="220" y="60" width="370" height="24" fill="#21C2B0"/><rect x="590" y="60" width="40" height="24" fill="#cfcfcf"/>
+        <rect x="70" y="116" width="12" height="12" fill="#333"/><text x="88" y="127" font-size="12">Production → in 2028: guardrails and intent</text>
+        <rect x="390" y="116" width="12" height="12" fill="#21C2B0"/><text x="408" y="127" font-size="12">Discovery and judgment</text>
+        <rect x="570" y="116" width="12" height="12" fill="#cfcfcf"/><text x="588" y="127" font-size="12">Admin</text>
+      </svg>
+      <div style="margin-top:22px;border-top:1.5px solid #c9c9c9;padding-top:16px">
+        <h4>What matters is where the time AI gives back goes</h4>
+        <p class="light" style="font-size:15px">Back into delivery, and we ship more of the same, faster and closer to average. Into discovery, and we test more ideas on real data and make better bets.</p>
+        <div style="border-left:3px solid var(--teal);padding-left:16px;margin-top:14px">
+          <p style="font-size:19px;font-weight:300;line-height:1.4;margin:0">Kill darlings because the evidence says so, <b style="font-weight:700">not because we ran out of time.</b></p>
+        </div>
+        <p class="small" style="margin-top:10px"><span class="tag ex" style="margin:0 6px 0 0">Experience example</span>At Culligan I paused a smart-bottle concept because the team couldn't hold two horizons at once.</p>
+      </div>
+    </div>
+    <div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px 14px;justify-items:center;margin-top:6px">
+        <div class="circ c-white" style="width:190px;height:190px;padding:18px"><b style="font-size:15px">Frames the problem</b><span class="small">What are we solving, for whom, and how will we know?</span></div>
+        <div class="circ c-white" style="width:190px;height:190px;padding:18px"><b style="font-size:15px">Makes it real</b><span class="small">Prototypes in code, on real data, in days</span></div>
+        <div class="circ c-white" style="width:190px;height:190px;padding:18px"><b style="font-size:15px">Judges the output</b><span class="small">Knows what good looks like, and why the generated version isn't</span></div>
+        <div class="circ c-dark" style="width:190px;height:190px;padding:18px"><b style="font-size:15px">Sets the guardrails</b><span class="small" style="color:#ddd">Writes the intent and rules agents work within, and enforces them</span></div>
+        <div class="circ c-white" style="width:190px;height:190px;padding:18px"><b style="font-size:15px">Designs behaviour</b><span class="small">What an agent does alone, when it asks, how it reports back</span></div>
+        <div class="circ c-white" style="width:190px;height:190px;padding:18px"><b style="font-size:15px">Owns the journey</b><span class="small">Across domains, together with product</span></div>
+      </div>
+      <p class="small" style="margin-top:22px;text-align:center">What stays human: framing, judgment, empathy. What gets automated: the production in between.</p>
+    </div>
+  </div>
+  <div class="pg"><span></span></div>
+  <div class="notes">
+    <p>The vision starts with the person. A bol designer in 2028 is a maker: they frame, make, judge, set the guardrails, design behaviour and own journeys. The production work that remains is guarding the guardrails and making the intent explicit.</p>
+    <p>Matthew mentioned the KR of six hours back per person per week. Hours freed measure speed. They say nothing about whether the work got better. If the time isn't redirected on purpose, it gets absorbed back into delivery.</p>
+  </div>
+</section>
+
+<!-- 04 THREE SHIFTS -->
+<section class="slide">
+  <div class="hdr"><span class="co">bol</span><span class="ln"></span><span class="nm">MARTA AXPE</span></div>
+  <div class="sec">1 · Vision</div>
+  <h2 class="t">Three shifts get us there, each with a concrete lever</h2><div class="tr"></div>
+  <div class="body">
+    <div class="grid g3" style="gap:44px">
+      <div class="rule">
+        <svg width="420" height="54" viewBox="0 0 420 54"><text x="0" y="34" font-size="24" font-weight="300">Screens</text><line x1="120" y1="27" x2="200" y2="27" stroke="#333" stroke-width="2"/><polygon points="200,21 212,27 200,33" fill="#333"/><text x="226" y="34" font-size="24" font-weight="700">Intent</text></svg>
+        <p class="light" style="font-size:15px;min-height:70px">Designers stop drawing every screen and write down what we're trying to achieve, when a pattern applies and how it should feel.</p>
+        <h4 style="margin-top:6px">How we get there</h4>
+        <ul><li>Write intent into the design language, one journey at a time, with the Engineering craft lead</li><li>Automate checks on the basics, so reviews discuss intent</li><li>Train taste with real good and bad examples in critiques</li></ul>
+        <span class="tag ex" style="margin:0">Experience example</span> <span class="small">Culligan design language</span>
+      </div>
+      <div class="rule">
+        <svg width="420" height="54" viewBox="0 0 420 54"><text x="0" y="34" font-size="24" font-weight="300">Handoffs</text><line x1="130" y1="27" x2="210" y2="27" stroke="#333" stroke-width="2"/><polygon points="210,21 222,27 210,33" fill="#333"/><text x="236" y="34" font-size="24" font-weight="700">Dialogue</text></svg>
+        <p class="light" style="font-size:15px;min-height:70px">Artefacts exist to move the conversation forward. A working thing on real data changes the quality of the decision.</p>
+        <h4 style="margin-top:6px">How we get there</h4>
+        <ul><li>The "show it working" standard: proposals arrive as working artefacts</li><li>Access to repositories, prototyping tools and real data, agreed with Engineering and Analytics</li><li>Three-minute demos replace handoff decks</li></ul>
+        <span class="tag ex" style="margin:0">Experience example</span> <span class="small">Report → design sprint</span>
+      </div>
+      <div class="rule">
+        <svg width="420" height="54" viewBox="0 0 420 54"><text x="0" y="34" font-size="24" font-weight="300">Domains</text><line x1="124" y1="27" x2="204" y2="27" stroke="#333" stroke-width="2"/><polygon points="204,21 216,27 204,33" fill="#333"/><text x="230" y="34" font-size="24" font-weight="700">Journeys</text></svg>
+        <p class="light" style="font-size:15px;min-height:70px">Designers own experiences that follow the customer across domains, together with product. Domains stay accountable for their systems.</p>
+        <h4 style="margin-top:6px">How we get there</h4>
+        <ul><li>One cross-domain journey squad, inside the existing pilot</li><li>A designer council across domains owns shared standards</li><li>Change structures only after the pilot shows it works</li></ul>
+        <span class="tag hy" style="margin:0">Hypothesis</span>
+      </div>
+    </div>
+  </div>
+  <div style="position:absolute;left:0;right:0;bottom:0;height:96px;background:#333;color:#fff;display:flex;align-items:center;padding:0 84px">
+    <p style="margin:0;font-size:26px;font-weight:300">Together, these shifts move design <b style="font-weight:700">from owning first drafts to owning intent.</b></p>
+  </div>
+  <div class="pg" style="z-index:2"><span></span></div>
+  <div class="notes">
+    <p>Each shift has a lever, otherwise it's wishful thinking. The first two I've done in other forms; the third is a direction I'd test before anyone touches how bol is organised. The cost is that cognitive load goes up and people protect what made them good, which is why designers are the users of this change.</p>
+  </div>
+</section>
+
+<!-- 06 WHAT IT UNLOCKS FOR BOL -->
+<section class="slide">
+  <div class="hdr"><span class="co">bol</span><span class="ln"></span><span class="nm">MARTA AXPE</span></div>
+  <div class="sec">1 · Vision</div>
+  <h2 class="t">When designers work this way, bol makes better bets, faster</h2><div class="tr"></div>
+  <div class="body">
+    <p class="light" style="max-width:1050px">The vision is for the team, and the payoff shows up in the product, from craft capability all the way to a business result. <span class="tag hy">Hypothesis</span></p>
+    <svg width="1432" height="300" viewBox="0 0 1432 300" style="margin-top:12px">
+      <defs><marker id="ar2" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#333"/></marker></defs>
+      <g font-size="16" font-weight="700" text-anchor="middle">
+        <circle cx="150" cy="140" r="118" fill="#e3e3e3"/><circle cx="150" cy="140" r="98" fill="#333"/>
+        <text x="150" y="134" fill="#fff">Craft</text><text x="150" y="156" fill="#fff">capability</text>
+        <circle cx="530" cy="140" r="98" fill="#fff" stroke="#333" stroke-width="1.5"/>
+        <text x="530" y="134">Team</text><text x="530" y="156">behaviour</text>
+        <circle cx="910" cy="140" r="98" fill="#fff" stroke="#333" stroke-width="1.5"/>
+        <text x="910" y="134">Product</text><text x="910" y="156">outcome</text>
+        <circle cx="1290" cy="140" r="118" fill="#d8f3ef"/><circle cx="1290" cy="140" r="98" fill="#21C2B0"/>
+        <text x="1290" y="134" fill="#fff">Business</text><text x="1290" y="156" fill="#fff">result</text>
+      </g>
+      <line x1="270" y1="140" x2="420" y2="140" stroke="#333" stroke-width="2" marker-end="url(#ar2)"/>
+      <line x1="630" y1="140" x2="800" y2="140" stroke="#333" stroke-width="2" marker-end="url(#ar2)"/>
+      <line x1="1010" y1="140" x2="1160" y2="140" stroke="#333" stroke-width="2" marker-end="url(#ar2)"/>
+    </svg>
+    <div class="grid g4" style="gap:30px;margin-top:6px">
+      <div><ul><li>Designers prototype on real data, in code</li><li>Designers can shape agent behaviour</li></ul></div>
+      <div><ul><li>Decisions made with evidence, sooner</li><li>Every craft makes; design holds the intent</li></ul></div>
+      <div><ul><li>More ideas tested before they're built</li><li>Shopper and partner agents that people trust</li><li>Fewer generic experiences</li></ul></div>
+      <div><ul><li>Faster time to a validated decision</li><li>Less rework</li><li>bol stays distinct when everyone has the same AI tools</li></ul></div>
+    </div>
+    <p class="small" style="margin-top:22px">Why now: the shopper agent is live and the partner agent is learning from traces and evals. This role prepares the designers who will shape those experiences.</p>
+  </div>
+  <div class="pg"><span>06</span></div>
+  <div class="notes">
+    <p>This is the leadership version of the vision: the same shift, told as a chain from capability to business result. It also covers product innovation, because more discovery means more of bol's future gets explored before it's built.</p>
+  </div>
+</section>
+
+<!-- 07 STANDARDS: BEHAVIOUR FRAMEWORK -->
+<section class="slide">
+  <div class="hdr"><span class="co">bol</span><span class="ln"></span><span class="nm">MARTA AXPE</span></div>
+  <div style="position:absolute;top:150px;left:84px;width:700px">
+    <div class="small" style="letter-spacing:.12em;text-transform:uppercase;margin-bottom:14px">2 · Standards & frameworks</div>
+    <p class="big">Four behaviours<br>are the new<br>standard</p>
+    <div style="height:1.5px;background:#999;width:700px;margin:40px 0 50px -20px"></div>
+    <p class="lead">In an AI-first craft, the standard is how people work</p>
+    <p class="light">Tools will change every quarter, and behaviours decide whether any tool produces good work. So the first standard I'd introduce is four behaviours, co-written with designers, researchers and writers, then made practical through one way of working.</p>
+    <p class="light"><b style="font-weight:600">Universal vs local:</b> the behaviours are the same everywhere, and how they show up is local. A partner-tools designer and a consumer designer will use different evidence and different data.</p>
+  </div>
+  <svg width="700" height="640" viewBox="0 0 700 640" style="position:absolute;left:850px;top:140px">
+    <circle cx="350" cy="320" r="300" fill="#efefef"/>
+    <g font-size="20" font-weight="700" text-anchor="middle">
+      <circle cx="235" cy="205" r="125" fill="#333" opacity=".92"/><text x="235" y="200" fill="#fff">High</text><text x="235" y="225" fill="#fff">agency</text>
+      <circle cx="465" cy="205" r="125" fill="#21C2B0" opacity=".9"/><text x="465" y="200" fill="#fff">High</text><text x="465" y="225" fill="#fff">taste</text>
+      <circle cx="235" cy="435" r="125" fill="#F2944A" opacity=".9"/><text x="235" y="430" fill="#fff">High</text><text x="235" y="455" fill="#fff">curiosity</text>
+      <circle cx="465" cy="435" r="125" fill="#777" opacity=".9"/><text x="465" y="430" fill="#fff">High</text><text x="465" y="455" fill="#fff">adaptability</text>
+    </g>
+  </svg>
+  <div class="pg"><span>07</span></div>
+  <div class="notes">
+    <p>Standards and frameworks are now about how people behave. These four are the ones I'd start from. The specific wording gets co-written with the people who'll live by it; that's the "build it with your users" part of the brief.</p>
+  </div>
+</section>
+
+<!-- 08 THE FOUR BEHAVIOURS -->
+<section class="slide">
+  <div class="hdr"><span class="co">bol</span><span class="ln"></span><span class="nm">MARTA AXPE</span></div>
+  <div class="sec">2 · Standards & frameworks</div>
+  <h2 class="t">Each behaviour is observable, and bol owes something back</h2><div class="tr"></div>
+  <div class="body">
+    <table>
+      <tr><th style="width:15%">Behaviour</th><th style="width:30%">What it looks like</th><th style="width:22%">What it isn't</th><th style="width:33%">How we make it possible</th></tr>
+      <tr><td class="b">High agency<br><span class="goal" style="font-size:13px">solves it without waiting</span></td><td>Builds a working prototype on real data to test a hypothesis, instead of asking for resources first. Brings a proposal with the problem.</td><td>Working alone, or bypassing other crafts</td><td>Access to tools, repositories and data. Permission to run small experiments within clear guardrails.</td></tr>
+      <tr><td class="b">High taste<br><span class="goal" style="font-size:13px">knows what good looks like, and why</span></td><td>Rejects plausible but generic output and can explain why. Writes intent others, and agents, can use. Knows what to remove.</td><td>Personal preference, or pixel policing</td><td>A shared design language that captures intent. Critiques built on real examples.</td></tr>
+      <tr><td class="b">High curiosity<br><span class="goal" style="font-size:13px">reaches for the tool before the expert</span></td><td>Tries the new tool or workflow first, and shares where it failed. Goes looking for data and user evidence.</td><td>Chasing every new tool</td><td>Protected time to explore. An open craft lab to share findings.</td></tr>
+      <tr><td class="b">High adaptability<br><span class="goal" style="font-size:13px">changes course when the evidence says so</span></td><td>Changes their mind in public. Works across crafts when the work needs it. Comfortable moving between many topics.</td><td>No direction, or constant pivoting</td><td>Short cycles with exit criteria agreed upfront. Psychological safety to be wrong.</td></tr>
+    </table>
+    <p class="small" style="margin-top:16px"><span class="tag ex" style="margin:0 6px 0 0">Experience example</span>Developing Alex at Culligan: creating explicit moments in design reviews where his field knowledge was the deciding voice, until challenging senior stakeholders became normal for him. He now runs a full category.</p>
+  </div>
+  <div class="pg"><span>08</span></div>
+  <div class="notes">
+    <p>Each behaviour has a "looks like", an "isn't", and what the organisation has to provide. The last column is my job: if we ask for agency, we owe people access and permission.</p>
+  </div>
+</section>
+
+<!-- 09 FRAMEWORK IN PRACTICE -->
+<section class="slide">
+  <div class="hdr"><span class="co">bol</span><span class="ln"></span><span class="nm">MARTA AXPE</span></div>
+  <div class="sec">2 · Standards & frameworks</div>
+  <h2 class="t">One loop turns the behaviours into daily work</h2><div class="tr"></div>
+  <div class="body grid" style="grid-template-columns:1.05fr 1fr;gap:56px">
+    <div style="position:relative">
+      <svg width="700" height="560" viewBox="0 0 700 560">
+        <circle cx="300" cy="280" r="200" fill="none" stroke="#ccc" stroke-width="2" stroke-dasharray="6 6"/>
+        <circle cx="300" cy="280" r="92" fill="#e3e3e3"/><circle cx="300" cy="280" r="74" fill="#333"/>
+        <text x="300" y="276" fill="#fff" font-size="16" font-weight="700" text-anchor="middle">The maker</text>
+        <text x="300" y="296" fill="#fff" font-size="16" font-weight="700" text-anchor="middle">loop</text>
+        <g font-size="14" font-weight="700" text-anchor="middle">
+          <circle cx="300" cy="80" r="52" fill="#fff" stroke="#333" stroke-width="1.5"/><text x="300" y="85">Frame</text>
+          <circle cx="473" cy="180" r="52" fill="#fff" stroke="#333" stroke-width="1.5"/><text x="473" y="185">Explore</text>
+          <circle cx="473" cy="380" r="52" fill="#21C2B0"/><text x="473" y="385" fill="#fff">Make</text>
+          <circle cx="300" cy="480" r="52" fill="#fff" stroke="#333" stroke-width="1.5"/><text x="300" y="485">Decide</text>
+          <circle cx="127" cy="380" r="52" fill="#fff" stroke="#333" stroke-width="1.5"/><text x="127" y="385">Encode</text>
+          <circle cx="127" cy="180" r="52" fill="#fff" stroke="#333" stroke-width="1.5"/><text x="127" y="185">Observe</text>
+        </g>
+        <g font-size="12.5" fill="#555">
+          <text x="360" y="44">the problem and the hypothesis</text>
+          <text x="532" y="166">AI as auditor: edge cases,</text><text x="532" y="182">gaps, simulated users</text>
+          <text x="532" y="376">a working thing,</text><text x="532" y="392">on real data</text>
+          <text x="360" y="536">with evidence, documented</text>
+          <text x="2" y="448">intent into the design</text><text x="2" y="464">language, for agents</text>
+          <text x="2" y="114">live behaviour, traces</text>
+        </g>
+      </svg>
+    </div>
+    <div>
+      <div style="background:var(--softer);border-radius:18px;padding:24px 28px">
+        <h4 style="color:var(--muted)">Example: one designer's itch, through the loop <span class="tag hy">Hypothesis</span></h4>
+        <p style="font-size:19px;font-weight:300;line-height:1.4;margin:6px 0 10px">"I spend two days making variations for a review, and the decision still comes down to opinion."</p>
+        <table>
+          <tr><td class="b" style="width:22%">Frame</td><td>What does the review need to decide, and what would prove it?</td></tr>
+          <tr><td class="b">Explore</td><td>AI lists edge cases and gaps in the options, instead of producing more variations.</td></tr>
+          <tr><td class="b">Make</td><td>One working prototype on real data, in a day.</td></tr>
+          <tr><td class="b">Decide</td><td>The review discusses the prototype and the evidence. The decision and its reason are written down.</td></tr>
+          <tr><td class="b">Encode</td><td>What we learned becomes intent in the design language, so the next draft starts closer.</td></tr>
+          <tr><td class="b">Observe</td><td>After release, live behaviour shows whether it holds.</td></tr>
+        </table>
+      </div>
+      <p class="small" style="margin-top:14px"><b>The standard behind it, "show it working":</b> every proposal arrives as a working artefact, with its hypothesis and the real data it was tested on.</p>
+      <p class="small"><span class="tag ex" style="margin:0 6px 0 0">Experience example</span>I replaced research reports with design sprints; developers started asking for the format at kick-off.</p>
+    </div>
+  </div>
+  <div class="pg"><span>09</span></div>
+  <div class="notes">
+    <p>The behaviours become practical through one loop. The example is a common itch, days of variations that end in opinion. Through the loop, it becomes one working prototype, an evidence-based decision, and intent the next draft can use. The same theme comes back in my first move, one level up, for the Heads of Design.</p>
+  </div>
+</section>
+
+<!-- 09b DRIVING CHANGE OPENER -->
+<section class="slide">
+  <div class="hdr"><span class="co">bol</span><span class="ln"></span><span class="nm">MARTA AXPE</span></div>
+  <div style="position:absolute;top:150px;left:84px;width:720px">
+    <div class="small" style="letter-spacing:.12em;text-transform:uppercase;margin-bottom:14px">3 · Driving change</div>
+    <p class="big">Change<br>without a<br>mandate</p>
+    <div style="height:1.5px;background:#999;width:720px;margin:36px 0 40px -20px"></div>
+    <p class="lead" style="font-size:20px;line-height:1.4">I'd launch this change like a product, with designers as its users</p>
+    <p class="light">I have a mandate from the CPTO MT but no authority over the Heads of Design. So people have to adopt the change; I can't announce it into place. It starts with me going first, spreads through one squad that includes the sceptics, and reaches every domain once the crafts have tested it together and people have made it their own.</p><p class="light"><span class="tag ex" style="margin:0 6px 0 0">Experience example</span>At Culligan, a design language nobody had to adopt became the standard for every new product.</p>
+  </div>
+  <svg width="700" height="660" viewBox="0 0 700 660" style="position:absolute;left:850px;top:150px">
+    <circle cx="350" cy="340" r="300" fill="#efefef"/>
+    <circle cx="350" cy="340" r="205" fill="#d6d6d6"/>
+    <circle cx="350" cy="340" r="110" fill="#333"/>
+    <g text-anchor="middle" font-weight="700">
+      <text x="350" y="335" fill="#fff" font-size="18">I go first</text>
+      <text x="350" y="358" fill="#ccc" font-size="12.5" font-weight="400">my own tests, failures included</text>
+      <text x="350" y="172" font-size="16">One squad, sceptics first</text>
+      <text x="350" y="192" font-size="12.5" font-weight="400" fill="#555">months 1–6, inside the existing pilot</text>
+      <text x="350" y="78" font-size="16">Every domain, made theirs</text>
+      <text x="350" y="98" font-size="12.5" font-weight="400" fill="#555">month 6 onwards</text>
+    </g>
+    <g><line x1="560" y1="560" x2="640" y2="620" stroke="#21C2B0" stroke-width="1.5" stroke-dasharray="4 4"/>
+    <rect x="520" y="612" width="180" height="40" rx="20" fill="#21C2B0"/><text x="610" y="637" font-size="13" font-weight="700" text-anchor="middle" fill="#fff">+ crafts' test bed</text></g>
+  </svg>
+  <div class="pg"><span></span></div>
+  <div class="notes"><p>Bridge: the vision says where we're going and the behaviours say what good looks like. This block is how people get there, without anyone being told to.</p></div>
+</section>
+
+<!-- 10 ACCEPTANCE TO ADAPTATION -->
+<section class="slide">
+  <div class="hdr"><span class="co">bol</span><span class="ln"></span><span class="nm">MARTA AXPE</span></div>
+  <div class="sec">3 · Driving change</div>
+  <h2 class="t">People move from accepting the change to making it theirs, in four stages</h2><div class="tr"></div>
+  <div class="body">
+    <p class="light" style="max-width:1100px">I have a mandate but no authority over the Heads of Design. So the change has to move people through four stages, and I design what happens at each one. Tools change in weeks; habits change in quarters.</p>
+    <svg width="1432" height="250" viewBox="0 0 1432 250">
+      <defs><marker id="ar3" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#333"/></marker></defs>
+      <g font-size="17" font-weight="700" text-anchor="middle">
+        <circle cx="170" cy="140" r="92" fill="#e3e3e3"/><circle cx="170" cy="140" r="74" fill="#333"/><text x="170" y="146" fill="#fff">Accept</text>
+        <circle cx="530" cy="140" r="74" fill="#fff" stroke="#333" stroke-width="1.5"/><text x="530" y="146">Try</text>
+        <circle cx="890" cy="140" r="74" fill="#fff" stroke="#333" stroke-width="1.5"/><text x="890" y="146">Adopt</text>
+        <circle cx="1250" cy="140" r="92" fill="#d8f3ef"/><circle cx="1250" cy="140" r="74" fill="#21C2B0"/><text x="1250" y="146" fill="#fff">Adapt</text>
+      </g>
+      <line x1="262" y1="140" x2="448" y2="140" stroke="#333" stroke-width="2" marker-end="url(#ar3)"/>
+      <line x1="604" y1="140" x2="808" y2="140" stroke="#333" stroke-width="2" marker-end="url(#ar3)"/>
+      <line x1="964" y1="140" x2="1150" y2="140" stroke="#333" stroke-width="2" marker-end="url(#ar3)"/>
+      <path d="M700,140 C700,80 700,40 760,30" fill="none" stroke="#999" stroke-width="1.5" stroke-dasharray="4 4"/>
+      <rect x="764" y="12" width="190" height="34" rx="17" fill="#fff" stroke="#999"/><text x="859" y="34" font-size="12.5" text-anchor="middle" fill="#555">Exit criteria: change course</text>
+    </svg>
+    <div class="grid g4" style="gap:34px">
+      <div class="rule"><p class="goal">"Why should I?"</p><ul><li>I go first: my own tests, including what broke</li><li>Relief first: one unglamorous task taken off the Heads of Design</li></ul><p class="small">Signal: people bring questions to the craft lab</p></div>
+      <div class="rule"><p class="goal">"Will it work for me?"</p><ul><li>Sceptics first: designers who defend the quality bar join the first squad</li><li>Pairing on live work instead of training courses</li></ul><p class="small">Signal: sceptics name specific failures</p></div>
+      <div class="rule"><p class="goal">"Can I do this every week?"</p><ul><li>Tools, access and the "show it working" standard</li><li>Office hours when teams get stuck</li></ul><p class="small">Signal: proposals arrive working, unasked</p></div>
+      <div class="rule"><p class="goal">"How do we make it ours?"</p><ul><li>A designer council rewrites the framework</li><li>Domains add their own versions</li></ul><p class="small">Signal: a domain changes the standard</p></div>
+    </div>
+  </div>
+  <div class="pg"><span>10</span></div>
+  <div class="notes">
+    <p>The brief asks how to move people from accepting a vision to changing how they work. This is my model, and it includes the reversal Matthew picked up on last time. I start with the sceptics, because they're usually the ones defending the quality bar, and their objections show where the change breaks.</p>
+  </div>
+</section>
+
+<!-- 11 FIRST SIX MONTHS -->
+<section class="slide">
+  <div class="hdr"><span class="co">bol</span><span class="ln"></span><span class="nm">MARTA AXPE</span></div>
+  <div class="sec">3 · Driving change</div>
+  <h2 class="t">In six months: one squad working as makers, on a foundation we can trust</h2><div class="tr"></div>
+  <div class="body">
+    <p class="lead">One squad working as makers, on a delivery foundation sharp enough to trust <span class="tag hy">Hypothesis</span></p>
+    <p class="light" style="max-width:1150px">Inside the pilot Matthew is already running. One cross-domain journey, chosen by traffic, number of domains crossed and known pain. Squad: designer, PM, engineer, and one sceptical designer.</p>
+    <div style="display:grid;grid-template-columns:170px repeat(4,1fr);margin-top:20px;border-top:2px solid #333">
+      <div></div>
+      <div style="padding:12px 16px 8px 0;font-family:var(--hfont);font-weight:800;font-size:22px">M0–1</div>
+      <div style="padding:12px 16px 8px 0;font-family:var(--hfont);font-weight:800;font-size:22px">M1–3</div>
+      <div style="padding:12px 16px 8px 0;font-family:var(--hfont);font-weight:800;font-size:22px">M3–5</div>
+      <div style="padding:12px 16px 8px 0;font-family:var(--hfont);font-weight:800;font-size:22px">M5–6</div>
+      <div style="padding:14px 10px 14px 0;font-weight:700;border-top:1px dotted #bbb">People<br><span class="small" style="font-weight:400">with Heads of Design</span></div>
+      <div class="pc">Listen and baseline: time audit, sit in reviews in every domain. I do a piece of real work in the pilot.</div>
+      <div class="pc" style="background:#e9f8f6">First squad works by the maker loop and "show it working".</div>
+      <div class="pc">Two or three more squads join. Craft lab and demos running.</div>
+      <div class="pc">Read-out to Heads of Design and MT. Designer council takes ownership.</div>
+      <div style="padding:14px 10px 14px 0;font-weight:700;border-top:1px dotted #bbb">Foundation<br><span class="small" style="font-weight:400">with Engineering craft lead</span></div>
+      <div class="pc">Audit what agents can use today: components, tokens, written intent.</div>
+      <div class="pc">Write intent into the design language for the pilot journey.</div>
+      <div class="pc">Automated first-pass checks on the basics.</div>
+      <div class="pc">Decide what becomes universal.</div>
+    </div>
+    <div style="display:flex;gap:16px;margin-top:20px;align-items:center">
+      <span class="circ c-dark" style="width:70px;height:70px;font-size:12px;font-weight:700">Gate<br>M3</span>
+      <p class="small" style="margin:0;max-width:520px">Is the squad deciding more on working artefacts? Did discovery time grow? Continue, change course, or stop.</p>
+      <span class="circ c-dark" style="width:70px;height:70px;font-size:12px;font-weight:700;margin-left:30px">Gate<br>M6</span>
+      <p class="small" style="margin:0;max-width:520px">Which behaviours, standards and parts of the foundation scale to every domain?</p>
+    </div>
+  </div>
+  <div class="pg"><span>11</span></div>
+  <div class="notes">
+    <p>Two tracks, because people won't change how they work if delivery still eats their week. The foundation track makes delivery boring and reliable; the people track uses the time that frees up. Exit criteria are agreed upfront: if the data says the standard is wrong, the standard changes.</p>
+  </div>
+</section>
+
+<!-- 12 HOW I'D DRIVE IT -->
+<section class="slide">
+  <div class="hdr"><span class="co">bol</span><span class="ln"></span><span class="nm">MARTA AXPE</span></div>
+  <div class="sec">3 · Driving change</div>
+  <h2 class="t">Designers are the users of this change, so I'd launch it like a product</h2><div class="tr"></div>
+  <div class="body grid" style="grid-template-columns:1.55fr 1fr;gap:50px">
+    <div class="grid g3" style="gap:24px 30px;align-content:start">
+      <div class="rule"><div class="stage-l">Understand the pain</div><h3>Relief first</h3><p class="light" style="font-size:14.5px">Take one unglamorous task off the Heads of Design before asking for anything.</p><p class="small"><b>Why:</b> trust comes from removing pain before adding work.</p></div>
+      <div class="rule"><div class="stage-l">Beta with the toughest users</div><h3>Sceptics first</h3><p class="light" style="font-size:14.5px">Start with the designers who defend the craft.</p><p class="small"><b>Why:</b> their objections show where it breaks, early.</p></div>
+      <div class="rule"><div class="stage-l">Test before release</div><h3>Test it first, together <span class="tag ex">Experience example</span></h3><p class="light" style="font-size:14.5px">Every new tool or workflow goes through the shared test bed with the other craft leads.</p><p class="small"><b>Why:</b> it arrives as a joint position from all the crafts.</p></div>
+      <div class="rule"><div class="stage-l">Clear scope</div><h3>Clear boundaries</h3><p class="light" style="font-size:14.5px">Craft direction is mine to lead. Delivery and performance stay with the domains.</p><p class="small"><b>Why:</b> nobody loses territory.</p></div>
+      <div class="rule"><div class="stage-l">Onboarding</div><h3>Learn on live work <span class="tag ex">Experience example</span></h3><p class="light" style="font-size:14.5px">A light shared foundation, then pairing on real journey work.</p><p class="small"><b>Why:</b> learning inside delivery time removes the tightrope.</p></div>
+      <div class="rule"><div class="stage-l">Retention</div><h3>What gets rewarded <span class="tag hy">Hypothesis</span></h3><p class="light" style="font-size:14.5px">Bring the four behaviours into competency expectations, with the Heads of Design.</p><p class="small"><b>Why:</b> behaviour follows recognition.</p></div>
+    </div>
+    <div>
+      <h4>Rituals in the teams, built on bol's own beliefs</h4>
+      <table>
+        <tr><td class="b" style="width:42%">Open craft lab<br><span class="small" style="font-weight:400">monthly · bold, curious</span></td><td>What we found, what broke, what worries us. I go first, including my own failures.</td></tr>
+        <tr><td class="b">Three-minute demos<br><span class="small" style="font-weight:400">make it happen</span></td><td>A working thing on real data, shown in three minutes.</td></tr>
+        <tr><td class="b">Designer council<br><span class="small" style="font-weight:400">stronger together</span></td><td>Rotating, cross-domain, sceptics included. Co-owns the framework, modelled on bol's culture trust.</td></tr>
+      </table>
+      <div style="margin-top:26px;border-left:3px solid var(--orange);padding-left:16px">
+        <p style="font-size:18px;font-weight:300;line-height:1.45;margin:0">We'll be tired either way. <b style="font-weight:700">Tired from admin and tired from making something you can see land are not the same tiredness.</b></p>
+      </div>
+      <p class="small" style="margin-top:10px">The intrinsic reward makes people want it. Recognition makes it last.</p>
+    </div>
+  </div>
+  <div class="pg"><span></span></div>
+  <div class="notes">
+    <p>Designers are my users, so I'd run this like a product launch without calling it one: understand the pain, beta with the toughest users, test before release, clear scope, onboarding, retention.</p>
+    <p>Proof that reward creates pull: at Culligan, attendance at the design reviews grew because people could see the work getting better. At WEAREREASONABLEPEOPLE, developers started asking for the sprint format. Test bed = lign.ai, where I dogfooded the product to give the AI engineer evidence; learning on live work = my service design coaching.</p>
+  </div>
+</section>
+
+<!-- 15 PEERS -->
+<section class="slide">
+  <div class="hdr"><span class="co">bol</span><span class="ln"></span><span class="nm">MARTA AXPE</span></div>
+  <div class="sec">3 · Driving change</div>
+  <h2 class="t">The crafts test ideas together before production teams are involved</h2><div class="tr"></div>
+  <div class="body grid" style="grid-template-columns:0.85fr 1.15fr;gap:40px">
+    <div>
+      <p class="lead">UX takes one seat at the table, alongside four other crafts</p>
+      <p class="light">The craft leads are already shaping an agentic way of building software. I'd join that work and add one thing: a <b style="font-weight:600">shared test bed</b> where we try new tools, workflows and ideas, with simulated users and real data, before any production team is involved.</p>
+      <svg width="600" height="90" viewBox="0 0 600 90" style="margin-top:10px">
+        <defs><marker id="ar6" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#333"/></marker></defs>
+        <g font-size="13" font-weight="700" text-anchor="middle">
+          <rect x="0" y="22" width="150" height="44" rx="22" fill="#21C2B0"/><text x="75" y="49" fill="#fff">Test bed</text>
+          <rect x="220" y="22" width="150" height="44" rx="22" fill="#fff" stroke="#333"/><text x="295" y="49">One squad</text>
+          <rect x="440" y="22" width="150" height="44" rx="22" fill="#333"/><text x="515" y="49" fill="#fff">Domain teams</text>
+        </g>
+        <line x1="152" y1="44" x2="212" y2="44" stroke="#333" stroke-width="1.5" marker-end="url(#ar6)"/>
+        <line x1="372" y1="44" x2="432" y2="44" stroke="#333" stroke-width="1.5" marker-end="url(#ar6)"/>
+      </svg>
+      <ul style="margin-top:16px"><li>Monthly craft-leads sync, with one shared log of tensions</li><li>Quarterly read-out to the CPTO MT, together</li><li>Every craft brings what the others can't</li></ul>
+    </div>
+    <svg width="820" height="580" viewBox="0 0 820 580">
+      <g stroke="#bbb" stroke-width="1.5" stroke-dasharray="5 5"><line x1="410" y1="290" x2="410" y2="85"/><line x1="410" y1="290" x2="605" y2="227"/><line x1="410" y1="290" x2="531" y2="456"/><line x1="410" y1="290" x2="289" y2="456"/><line x1="410" y1="290" x2="215" y2="227"/></g>
+      <circle cx="410" cy="290" r="104" fill="#d8f3ef"/><circle cx="410" cy="290" r="86" fill="#21C2B0"/>
+      <text x="410" y="282" fill="#fff" font-size="16" font-weight="700" text-anchor="middle">Shared</text>
+      <text x="410" y="302" fill="#fff" font-size="16" font-weight="700" text-anchor="middle">test bed</text>
+      <g text-anchor="middle">
+        <circle cx="410" cy="85" r="66" fill="#fff" stroke="#333" stroke-width="1.5"/><text x="410" y="80" font-size="14" font-weight="700">Design</text><text x="410" y="98" font-size="11.5">intent, users,</text><text x="410" y="113" font-size="11.5">quality bar</text>
+        <circle cx="605" cy="227" r="66" fill="#fff" stroke="#333" stroke-width="1.5"/><text x="605" y="222" font-size="14" font-weight="700">Engineering</text><text x="605" y="240" font-size="11.5">code, components,</text><text x="605" y="255" font-size="11.5">agents</text>
+        <circle cx="531" cy="456" r="66" fill="#fff" stroke="#333" stroke-width="1.5"/><text x="531" y="451" font-size="14" font-weight="700">Product</text><text x="531" y="469" font-size="11.5">hypotheses,</text><text x="531" y="484" font-size="11.5">outcomes</text>
+        <circle cx="289" cy="456" r="66" fill="#fff" stroke="#333" stroke-width="1.5"/><text x="289" y="444" font-size="14" font-weight="700">Product</text><text x="289" y="461" font-size="14" font-weight="700">Analytics</text><text x="289" y="479" font-size="11.5">real data, measures</text>
+        <circle cx="215" cy="227" r="66" fill="#fff" stroke="#333" stroke-width="1.5"/><text x="215" y="222" font-size="14" font-weight="700">UX Research</text><text x="215" y="240" font-size="11.5">evidence,</text><text x="215" y="255" font-size="11.5">blind spots</text>
+      </g>
+    </svg>
+  </div>
+  <div class="pg"><span></span></div>
+  <div class="notes">
+    <p>Bringing designers along happens in the teams (previous slide). Bringing the crafts along happens here: we test together first, with simulated users and real data, so nothing reaches a production team half-baked. For the UX Research Manager: if AI catches the known issues, human research goes where AI can't see. Experience example: YouTube, 1,000+ quotes coded with AI-assisted synthesis, every insight traceable to its source.</p>
+  </div>
+</section>
+
+<!-- 13 EXPERIENCE EXAMPLE CULLIGAN -->
+<section class="slide">
+  <div class="hdr"><span class="co">bol</span><span class="ln"></span><span class="nm">MARTA AXPE</span></div>
+  <div class="sec">3 · Driving change · experience example</div>
+  <h2 class="t">I've done this without authority before: Culligan</h2><div class="tr"></div>
+  <div class="body grid" style="grid-template-columns:1fr 1.25fr;gap:56px">
+    <div>
+      <p class="lead">A design language from zero, adopted by teams that didn't report to me</p>
+      <p class="light" style="font-size:15px">I owned the UX layer: who the users are, their journeys, and one UX character (simple, trustworthy, expert) adapted to each context. I co-designed the touchscreen, indicator and accessibility toolkits with our agency, and approved the work.</p>
+      <details><summary>One colour, one meaning, on plastic and pixels</summary><div><ul><li>Azure marks critical touch points on the hardware and the filtration process on screen</li><li>Indicators: white all well, yellow attention, orange act now</li></ul></div></details>
+      <details><summary>Motion that tells the truth about urgency</summary><div><ul><li>Calm for steady information; pulsing only when attention is critical</li><li>A breathing light, so the product feels at work</li></ul></div></details>
+      <details><summary>Rules from real use</summary><div><ul><li>1–2 options: selecting is dispensing. 3 or more: separate steps</li><li>Shared office: reset to the most-used option. Home: remember the last choice</li></ul></div></details>
+      <div class="ph" style="height:150px;margin-top:16px">Insert: layer-4 visuals, indicator examples, BFC screens across tiers</div>
+    </div>
+    <div>
+      <svg width="760" height="200" viewBox="0 0 760 200">
+        <defs><marker id="ar4" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#333"/></marker></defs>
+        <g font-size="12.5" font-weight="700" text-anchor="middle">
+          <circle cx="62" cy="80" r="58" fill="#333"/><text x="62" y="76" fill="#fff">My hands</text><text x="62" y="92" fill="#ccc" font-weight="400" font-size="10.5">Pelican screens</text>
+          <circle cx="222" cy="80" r="58" fill="#fff" stroke="#333" stroke-width="1.5"/><text x="222" y="76">Language</text><text x="222" y="92" font-weight="400" font-size="10.5">layer 4</text>
+          <circle cx="382" cy="80" r="58" fill="#fff" stroke="#333" stroke-width="1.5"/><text x="382" y="76">Assets</text><text x="382" y="92" font-weight="400" font-size="10.5">why + toolkit</text>
+          <circle cx="542" cy="80" r="58" fill="#fff" stroke="#333" stroke-width="1.5"/><text x="542" y="76">Teams</text><text x="542" y="92" font-weight="400" font-size="10.5">own roadmaps</text>
+          <circle cx="700" cy="80" r="58" fill="#21C2B0"/><text x="700" y="76" fill="#fff">Products</text><text x="700" y="92" fill="#fff" font-weight="400" font-size="10.5">Red Dot 2026</text>
+        </g>
+        <g stroke="#333" stroke-width="1.5"><line x1="122" y1="80" x2="158" y2="80" marker-end="url(#ar4)"/><line x1="282" y1="80" x2="318" y2="80" marker-end="url(#ar4)"/><line x1="442" y1="80" x2="478" y2="80" marker-end="url(#ar4)"/><line x1="602" y1="80" x2="636" y2="80" marker-end="url(#ar4)"/></g>
+        <text x="4" y="176" font-size="12.5" fill="#555">Underneath: design reviews every two weeks (attendance grew) · office hours when teams got stuck</text>
+      </svg>
+      <div class="grid g3" style="gap:24px;margin-top:10px">
+        <div class="rule"><h3>Short term</h3><p class="light" style="font-size:14.5px">One six-layer language. Each category redesigned its flagship on it.</p></div>
+        <div class="rule"><h3>Long term</h3><p class="light" style="font-size:14.5px">It outlived my involvement. The BFC, the first product with all six layers, won a Red Dot.</p></div>
+        <div class="rule"><h3>What I'd change</h3><p class="light" style="font-size:14.5px">Approval ended up in one central brand gate. At hardware speed that works; at AI speed it's the bottleneck.</p></div>
+      </div>
+      <p class="small" style="margin-top:18px">How it maps to bol: craft first, then a shared language, then assets that make teams independent, then support. This time, a designer council would share ownership instead of one gate.</p>
+    </div>
+  </div>
+  <div class="pg"><span>13</span></div>
+  <div class="notes">
+    <p>Getting it adopted was the harder part, because nobody reported to me. Attendance at the reviews grew because people could see the work getting better. Then we made it usable without us, and teams took it into their own roadmaps.</p>
+    <p>If asked about the mandate: in the end it became mandatory for new products. I won't have that lever at bol, so I'd rely on what made it stick before the mandate. <span class="verify">[Confirm number of business units before saying one]</span></p>
+  </div>
+</section>
+
+<!-- 13b SUCCESS OPENER -->
+<section class="slide">
+  <div class="hdr"><span class="co">bol</span><span class="ln"></span><span class="nm">MARTA AXPE</span></div>
+  <div style="position:absolute;top:150px;left:84px;width:720px">
+    <div class="small" style="letter-spacing:.12em;text-transform:uppercase;margin-bottom:14px">4 · Success</div>
+    <p class="big">Behaviour<br>first, products<br>follow</p>
+    <div style="height:1.5px;background:#999;width:720px;margin:36px 0 40px -20px"></div>
+    <p class="lead" style="font-size:20px;line-height:1.4">Success in year one is designers working differently</p>
+    <p class="light">The signals I'd watch first are behaviour and time, because they move early. Product outcomes lag two or three quarters behind, so I'd report them as they emerge, never in place of the behaviour signals. Every speed signal is paired with a quality or people signal.</p><p class="light">The other craft leads and the UX Research Manager see the same read-outs, so UX keeps a sustained voice in how roles and teams evolve.</p>
+  </div>
+  <svg width="700" height="660" viewBox="0 0 700 660" style="position:absolute;left:850px;top:150px">
+    <path d="M90,560 C250,520 400,330 610,130" fill="none" stroke="#bbb" stroke-width="2" stroke-dasharray="6 6"/>
+    <circle cx="140" cy="530" r="78" fill="#fff" stroke="#333" stroke-width="1.5"/>
+    <text x="140" y="518" text-anchor="middle" font-size="14" font-weight="700">Month 6</text>
+    <text x="140" y="540" text-anchor="middle" font-size="12.5">One squad works</text><text x="140" y="557" text-anchor="middle" font-size="12.5">as makers</text>
+    <circle cx="350" cy="370" r="112" fill="#e3e3e3"/><circle cx="350" cy="370" r="96" fill="#333"/>
+    <text x="350" y="358" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">Month 12</text>
+    <text x="350" y="381" text-anchor="middle" font-size="13" fill="#ddd">Most designers</text><text x="350" y="399" text-anchor="middle" font-size="13" fill="#ddd">work this way</text>
+    <circle cx="560" cy="170" r="140" fill="#d8f3ef"/><circle cx="560" cy="170" r="122" fill="#21C2B0"/>
+    <text x="560" y="158" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">Year 2</text>
+    <text x="560" y="182" text-anchor="middle" font-size="13.5" fill="#fff">bol's products</text><text x="560" y="201" text-anchor="middle" font-size="13.5" fill="#fff">show it</text>
+  </svg>
+  <div class="pg"><span></span></div>
+  <div class="notes"><p>Bridge: if the change is working, it should show up in how people work before it shows up in the product. That's how I'd measure it, and how I'd keep leadership patient enough to let it land.</p></div>
+</section>
+
+<!-- 14 SUCCESS METRICS -->
+<section class="slide">
+  <div class="hdr"><span class="co">bol</span><span class="ln"></span><span class="nm">MARTA AXPE</span></div>
+  <div class="sec">4 · Success</div>
+  <h2 class="t">Success means behaviour changes first, and products follow</h2><div class="tr"></div>
+  <div class="body grid" style="grid-template-columns:1.5fr 1fr;gap:50px">
+    <div>
+      <table>
+        <tr><th style="width:15%">Area</th><th style="width:43%">Signal</th><th>Month 1</th><th>Month 6</th><th>Month 12</th></tr>
+        <tr><td class="b">Behaviour</td><td>Review decisions made on a working artefact</td><td>Baseline</td><td>30%</td><td>60%</td></tr>
+        <tr><td class="b"></td><td>Designers who've prototyped on real data, in code</td><td>Baseline</td><td>25%</td><td>60%</td></tr>
+        <tr><td class="b">Time</td><td>Share of design time on discovery</td><td>Baseline</td><td>+10 pts</td><td>+20 pts</td></tr>
+        <tr><td class="b">Quality</td><td>AI-assisted work sent back for basics</td><td>Baseline</td><td>−30%</td><td>−60%</td></tr>
+        <tr><td class="b"></td><td>Time to detect and fix a UX issue in production</td><td>Baseline</td><td>−20%</td><td>−40%</td></tr>
+        <tr><td class="b">Product</td><td>Hypotheses tested per squad per quarter</td><td>Baseline</td><td>2×</td><td>3×</td></tr>
+        <tr><td class="b">People</td><td>Satisfaction and cognitive load, tracked together</td><td>Baseline</td><td>Satisfaction up, load stable</td><td>Both stable or better</td></tr>
+      </table>
+      <p class="small" style="margin-top:12px"><span class="tag hy" style="margin:0 6px 0 0">Hypothesis</span>Proposed targets, calibrated after the month-1 baseline. People signals use bol's existing engagement survey and the pilot's satisfaction measure.</p>
+    </div>
+    <div>
+      <p class="lead">How I expect it to move</p>
+      <svg width="520" height="300" viewBox="0 0 520 300">
+        <line x1="40" y1="250" x2="500" y2="250" stroke="#333" stroke-width="1.5"/><line x1="40" y1="250" x2="40" y2="20" stroke="#333" stroke-width="1.5"/>
+        <path d="M40,240 C120,230 170,120 260,90 S420,60 500,50" fill="none" stroke="#21C2B0" stroke-width="3"/>
+        <path d="M40,245 C160,243 230,230 300,180 S440,90 500,80" fill="none" stroke="#F2944A" stroke-width="3"/>
+        <text x="40" y="272" font-size="12" fill="#555">M0</text><text x="260" y="272" font-size="12" fill="#555" text-anchor="middle">M6</text><text x="500" y="272" font-size="12" fill="#555" text-anchor="end">M12</text>
+        <rect x="60" y="22" width="12" height="12" fill="#21C2B0"/><text x="80" y="33" font-size="12.5">Behaviour (leading)</text>
+        <rect x="60" y="44" width="12" height="12" fill="#F2944A"/><text x="80" y="55" font-size="12.5">Product outcomes (lagging)</text>
+      </svg>
+      <p class="light" style="font-size:15px">Behaviour moves first, in one squad, then spreads. Product outcomes lag behaviour by two or three quarters. So in year one I'd report behaviour and time honestly, and show product signals as they emerge.</p>
+      <p class="small">Every speed signal is paired with a quality or people signal. If cognitive load rises and satisfaction doesn't, the fault is in how the change was designed.</p>
+    </div>
+  </div>
+  <div class="pg"><span>14</span></div>
+  <div class="notes">
+    <p>The brief asks for signals that the craft is evolving. These measure behaviour, time, quality, product and people, with the trajectory I'd expect. The numbers are proposals to calibrate after the baseline.</p>
+  </div>
+</section>
+
+<!-- 16 FIRST MOVE -->
+<section class="slide">
+  <div class="hdr"><span class="co">bol</span><span class="ln"></span><span class="nm">MARTA AXPE</span></div>
+  <div class="sec">5 · First move</div>
+  <h2 class="t">My first move: give the Heads of Design their time back</h2><div class="tr"></div>
+  <div class="body">
+    <p class="stmt" style="font-size:30px">My assumption: <b>reviews of AI-assisted work are eating the Heads of Design's week</b>, and without a shared bar, quality debates become opinion. <span class="tag hy">Hypothesis</span></p>
+    <svg width="1432" height="190" viewBox="0 0 1432 190" style="margin-top:28px">
+      <defs><marker id="ar5" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#333"/></marker></defs>
+      <line x1="80" y1="70" x2="1360" y2="70" stroke="#333" stroke-width="2" marker-end="url(#ar5)"/>
+      <g font-size="14" font-weight="700" text-anchor="middle">
+        <circle cx="200" cy="70" r="46" fill="#333"/><text x="200" y="75" fill="#fff">Wk 1–2</text>
+        <circle cx="560" cy="70" r="46" fill="#fff" stroke="#333" stroke-width="1.5"/><text x="560" y="75">Wk 3–4</text>
+        <circle cx="920" cy="70" r="46" fill="#fff" stroke="#333" stroke-width="1.5"/><text x="920" y="75">Wk 5–8</text>
+        <circle cx="1260" cy="70" r="46" fill="#21C2B0"/><text x="1260" y="75" fill="#fff">Wk 9</text>
+      </g>
+    </svg>
+    <div class="grid g4" style="gap:34px;margin-top:-30px">
+      <div><h3>Sit in</h3><p class="light" style="font-size:15px">Join reviews in every domain. Log where review time goes: basics, or intent and judgment?</p></div>
+      <div><h3>Co-write</h3><p class="light" style="font-size:15px">With the Heads of Design: the "show it working" standard, and a short list of basics a tool can check first.</p></div>
+      <div><h3>Run it</h3><p class="light" style="font-size:15px">Automated first-pass check in one domain. Human reviews focus on intent, taste and evidence.</p></div>
+      <div><h3>Read out</h3><p class="light" style="font-size:15px">Review time per item, and how much of it now goes to intent. Decide whether to spread it.</p></div>
+    </div>
+    <p class="small" style="margin-top:26px">The same loop as the designer's itch on the framework slide, one level up.</p><p class="stmt" style="font-size:26px;margin-top:18px">That's my assumption. <b>Is it the right hurdle?</b></p>
+  </div>
+  <div class="pg"><span>16</span></div>
+  <div class="notes">
+    <p>Ask the question and let Matthew answer. If he names a different hurdle, the method stays the same: sit in, co-write, run it in one domain, read out.</p>
+  </div>
+</section>
+
+<!-- 17 CLOSE -->
+<section class="slide">
+  <div class="hdr"><span class="co">bol</span><span class="ln"></span><span class="nm">MARTA AXPE</span></div>
+  <h2 class="t">Let's make it happen</h2><div class="tr"></div>
+  <div class="body" style="top:250px">
+    <p class="stmt" style="font-size:38px">By 2028, bol's designers spend their time <b>discovering, with every craft, what bol should build next.</b></p>
+    <div class="grid g3" style="margin-top:56px;gap:48px">
+      <div class="rule"><h4 style="color:var(--muted)">Vision</h4><p style="font-size:18px;font-weight:300;line-height:1.45">Makers who discover, guard the intent and own journeys, together with every craft.</p></div>
+      <div class="rule"><h4 style="color:var(--muted)">Standard</h4><p style="font-size:18px;font-weight:300;line-height:1.45">Four behaviours, one loop, and one standard: show it working.</p></div>
+      <div class="rule"><h4 style="color:var(--muted)">Change</h4><p style="font-size:18px;font-weight:300;line-height:1.45">One squad, sceptics first, a shared test bed, and the Heads of Design's time back first.</p></div>
+    </div>
+    <p style="margin-top:50px;font-size:22px;font-weight:300">Designers deserve to be treated as <b style="font-weight:700">the users of this change</b>. That's how I'd lead it.</p>
+  </div>
+  <div class="pg"><span></span></div>
+  <div class="notes">
+    <p>Recap in three lines, then hand over. Motivation, if it hasn't come up: an innovation brief wearing a design hat. And bol is a B Corp: scaling AI work has a compute and energy cost I'd want us to count honestly.</p>
+  </div>
+</section>
+
+<!-- 18 QUESTIONS -->
+<section class="slide dark">
+  <div class="hdr"><span class="co">bol</span><span class="ln"></span><span class="nm">MARTA AXPE</span></div>
+  <div class="hline" style="top:520px"></div>
+  <div class="bigt" style="top:600px;font-size:110px">Questions?</div>
+  <div class="hline" style="top:780px"></div>
+  <div class="pg"><span>18</span></div>
+  <div class="notes"><p>Appendix follows, only if asked.</p></div>
+</section>
+
+<!-- 19 APPENDIX -->
+<section class="slide">
+  <div class="hdr"><span class="co">bol</span><span class="ln"></span><span class="nm">MARTA AXPE</span></div>
+  <h2 class="t">Appendix</h2><div class="tr"></div>
+  <div class="body grid g2" style="gap:60px">
+    <div>
+      <details><summary>Risks and known unknowns</summary><div><ul><li>Cognitive load and burnout</li><li>Journey ownership clashing with domain accountability</li><li>The cost of keeping a design language usable by agents</li><li>Compute and energy cost</li><li>People changing code they don't understand</li><li>Simulated evidence mistaken for real research</li></ul></div></details>
+      <details><summary>When energy dips</summary><div><ul><li>Measure contribution, not attendance</li><li>If a ritual isn't earning its time after two cycles, shrink it or stop it</li><li>Rotate hosts; show work, not slides</li><li>Go to the sceptics first and ask why</li></ul></div></details>
+      <details><summary>Quality as a loop, decided by reversibility</summary><div><p class="light">Fix fast where an experience is reversible and low-risk. Prevent upfront where the stakes are high: checkout, payments, partner payouts, trust.</p></div></details>
+    </div>
+    <div>
+      <details><summary>Context is the infrastructure (SunSpot)</summary><div><p class="light">I built findsunspot.com with AI tools. The interface looked polished, but shade was calculated from building centre points, not terrace shapes. I fixed it by feeding in real data, the city's terrace permit polygons. Generic output is a missing-input problem, not a prompting problem.</p><span class="tag ex" style="margin:0">Experience example</span></div></details>
+      <details><summary>Regulation in the universal standard</summary><div><p class="light">European Accessibility Act; EU AI Act transparency duties. <span class="verify">[VERIFY dates before citing]</span></p></div></details>
+      <details><summary>The business case ladder</summary><div><p class="light">Fewer reviews spent on basics → less rework → faster time to market. More discovery time → decisions backed by evidence → fewer features built that don't move a metric.</p></div></details>
+    </div>
+  </div>
+  <div class="pg"><span>19</span></div>
+  <div class="notes"><p>Open only if asked.</p></div>
+</section>
+
+</div>
+
+<script>
+(function(){
+  // small style for timeline cells
+  var st=document.createElement('style');st.textContent='.stage-l{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#21a597;font-weight:600;margin-bottom:4px}.pc{padding:14px 18px 14px 0;font-size:14px;line-height:1.45;border-top:1px dotted #bbb;font-weight:300}';document.head.appendChild(st);
+  var stage=document.getElementById('stage');
+  function fit(){var s=Math.min(window.innerWidth/1600,(window.innerHeight)/900);stage.style.transform='translate(-50%,-50%) scale('+s+')'}
+  window.addEventListener('resize',fit);fit();
+  var slides=[].slice.call(document.querySelectorAll('.slide'));
+  var count=document.getElementById('count'),notes=document.getElementById('notes');
+  var i=0;
+  function show(n){
+    i=Math.max(0,Math.min(slides.length-1,n));
+    slides.forEach(function(s,k){s.classList.toggle('active',k===i)});
+    count.textContent=(i+1)+' / '+slides.length;
+    var nt=slides[i].querySelector('.notes');
+    notes.innerHTML='<div class="nlab">Speaker notes · slide '+String(i).padStart(2,'0')+'</div>'+(nt?nt.innerHTML:'');
+  }
+  document.querySelectorAll('.slide').forEach(function(s,k){var sp=s.querySelector('.pg span');if(sp)sp.textContent=String(k).padStart(2,'0')});
+  show(0);
+  var t=document.getElementById('timer'),running=false,elapsed=0,last=0,iv=null;
+  function fmt(s){var m=Math.floor(s/60),r=s%60;return (m<10?'0':'')+m+':'+(r<10?'0':'')+r}
+  function tick(){var now=Date.now();elapsed+=(now-last)/1000;last=now;var s=Math.floor(elapsed);t.textContent=fmt(s);t.classList.toggle('over',s>=22*60)}
+  function toggleTimer(){running=!running;if(running){last=Date.now();iv=setInterval(tick,500)}else{clearInterval(iv)}}
+  document.getElementById('timerBtn').addEventListener('click',toggleTimer);
+  document.getElementById('notesBtn').addEventListener('click',function(){notes.classList.toggle('on')});
+  document.addEventListener('keydown',function(e){
+    var tg=(e.target.tagName||'').toLowerCase();
+    if(tg==='summary'||tg==='button')return;
+    if(e.key==='ArrowRight'||e.key==='PageDown'||e.key===' '){e.preventDefault();show(i+1)}
+    else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();show(i-1)}
+    else if(e.key==='Home')show(0); else if(e.key==='End')show(slides.length-1);
+    else if(e.key==='n'||e.key==='N')notes.classList.toggle('on');
+    else if(e.key==='t'||e.key==='T')toggleTimer();
+    else if(e.key==='r'||e.key==='R'){elapsed=0;t.textContent='00:00';t.classList.remove('over')}
+  });
+  window.addEventListener('beforeprint',function(){document.querySelectorAll('details').forEach(function(d){d.open=true})});
+})();
+</script>
+</body>
+</html>
