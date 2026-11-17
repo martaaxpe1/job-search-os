@@ -4,6 +4,7 @@ Interviewer: Ronald van Rijn (CPTO: product, tech and data, about 1,500 people; 
 Overall score: **6/10 on how the answers were built. The signals point clearly positive.** Thijmen comes back with the outcome by Mon 26/10.
 
 Transcript quality: good. The only artifacts are names ("Ball/Bolt/Bold" = bol, "Colligan" = Culligan, "Cloud Code" = Claude Code, "Marktplatz" = Marktplaats; "Ferry agrees" is unclear). All answers graded. Confidence: high.
+Raw transcript: `briefings/2026-10-22-bol-final-ronald-transcript.txt`
 
 ---
 
